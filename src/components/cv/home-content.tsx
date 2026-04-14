@@ -7,6 +7,7 @@ import { ScanLineReveal } from "@/components/motion/scan-line-reveal";
 import { StaggerLines } from "@/components/motion/stagger-lines";
 import { ExperienceEntry } from "@/components/cv/experience-entry";
 import { Pretext } from "@/components/motion/pretext";
+import { PretextWords } from "@/components/motion/pretext-words";
 
 export function HomeContent() {
   return (
@@ -22,7 +23,7 @@ export function HomeContent() {
 
         <PaperFeed delay={0.3}>
           <h2 className="mb-[var(--spacing-2xl)] font-mono text-[14px] font-bold leading-relaxed">
-            {cv.title}
+            <PretextWords text={cv.title} />
           </h2>
         </PaperFeed>
 
@@ -36,7 +37,7 @@ export function HomeContent() {
         {/* Experience */}
         <PaperFeed delay={0.1}>
           <h3 className="mb-[var(--spacing-lg)] mt-[var(--spacing-4xl)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-            Experience
+            <PretextWords text="Experience" />
           </h3>
         </PaperFeed>
 
@@ -47,18 +48,22 @@ export function HomeContent() {
         {/* Education */}
         <PaperFeed>
           <h3 className="mb-[var(--spacing-lg)] mt-[var(--spacing-4xl)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-            Education
+            <PretextWords text="Education" />
           </h3>
         </PaperFeed>
 
         {cv.education.map((edu, i) => (
           <PaperFeed key={edu.institution} delay={i * 0.08}>
             <div className="mb-[var(--spacing-lg)]">
-              <h4 className="text-[12px]">{edu.institution}</h4>
-              <div className="text-ink-light">{edu.degree}</div>
+              <h4 className="text-[12px]">
+                <PretextWords text={edu.institution} />
+              </h4>
+              <div className="text-ink-light">
+                <PretextWords text={edu.degree} />
+              </div>
               {edu.note && (
                 <p className="mt-[var(--spacing-xs)] text-ink-faint">
-                  {edu.note}
+                  <PretextWords text={edu.note} />
                 </p>
               )}
             </div>
@@ -86,14 +91,14 @@ export function HomeContent() {
           <>
             <PaperFeed>
               <h3 className="mb-[var(--spacing-lg)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-                Skills
+                <PretextWords text="Skills" />
               </h3>
             </PaperFeed>
 
             <StaggerLines staggerDelay={0.04}>
               {cv.skills.map((skill) => (
                 <div key={skill} className="mb-[var(--spacing-xs)] text-ink-light">
-                  {skill}
+                  <PretextWords text={skill} />
                 </div>
               ))}
             </StaggerLines>
@@ -105,56 +110,20 @@ export function HomeContent() {
           <>
             <PaperFeed>
               <h3 className="mb-[var(--spacing-lg)] mt-[var(--spacing-3xl)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-                Select Clients
+                <PretextWords text="Select Clients" />
               </h3>
             </PaperFeed>
 
             <StaggerLines staggerDelay={0.03}>
               {cv.clients.map((client) => (
                 <div key={client} className="mb-[var(--spacing-xs)] text-ink-light">
-                  {client}
+                  <PretextWords text={client} />
                 </div>
               ))}
             </StaggerLines>
           </>
         )}
 
-        {/* Awards */}
-        <PaperFeed>
-          <h3 className="mb-[var(--spacing-lg)] mt-[var(--spacing-3xl)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-            Notable Press and Awards
-          </h3>
-        </PaperFeed>
-
-        <StaggerLines staggerDelay={0.05}>
-          {cv.awards.map((award) => (
-            <div key={award} className="mb-[var(--spacing-sm)] text-ink-light">
-              {award}
-            </div>
-          ))}
-        </StaggerLines>
-
-        {/* References */}
-        <PaperFeed>
-          <h3 className="mb-[var(--spacing-lg)] mt-[var(--spacing-3xl)] text-[10px] font-bold uppercase tracking-[0.2em] text-ink-faint">
-            References
-          </h3>
-        </PaperFeed>
-
-        <StaggerLines staggerDelay={0.06}>
-          {cv.references.map((ref) => (
-            <div key={ref.name} className="mb-[var(--spacing-lg)]">
-              {ref.email ? (
-                <a href={`mailto:${ref.email}`} className="font-bold">
-                  {ref.name}
-                </a>
-              ) : (
-                <span className="font-bold">{ref.name}</span>
-              )}
-              <div className="text-ink-light">{ref.title}</div>
-            </div>
-          ))}
-        </StaggerLines>
       </div>
     </div>
   );

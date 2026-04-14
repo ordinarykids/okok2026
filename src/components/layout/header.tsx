@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import { navigation } from "@/data/navigation";
+import { PretextWords } from "@/components/motion/pretext-words";
 
 export function Header() {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ export function Header() {
           href="/"
           className="text-[16px] font-light tracking-tight hover:no-underline"
         >
-          Jason Herring
+          <PretextWords text="Jason Herring" />
         </Link>
       </div>
 
@@ -24,7 +25,7 @@ export function Header() {
         {navigation.map((section, sectionIdx) => (
           <div key={section.label} className="mb-[var(--spacing-xs)]">
             <span className="mr-[var(--spacing-sm)] font-bold">
-              {section.label}
+              <PretextWords text={section.label} />
             </span>
             {section.links.map((link, linkIdx) => {
               const isActive = pathname === link.href;
@@ -36,7 +37,7 @@ export function Header() {
                       href={link.href}
                       className={`${isActive ? "underline" : ""}`}
                     >
-                      {link.title}
+                      <PretextWords text={link.title} />
                     </Link>
                   ) : (
                     <motion.span
@@ -54,7 +55,7 @@ export function Header() {
                         href={link.href}
                         className={`${isActive ? "underline" : ""}`}
                       >
-                        {link.title}
+                        <PretextWords text={link.title} />
                       </Link>
                     </motion.span>
                   )}

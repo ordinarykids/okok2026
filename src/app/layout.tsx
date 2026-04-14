@@ -4,6 +4,7 @@ import { Agentation } from "agentation";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { GrainOverlay } from "@/components/grain-overlay";
+import { PretextProvider } from "@/components/motion/pretext-provider";
 import "./globals.css";
 
 const geistBlack = localFont({
@@ -38,9 +39,11 @@ export default function RootLayout({
     >
       <body className="relative min-h-screen">
         <GrainOverlay />
-        <Header />
-        {children}
-        <Footer />
+        <PretextProvider>
+          <Header />
+          {children}
+          <Footer />
+        </PretextProvider>
         {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
