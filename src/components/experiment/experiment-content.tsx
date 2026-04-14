@@ -6,6 +6,7 @@ import { XeroxText } from "@/components/motion/xerox-text";
 import { PaperFeed } from "@/components/motion/paper-feed";
 import { ScanLineReveal } from "@/components/motion/scan-line-reveal";
 import { GlitchText } from "@/components/motion/glitch-text";
+import { Pretext } from "@/components/motion/pretext";
 
 interface ExperimentContentProps {
   experiment: Experiment;
@@ -32,9 +33,10 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
 
         {experiment.description && (
           <PaperFeed delay={0.3}>
-            <p className="mt-[var(--spacing-lg)] text-[14px] leading-relaxed text-ink-light">
-              {experiment.description}
-            </p>
+            <Pretext
+              paragraphs={[experiment.description]}
+              className="mt-[var(--spacing-lg)] text-[14px] text-ink-light"
+            />
           </PaperFeed>
         )}
       </div>
@@ -61,9 +63,9 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
           case "text":
             return (
               <PaperFeed key={i} delay={0.1 * i}>
-                <div
-                  className="mb-[var(--spacing-2xl)] leading-relaxed text-ink-light [&>p]:mb-[var(--spacing-lg)]"
-                  dangerouslySetInnerHTML={{ __html: block.body }}
+                <Pretext
+                  html={block.body}
+                  className="mb-[var(--spacing-2xl)] text-ink-light"
                 />
               </PaperFeed>
             );

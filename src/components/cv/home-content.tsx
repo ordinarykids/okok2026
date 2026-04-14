@@ -6,6 +6,7 @@ import { PaperFeed } from "@/components/motion/paper-feed";
 import { ScanLineReveal } from "@/components/motion/scan-line-reveal";
 import { StaggerLines } from "@/components/motion/stagger-lines";
 import { ExperienceEntry } from "@/components/cv/experience-entry";
+import { Pretext } from "@/components/motion/pretext";
 
 export function HomeContent() {
   return (
@@ -25,13 +26,12 @@ export function HomeContent() {
           </h2>
         </PaperFeed>
 
-        {cv.bio.map((paragraph, i) => (
-          <PaperFeed key={i} delay={0.4 + i * 0.1}>
-            <p className="mb-[var(--spacing-lg)] leading-relaxed text-ink-light">
-              {paragraph}
-            </p>
-          </PaperFeed>
-        ))}
+        <PaperFeed delay={0.4}>
+          <Pretext
+            paragraphs={cv.bio}
+            className="text-ink-light"
+          />
+        </PaperFeed>
 
         {/* Experience */}
         <PaperFeed delay={0.1}>

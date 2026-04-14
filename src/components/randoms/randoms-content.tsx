@@ -6,6 +6,7 @@ import { randoms } from "@/data/randoms";
 import { XeroxText } from "@/components/motion/xerox-text";
 import { PaperFeed } from "@/components/motion/paper-feed";
 import { ScanLineReveal } from "@/components/motion/scan-line-reveal";
+import { Pretext } from "@/components/motion/pretext";
 import { motion, AnimatePresence } from "motion/react";
 
 const allProjects = randoms;
@@ -69,9 +70,10 @@ export function RandomsContent() {
           </h2>
 
           <PaperFeed>
-            <p className="mb-[var(--spacing-lg)] max-w-[var(--content-narrow)] text-[14px] leading-relaxed text-ink-light">
-              {current.shortDescription}
-            </p>
+            <Pretext
+              paragraphs={[current.shortDescription]}
+              className="mb-[var(--spacing-lg)] max-w-[var(--content-narrow)] text-[14px] text-ink-light"
+            />
           </PaperFeed>
 
           {/* Gallery */}
