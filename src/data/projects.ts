@@ -343,30 +343,56 @@ export const projects: Project[] = [
   {
     slug: "aleph-rebrand",
     title: "Aleph Rebrand",
-    date: "2022-01-15",
+    date: "2024-01-31",
     role: "Creative Director",
     client: "Aleph",
     shortDescription:
-      "Complete brand identity refresh for Aleph, including a new website, process film, and the essay 'Refining the Point.'",
-    longDescription: `<p>Led the complete rebranding of Aleph, reshaping the studio's identity to reflect its evolution as a modern creative technology partner.</p>
-<p>The work encompassed logo design, typography systems, color palettes, and a comprehensive set of brand guidelines, then extended into the launch of a new website and the written piece <em>Refining the Point</em>, which framed the thinking behind the shift.</p>
-<p>A core belief behind the project was that coding is a creative act, not a downstream implementation step. The identity system was built to hold both editorial clarity and interactive motion, treating design, writing, and technology as a single authorship practice.</p>
-<p>The rebrand also embraced AI-assisted image making as a creative partner rather than a replacement, using generated imagery as a way to translate ideas into references, collages, and visual provocations. That process helped shape a brand language that felt ambitious, contemporary, and open to new tools without giving up intent or craft.</p>`,
+      "A new website and brand evolution that reflects how Aleph provides creative direction and tech guidance to its clients, inspired by smart robots.",
+    longDescription: `<p>Aleph's core offerings as a creative technology partner had expanded and shifted over the years as the studio's talents and focus evolved. The rebrand and new website were built to place those capabilities clearly inside a fast-changing technical landscape and make the latest expression of the studio visible.</p>
+<p>The new identity was designed to reflect the collective diversity of Aleph's creative influences, the empathy the team brings to collaborators, and the irreverent nature of the work it wants to do. The studio's client work centers on shaping the space around information with a creative vision that is both ambitious and inherently possible.</p>
+<p>A core tenet of the project was that coding is a creative act, not simply a byproduct of design. The brand system had to hold both the static logic of printed pages and the dynamic movement of interactive art, treating code as something foundational and transformative rather than downstream.</p>
+<p>The work also embraced AI and LLMs as tools for creation. Prompting and generated imagery were used as a way to translate ideas into visual inspiration, accelerate mood boards, and surface surrealist references while keeping human judgment, taste, and experience at the center of the process.</p>
+<p>The result was a brand and website that position Aleph as a guide for clients navigating rapid technical change. The supporting film and imagery extend that point of view into motion, framing the studio's identity around fearless experimentation, creative leadership, and new tools.</p>`,
     featuredImage: {
-      src: "/images/projects/aleph-rebrand/featured.jpg",
-      alt: "Aleph brand identity",
-      width: 1726,
-      height: 984,
+      src: "/images/experiments/refining-the-point/featured.jpg",
+      alt: "Aleph rebrand hero composition",
+      width: 3500,
+      height: 2000,
     },
-    images: [],
+    images: [
+      {
+        src: "/images/experiments/refining-the-point/brand-mark.png",
+        alt: "Aleph rebrand brand mark",
+        width: 2382,
+        height: 2336,
+        caption:
+          "Brand Mark\nA primary identity form from the rebrand, used to anchor the refreshed website and broader visual system.",
+      },
+      {
+        src: "/images/experiments/refining-the-point/flowers.png",
+        alt: "Aleph AI-assisted floral study",
+        width: 1080,
+        height: 541,
+        caption:
+          "AI Visual Reference\nGenerated imagery used as creative inspiration during the rebrand process, helping translate ideas into mood and atmosphere.",
+      },
+      {
+        src: "/images/experiments/refining-the-point/animals.png",
+        alt: "Aleph AI-assisted animal collage",
+        width: 1448,
+        height: 1056,
+        caption:
+          "Smart Robot Flourishes\nPart of the surreal visual language described in the essay, where AI acts as a creative partner rather than a replacement for authorship.",
+      },
+    ],
     embeds: [
       {
-        type: "youtube",
-        src: "https://www.youtube.com/embed/FFpdC3Qbggg",
+        type: "video",
+        src: "/c8d8c5e87ed1917106545837de051d717c60de62.mp4",
         title: "Refining the Point — Aleph Rebrand Process Film",
       },
     ],
-    tags: ["branding", "identity", "design-systems"],
+    tags: ["branding", "identity", "creative-technology", "ai-art-direction"],
     category: "selected",
   },
   {

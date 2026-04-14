@@ -93,7 +93,7 @@ export function ProjectContent({ project }: ProjectContentProps) {
             </div>
           ) : (
             <video controls className="w-full">
-              <source src={embed.src} type="video/mp4" />
+              <source src={embed.src} type={getVideoMimeType(embed.src)} />
             </video>
           )}
         </PaperFeed>
@@ -138,4 +138,10 @@ export function ProjectContent({ project }: ProjectContentProps) {
       </div>
     </article>
   );
+}
+
+function getVideoMimeType(src: string) {
+  if (src.endsWith(".mov")) return "video/quicktime";
+  if (src.endsWith(".webm")) return "video/webm";
+  return "video/mp4";
 }
