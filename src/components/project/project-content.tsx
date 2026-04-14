@@ -91,6 +91,17 @@ export function ProjectContent({ project }: ProjectContentProps) {
                 allowFullScreen
               />
             </div>
+          ) : embed.type === "instagram" ? (
+            <div className="mx-auto max-w-[540px]">
+              <iframe
+                src={embed.src}
+                title={embed.title}
+                className="w-full border border-rule bg-white"
+                style={{ minWidth: 326, borderRadius: 3 }}
+                height={536}
+                allowFullScreen
+              />
+            </div>
           ) : (
             <video controls className="w-full">
               <source src={embed.src} type={getVideoMimeType(embed.src)} />

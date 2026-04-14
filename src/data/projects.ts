@@ -391,6 +391,11 @@ export const projects: Project[] = [
         src: "/c8d8c5e87ed1917106545837de051d717c60de62.mp4",
         title: "Refining the Point — Aleph Rebrand Process Film",
       },
+      {
+        type: "instagram",
+        src: "https://www.instagram.com/p/C2QU1e5Ocyv/embed/",
+        title: "Aleph Rebrand — Instagram",
+      },
     ],
     tags: ["branding", "identity", "creative-technology", "ai-art-direction"],
     category: "selected",
@@ -443,6 +448,330 @@ export const projects: Project[] = [
       },
     ],
     tags: ["branding", "packaging", "identity"],
+    category: "selected",
+  },
+  {
+    slug: "exploratorium",
+    title: "Exploratorium",
+    date: "2015-06-01",
+    role: "Design Director",
+    client: "Exploratorium",
+    shortDescription:
+      "Complete website redesign for San Francisco's Exploratorium, timed to the museum's historic move from the Palace of Fine Arts to Pier 15.",
+    longDescription: `<p>The Exploratorium's relocation to Pier 15 in 2013 was the biggest transformation in the museum's history — a new building, new galleries, a fundamentally different relationship to the waterfront and the city. The website needed to carry that same energy: not a refresh but a reimagining of how a science museum presents itself online.</p>
+<p>We redesigned the full site from the ground up, building an information architecture that mirrored the museum's six gallery zones — the Tinkering Studio, Light and Sound, Human Behaviour, Living Systems, the Outdoor exhibits, and the Bay Observatory. Each section had its own visual rhythm while holding together as a coherent system. The Visit page became a portal to the new Pier 15 location, walking users through what they'd find in each gallery with photography and context that matched the museum's signature mix of wonder and rigour.</p>
+<p>The Artists-in-Residence section received particular attention. The Exploratorium has long been a place where artists and scientists overlap, and the redesign gave that program a proper editorial home — profiles, project documentation, and a sense of the creative process behind each residency.</p>
+<p>The store, events calendar, education resources, and membership flows were all rebuilt to feel native to the new identity. The result was a site that felt like walking into the museum itself: curious, layered, inviting you to go deeper.</p>`,
+    featuredImage: {
+      src: "/images/projects/exploratorium/01.jpg",
+      alt: "Exploratorium website — homepage with 'more: science close up' feature",
+      width: 1280,
+      height: 1212,
+    },
+    images: [
+      {
+        src: "/images/projects/exploratorium/01.jpg",
+        alt: "Exploratorium homepage — gallery grid with Tinkering Studio, Pier 15 move announcement",
+        width: 1280,
+        height: 1212,
+      },
+      {
+        src: "/images/projects/exploratorium/02.jpg",
+        alt: "Exploratorium Artists-in-Residence — editorial page with program history and current residents",
+        width: 1280,
+        height: 1640,
+      },
+      {
+        src: "/images/projects/exploratorium/03.jpg",
+        alt: "Exploratorium store — product grid",
+        width: 1280,
+        height: 1107,
+      },
+      {
+        src: "/images/projects/exploratorium/04.jpg",
+        alt: "Exploratorium store — detail view",
+        width: 1280,
+        height: 1107,
+      },
+      {
+        src: "/images/projects/exploratorium/05.jpg",
+        alt: "Exploratorium visit page — plan your trip to Pier 15",
+        width: 1280,
+        height: 1508,
+      },
+      {
+        src: "/images/projects/exploratorium/06.jpg",
+        alt: "Exploratorium visit portal — gallery zones with Light and Sound, Tinkering, Human Behaviour, Living Systems, Outdoor, Bay Observatory",
+        width: 2644,
+        height: 2438,
+      },
+    ],
+    tags: ["product", "museum", "education", "information-architecture"],
+    category: "selected",
+  },
+  {
+    slug: "nike-nsw",
+    title: "Nike NSW",
+    date: "2010-06-01",
+    role: "Creative Director, Director",
+    client: "Nike",
+    shortDescription:
+      "Microsite and 6 short films for Nike Sportswear's flagship collection — merging fashion film, interactive product exploration, and technical storytelling.",
+    longDescription: `<p>Nike Sportswear was Nike's bid to take its technical innovation and dress it in something you'd actually want to wear on the street. The NSW collection — Tech Composite Fleece, Featherweight Windrunner, and the rest — needed a digital presence that could hold both the fashion and the engineering.</p>
+<p>We built a microsite that worked as both a collection browser and a film portal. The product grid floated garments in three-dimensional space against a cool studio backdrop, letting users navigate by category — MNS, WMNS, Jackets, Shirts, Sweats, Hats, Pants — with each piece linking out to detailed product pages featuring macro photography (riri zippers, ultrasonic seam taping, bonded hood peaks) and technical spec overlays.</p>
+<p>Alongside the site, we directed 6 short films that treated the garments as characters rather than products. The films used timecode overlays and tight cinematography to create a sense of movement and precision that matched the engineering ethos of the line. Each film tied directly into the microsite, so the experience flowed between watching and shopping without a hard break.</p>
+<p>The project was one of the first to blur the line between fashion film and interactive commerce at Nike — treating the web as a space where storytelling and product could coexist without one subordinating the other.</p>`,
+    featuredImage: {
+      src: "/images/projects/nike-nsw/01.jpg",
+      alt: "Nike NSW — studio wall with production boards, film stills, and garment flats",
+      width: 746,
+      height: 495,
+    },
+    images: [
+      {
+        src: "/images/projects/nike-nsw/01.jpg",
+        alt: "Nike NSW — production wall with film stills, wireframes, and garment photography",
+        width: 746,
+        height: 495,
+      },
+      {
+        src: "/images/projects/nike-nsw/02.jpg",
+        alt: "Nike NSW — collection browser with floating garments in 3D grid",
+        width: 746,
+        height: 497,
+      },
+      {
+        src: "/images/projects/nike-nsw/03.jpg",
+        alt: "Nike NSW — film still with timecode overlay, neon Windrunner detail",
+        width: 746,
+        height: 420,
+      },
+      {
+        src: "/images/projects/nike-nsw/04.jpg",
+        alt: "Nike NSW — macro detail of riri zipper on Tech Composite Fleece",
+        width: 746,
+        height: 420,
+      },
+      {
+        src: "/images/projects/nike-nsw/05.jpg",
+        alt: "Nike NSW — Tech Composite Fleece product page with technical specs and hotspot annotations",
+        width: 746,
+        height: 497,
+      },
+      {
+        src: "/images/projects/nike-nsw/06.jpg",
+        alt: "Nike NSW — campaign editorial detail",
+        width: 746,
+        height: 497,
+      },
+    ],
+    tags: ["film", "interactive", "fashion", "nike", "e-commerce"],
+    category: "selected",
+  },
+  {
+    slug: "dockers-shk",
+    title: "Dockers Super Hard Khakis",
+    date: "2013-06-01",
+    role: "Creative Director",
+    client: "Dockers",
+    shortDescription:
+      "A branded campaign for Dockers SHK that put skateboarders in khakis and asked what happens when workwear meets street culture.",
+    longDescription: `<p>Dockers Super Hard Khakis were built to take a beating — reinforced seams, heavy-duty twill, a construction spec borrowed from workwear rather than fashion. The question was how to market a pair of khakis to people who would never self-identify as khaki wearers. The answer was skateboarding.</p>
+<p>We produced a full campaign built around skaters wearing SHK in the wild — no studio shoots, no catalog posing. The photography used long exposures and desaturated tones to create a cinematic quality that felt more like an editorial in a skate mag than an ad for pants. One of the hero images composited a frozen skater against his own motion blur, a visual metaphor for the pants themselves: still holding their shape while everything around them moves.</p>
+<p>The campaign ran across digital and print, with a lookbook that paired the motion photography with product detail and lifestyle context. The work succeeded because it took Dockers seriously as a material rather than a brand — treating the khaki as a substrate for culture rather than the other way around.</p>`,
+    featuredImage: {
+      src: "/images/projects/dockers-shk/01.jpg",
+      alt: "Dockers SHK — skater frozen against motion blur, Super Hard Khakis lookbook cover",
+      width: 792,
+      height: 1224,
+    },
+    images: [
+      {
+        src: "/images/projects/dockers-shk/01.jpg",
+        alt: "Dockers SHK — hero image with frozen skater and motion-blur double exposure",
+        width: 792,
+        height: 1224,
+      },
+      {
+        src: "/images/projects/dockers-shk/02.jpg",
+        alt: "Dockers SHK — skater grinding at SF industrial park, desaturated editorial tone",
+        width: 1920,
+        height: 1280,
+      },
+      {
+        src: "/images/projects/dockers-shk/03.jpg",
+        alt: "Dockers SHK — kickflip in Golden Gate Park, foggy morning light",
+        width: 1920,
+        height: 1280,
+      },
+      {
+        src: "/images/projects/dockers-shk/04.jpg",
+        alt: "Dockers SHK — skating San Francisco streets",
+        width: 1920,
+        height: 1280,
+      },
+      {
+        src: "/images/projects/dockers-shk/05.jpg",
+        alt: "Dockers SHK — lifestyle photography",
+        width: 1920,
+        height: 1281,
+      },
+      {
+        src: "/images/projects/dockers-shk/06.jpg",
+        alt: "Dockers SHK — skate session detail",
+        width: 1920,
+        height: 1280,
+      },
+      {
+        src: "/images/projects/dockers-shk/07.jpg",
+        alt: "Dockers SHK — campaign photography",
+        width: 1920,
+        height: 1280,
+      },
+    ],
+    tags: ["photography", "skateboarding", "fashion", "campaign"],
+    category: "selected",
+  },
+  {
+    slug: "huf-sf",
+    title: "HUF",
+    date: "2008-01-01",
+    role: "Designer, Developer",
+    client: "HUF",
+    shortDescription:
+      "A long-running creative partnership with Keith Hufnagel and HUF — building the digital presence for one of San Francisco's defining streetwear brands.",
+    longDescription: `<p>The relationship with HUF and its founder Keith Hufnagel spanned years and touched nearly every aspect of the brand's digital life. HUF was one of those rare brands that didn't need to be explained to its audience — if you knew, you knew — but it still needed a web presence that matched the precision and taste of what Keith was building in the physical world.</p>
+<p>We designed and developed hufsf.com through multiple iterations, including the e-commerce platform, seasonal lookbooks, and collaboration launches. The site featured product photography with the kind of obsessive detail Keith brought to everything — the Nike SB x HUF Air Trainer collab got its own interactive showcase, with the shoe rendered from multiple angles against a clean white field, information overlays triggered by cursor position, and the HUF branding sitting quietly in the corner like a signature on a painting.</p>
+<p>The seasonal product grids were designed to feel like a curated shop window rather than a catalog — beanies, button-downs, sneakers, and accessories arranged with the same eye that Keith brought to the physical retail space on Bush Street. The site's green accent color and Futura-adjacent type became as recognizable online as the HUF triple-triangle was on the street.</p>
+<p>Keith passed in 2020. The work we did together remains some of the most satisfying of my career — not because of scale or awards, but because it was honest. The brand said what it was, and the digital work tried to do the same.</p>`,
+    featuredImage: {
+      src: "/images/projects/huf-sf/01.jpg",
+      alt: "HUF — Nike SB x HUF Air Trainer collaboration product page",
+      width: 1200,
+      height: 800,
+    },
+    images: [
+      {
+        src: "/images/projects/huf-sf/01.jpg",
+        alt: "HUF — Nike SB Air Trainer collaboration with product detail overlay",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/02.jpg",
+        alt: "HUF — Nike SB Air Trainer top-down view",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/03.jpg",
+        alt: "HUF — product page detail",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/04.jpg",
+        alt: "HUF — e-commerce product grid",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/05.jpg",
+        alt: "HUF — seasonal lookbook grid with product photography",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/06.jpg",
+        alt: "HUF — campaign imagery",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/07.jpg",
+        alt: "HUF — beanie product display",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/08.jpg",
+        alt: "HUF — lookbook editorial",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/09.jpg",
+        alt: "HUF — collection page",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/10.jpg",
+        alt: "HUF — product photography",
+        width: 1200,
+        height: 800,
+      },
+      {
+        src: "/images/projects/huf-sf/11.jpg",
+        alt: "HUF — retail and brand presence",
+        width: 1200,
+        height: 800,
+      },
+    ],
+    tags: ["interactive", "streetwear", "branding", "e-commerce"],
+    category: "selected",
+  },
+  {
+    slug: "okml",
+    title: "OK Media Lab",
+    date: "2014-03-01",
+    role: "Founder, Instructor",
+    client: "OrdinaryKids",
+    shortDescription:
+      "A 6-week workshop teaching creatives to build Arduino-based interactive installations, culminating in a gallery show at Lowerdeck Gallery in San Francisco.",
+    longDescription: `<p>OK Media Lab grew out of a simple observation: designers and artists were surrounded by cheap, powerful hardware — Arduinos, sensors, LEDs, servos — but most of them had no idea how to use any of it. The gap between wanting to make physical interactive work and actually doing it was a soldering iron and six Tuesday nights.</p>
+<p>OKML was a 6-week workshop held at the OrdinaryKids studio, open to creatives with zero electronics experience. Each session introduced a new concept — basic circuits, sensor input, servo control, Processing communication, projection mapping — and each participant worked toward a final installation piece. The structure was deliberately low-ceremony: free beer courtesy of the Sea Star, an Arduino starter kit, and a room full of people willing to blow up a few LEDs in the name of learning.</p>
+<p>The workshop culminated in a group show at Lowerdeck Gallery in the Mission. Participants exhibited finished Arduino-based installations — interactive projections, sensor-triggered sound pieces, light sculptures — to a public audience. The gallery was dark, the projections were blue, and people brought their kids.</p>
+<p>OKML ran for several sessions and represented something important to the studio's identity: the belief that creative technology isn't a specialisation but a literacy, and that the best way to learn it is to build something real and put it in front of people.</p>`,
+    featuredImage: {
+      src: "/images/projects/okml/01.jpg",
+      alt: "OKML — workshop poster with Arduino board, electronic components, and moon",
+      width: 1140,
+      height: 749,
+    },
+    images: [
+      {
+        src: "/images/projects/okml/01.jpg",
+        alt: "OKML — opening workshop poster, Lowerdeck Gallery, Feb 12 2010, 'Free Beer' and Arduino components",
+        width: 1140,
+        height: 749,
+      },
+      {
+        src: "/images/projects/okml/02.jpg",
+        alt: "OKML — workshop session in progress",
+        width: 746,
+        height: 495,
+      },
+      {
+        src: "/images/projects/okml/03.jpg",
+        alt: "OKML — gallery show, visitors silhouetted against interactive projection installation",
+        width: 746,
+        height: 495,
+      },
+      {
+        src: "/images/projects/okml/04.jpg",
+        alt: "OKML — children interacting with projected installation at gallery opening",
+        width: 746,
+        height: 495,
+      },
+      {
+        src: "/images/projects/okml/05.jpg",
+        alt: "OKML — gallery show, figure silhouetted against blue LED pixel wall installation",
+        width: 746,
+        height: 515,
+      },
+    ],
+    tags: ["arduino", "workshop", "installation", "education", "gallery"],
     category: "selected",
   },
 ];

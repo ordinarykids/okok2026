@@ -7,7 +7,7 @@ export interface ImageAsset {
 }
 
 export interface Embed {
-  type: "youtube" | "video";
+  type: "youtube" | "video" | "instagram";
   src: string;
   title: string;
 }
