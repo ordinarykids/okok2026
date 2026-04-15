@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useCallback } from "react";
 import { usePretextRegister } from "./pretext-provider";
 
 interface PretextWordsProps {
@@ -16,35 +16,16 @@ interface PretextWordsProps {
  */
 export function PretextWords({ text, className }: PretextWordsProps) {
   const ctx = usePretextRegister();
-  const spansRef = useRef<(HTMLSpanElement | null)[]>([]);
-  const cleanupRef = useRef<(() => void)[]>([]);
 
-  const setSpanRef = useCallback(
-    (index: number) => (el: HTMLSpanElement | null) => {
-      spansRef.current[index] = el;
+  const refCallback = useCallback(
+    (el: HTMLSpanElement | null) => {
+      if (!ctx || !el) return;
+      // Register returns a cleanup function; store it on the element
+      const cleanup = ctx.register(el);
+      (el as HTMLSpanElement & { __pretextCleanup?: () => void }).__pretextCleanup = cleanup;
     },
-    [],
+    [ctx],
   );
-
-  useEffect(() => {
-    if (!ctx) return;
-
-    // Clean up previous registrations
-    cleanupRef.current.forEach((fn) => fn());
-    cleanupRef.current = [];
-
-    // Register all current spans
-    for (const el of spansRef.current) {
-      if (el) {
-        cleanupRef.current.push(ctx.register(el));
-      }
-    }
-
-    return () => {
-      cleanupRef.current.forEach((fn) => fn());
-      cleanupRef.current = [];
-    };
-  }, [ctx, text]);
 
   if (!text) return null;
 
@@ -55,7 +36,7 @@ export function PretextWords({ text, className }: PretextWordsProps) {
       {words.map((word, i) => (
         <span
           key={`${i}-${word}`}
-          ref={setSpanRef(i)}
+          ref={refCallback}
           className="inline-block transition-[transform,opacity] duration-100 ease-out will-change-transform"
         >
           {word}

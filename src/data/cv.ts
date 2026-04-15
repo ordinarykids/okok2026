@@ -48,11 +48,13 @@ export const cv: CVData = {
       role: "Group Manager, Design Technology \u2014 Foresight",
       period: "FEB 2026 \u2014 PRESENT",
       description:
-        "Leading Design Technology on Intuit\u2019s Futures innovation team. Building the interfaces of the future across voice, vision, and ambient intelligence.",
+        "Leading Design Technology on Intuit\u2019s Foresight innovation team. Creating, managing, and composing agentic systems \u2014 multi-agent architectures that orchestrate voice, vision, and ambient intelligence into coherent product experiences.",
       bullets: [
-        "Key builder on a 100+ person innovation team called Futures, driving multi-modal prototyping and experience innovation.",
+        "Key builder on Foresight, a 100+ person innovation team driving multi-modal prototyping and experience innovation across Intuit.",
+        "Architecting and shipping agentic systems \u2014 composing autonomous AI agents that reason, act, and collaborate across voice, vision, and data pipelines.",
         "Leading rapid experimentation across design, engineering, and AI \u2014 building high-fidelity provocations for leadership with real data, natural language, and multi-device ecosystems.",
         "Delivering flagship demos across executive forums and summits, shifting organizational culture around AI as a creative medium.",
+        "Member of senior leadership team reporting directly to Intuit\u2019s Chief AI Officer.",
       ],
     },
     {

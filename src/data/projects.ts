@@ -61,9 +61,10 @@ export const projects: Project[] = [
     role: "Creative Director, Developer",
     client: "Tracy Chapman / Elektra Records",
     shortDescription:
-      "An animated coloring book web experience that allowed users to color the website while animations unfolded to Tracy Chapman's music.",
-    longDescription: `<p>For Tracy Chapman's album release, we created an interactive web experience that merged animation with user participation. The site functioned as a living coloring book — visitors could paint directly on the canvas while hand-drawn animations played in response to the music.</p>
-<p>Built entirely in Flash, the experience pushed the boundaries of what interactive storytelling could be on the web, earning recognition from Communication Arts and the FWA.</p>`,
+      "Tracy Chapman\u2019s album was called Our Bright Future. Optimistic. Possibly ironic. The title resisted resolution \u2014 and that resistance became the work.",
+    longDescription: `<p>What we built had no precedent. Not a game. Not a website. Not an animation. Something that had never existed before: a participatory narrative where the meaning of the story was structurally dependent on the audience\u2019s choices. The coloring book was not metaphor \u2014 it was mechanism. Visitors painted directly onto the canvas while hand-drawn animations responded to Tracy\u2019s music. The world took shape under your hand. And the brightness of that future \u2014 the one the album promised, or questioned \u2014 was a direct consequence of how you chose to fill it in.</p>
+<p>This was not interactivity in the conventional sense. It was authorship distributed across thousands of strangers, each one deciding, brush stroke by brush stroke, whether Chapman\u2019s titular optimism was sincere or elegiac. The work existed in the space between intention and interpretation \u2014 which is, of course, where all meaningful art lives.</p>
+<p>Built entirely in Flash, it earned recognition from Communication Arts and the FWA. But the more enduring achievement was conceptual: we had made something the medium had never produced. A story with no fixed emotional valence. An artifact whose meaning you had to earn.</p>`,
     featuredImage: {
       src: "/images/projects/tracy-chapman/featured.jpg",
       alt: "Tracy Chapman interactive coloring book experience",
@@ -309,12 +310,6 @@ export const projects: Project[] = [
       {
         src: "/images/projects/helix/06-hero.png",
         alt: "Helix hero image — variant 1",
-        width: 3810,
-        height: 2834,
-      },
-      {
-        src: "/images/projects/helix/07-hero.png",
-        alt: "Helix hero image — variant 2",
         width: 3810,
         height: 2834,
       },
