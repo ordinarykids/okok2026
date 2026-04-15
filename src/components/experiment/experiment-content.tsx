@@ -5,7 +5,6 @@ import type { Experiment } from "@/types/project";
 import { XeroxText } from "@/components/motion/xerox-text";
 import { PaperFeed } from "@/components/motion/paper-feed";
 import { ScanLineReveal } from "@/components/motion/scan-line-reveal";
-import { GlitchText } from "@/components/motion/glitch-text";
 import { Pretext } from "@/components/motion/pretext";
 
 interface ExperimentContentProps {
@@ -22,14 +21,6 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
           className="mb-[var(--spacing-md)] text-[clamp(28px,3.5vw,48px)] leading-none"
           glitch
         />
-
-        <PaperFeed delay={0.2}>
-          <div className="flex items-baseline gap-[var(--spacing-lg)]">
-            <GlitchText className="text-ink-faint">
-              {new Date(experiment.date).getFullYear()}
-            </GlitchText>
-          </div>
-        </PaperFeed>
 
         {experiment.description && (
           <PaperFeed delay={0.3}>
@@ -95,8 +86,13 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
           case "video":
             return (
               <PaperFeed key={i} delay={0.1 * i} className="mb-[var(--spacing-2xl)]">
-                <video controls className="w-full">
-                  <source src={block.src} type="video/mp4" />
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="w-full bg-black"
+                >
+                  <source src={block.src} type={videoMimeType(block.src)} />
                 </video>
                 {block.title && (
                   <p className="mt-[var(--spacing-sm)] text-[10px] text-ink-faint">
@@ -121,10 +117,34 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
               </PaperFeed>
             );
 
+          case "vimeo":
+            return (
+              <PaperFeed key={i} delay={0.1 * i} className="mb-[var(--spacing-2xl)]">
+                <div
+                  className={`relative w-full overflow-hidden ${block.aspectClass ?? "aspect-video"}`}
+                >
+                  <iframe
+                    src={block.src}
+                    title={block.title ?? "Vimeo video"}
+                    className="absolute inset-0 h-full w-full border-0"
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+              </PaperFeed>
+            );
+
           default:
             return null;
         }
       })}
     </article>
   );
+}
+
+function videoMimeType(src: string) {
+  if (src.endsWith(".webm")) return "video/webm";
+  if (src.endsWith(".mov")) return "video/quicktime";
+  return "video/mp4";
 }

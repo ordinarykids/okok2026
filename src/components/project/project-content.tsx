@@ -12,22 +12,38 @@ interface ProjectContentProps {
   project: Project;
 }
 
+/** Gallery images only: never repeat the hero, never repeat the same asset twice. */
+function uniqueGalleryImages(project: Project) {
+  const seen = new Set<string>();
+  if (project.featuredImage) seen.add(project.featuredImage.src);
+  const out: Project["images"] = [];
+  for (const image of project.images) {
+    if (seen.has(image.src)) continue;
+    seen.add(image.src);
+    out.push(image);
+  }
+  return out;
+}
+
 export function ProjectContent({ project }: ProjectContentProps) {
+  const galleryImages = uniqueGalleryImages(project);
+
   return (
     <article>
-      {/* Hero image */}
-      <ScanLineReveal className="mb-[var(--spacing-2xl)]">
-        <div className="w-full overflow-hidden">
-          <Image
-            src={project.featuredImage.src}
-            alt={project.featuredImage.alt}
-            width={project.featuredImage.width}
-            height={project.featuredImage.height}
-            className="h-auto w-full"
-            priority
-          />
-        </div>
-      </ScanLineReveal>
+      {project.featuredImage && (
+        <ScanLineReveal className="mb-[var(--spacing-2xl)]">
+          <div className="w-full overflow-hidden">
+            <Image
+              src={project.featuredImage.src}
+              alt={project.featuredImage.alt}
+              width={project.featuredImage.width}
+              height={project.featuredImage.height}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
+        </ScanLineReveal>
+      )}
 
       {/* Title block */}
       <div className="mb-[var(--spacing-3xl)]">
@@ -46,9 +62,6 @@ export function ProjectContent({ project }: ProjectContentProps) {
             {project.client && (
               <span className="text-ink-faint">for {project.client}</span>
             )}
-            <span className="text-ink-faint">
-              {new Date(project.date).getFullYear()}
-            </span>
           </div>
         </PaperFeed>
 
@@ -61,6 +74,58 @@ export function ProjectContent({ project }: ProjectContentProps) {
           longDescription={project.longDescription}
         />
       </PaperFeed>
+
+      {/* Embeds (directly under description) */}
+      {project.embeds?.map((embed, i) => (
+        <PaperFeed key={i} className="mb-[var(--spacing-2xl)]">
+          {embed.type === "youtube" ? (
+            <div
+              className={`relative w-full overflow-hidden ${embed.aspectClass ?? "aspect-video"}`}
+            >
+              <iframe
+                src={embed.src}
+                title={embed.title}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ) : embed.type === "vimeo" ? (
+            <div
+              className={`relative w-full overflow-hidden ${embed.aspectClass ?? "aspect-video"}`}
+            >
+              <iframe
+                src={embed.src}
+                title={embed.title}
+                className="absolute inset-0 h-full w-full border-0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          ) : embed.type === "instagram" ? (
+            <div className="mx-auto max-w-[540px]">
+              <iframe
+                src={embed.src}
+                title={embed.title}
+                className="w-full border border-rule bg-white"
+                style={{ minWidth: 326, borderRadius: 3 }}
+                height={536}
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              className="mx-auto w-full max-w-[480px] bg-black"
+            >
+              <source src={embed.src} type={getVideoMimeType(embed.src)} />
+            </video>
+          )}
+        </PaperFeed>
+      ))}
 
       {/* Tags */}
       {project.tags && project.tags.length > 0 && (
@@ -78,43 +143,11 @@ export function ProjectContent({ project }: ProjectContentProps) {
         </PaperFeed>
       )}
 
-      {/* Embeds */}
-      {project.embeds?.map((embed, i) => (
-        <PaperFeed key={i} className="mb-[var(--spacing-2xl)]">
-          {embed.type === "youtube" ? (
-            <div className="relative aspect-video w-full overflow-hidden">
-              <iframe
-                src={embed.src}
-                title={embed.title}
-                className="absolute inset-0 h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          ) : embed.type === "instagram" ? (
-            <div className="mx-auto max-w-[540px]">
-              <iframe
-                src={embed.src}
-                title={embed.title}
-                className="w-full border border-rule bg-white"
-                style={{ minWidth: 326, borderRadius: 3 }}
-                height={536}
-                allowFullScreen
-              />
-            </div>
-          ) : (
-            <video controls className="w-full">
-              <source src={embed.src} type={getVideoMimeType(embed.src)} />
-            </video>
-          )}
-        </PaperFeed>
-      ))}
-
       {/* Image gallery */}
       <div className="grid grid-cols-1 gap-[var(--spacing-lg)]">
-        {project.images.map((image, i) => (
+        {galleryImages.map((image, i) => (
           <ScanLineReveal
-            key={i}
+            key={image.src}
             delay={i * 0.1}
             className="mb-[var(--spacing-sm)]"
           >

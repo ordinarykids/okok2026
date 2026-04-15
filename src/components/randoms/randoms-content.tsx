@@ -28,6 +28,8 @@ export function RandomsContent() {
     setKey((k) => k + 1);
   }, [current.slug]);
 
+  const thumb = current.featuredImage ?? current.images[0];
+
   return (
     <div>
       <div className="mb-[var(--spacing-2xl)] flex items-baseline justify-between">
@@ -53,17 +55,19 @@ export function RandomsContent() {
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
+          {thumb && (
           <ScanLineReveal className="mb-[var(--spacing-2xl)]">
             <div className="relative aspect-[3/2] w-full overflow-hidden">
               <Image
-                src={current.featuredImage.src}
-                alt={current.featuredImage.alt}
-                width={current.featuredImage.width}
-                height={current.featuredImage.height}
+                src={thumb.src}
+                alt={thumb.alt}
+                width={thumb.width}
+                height={thumb.height}
                 className="h-full w-full object-cover"
               />
             </div>
           </ScanLineReveal>
+          )}
 
           <h2 className="mb-[var(--spacing-md)] font-heading text-[clamp(24px,3vw,40px)] leading-none">
             {current.title}

@@ -60,23 +60,30 @@ The pretext system is context-based: one `PretextProvider` wraps the entire layo
 ```
 src/data/
   cv.ts              Bio, experience, education, skills, clients
-  projects.ts        11 selected projects with full image arrays
+  projects.ts        13 selected projects with full image arrays
   experiments.ts     11 experiments with mixed content blocks
-  randoms.ts         9 archival projects
-  navigation.ts      Site nav structure
+  randoms.ts         7 archival projects
+  sesame.ts          Password-gated index + detail pages (see below)
+  navigation.ts      Site nav structure (WORK, LAB; SESAME links from sesame.ts)
 ```
 
-### Selected Projects (11)
+### Selected Projects (13)
 
-Nike Free Plus 2 / Tracy Chapman / KQED / Helix / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Dockers Super Hard Khakis / HUF / OK Media Lab
+Nike Free Plus 2 / Tracy Chapman / KQED / Helix / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Dockers Super Hard Khakis / HUF / OK Media Lab / Stussy / Nike FuelBand
 
 ### Experiments (11)
 
-Early Covid GANs / Claude Self-Portrait / Claude #2 / Surrealist Dreams / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / The Gazer / Refining the Point
+Early Covid GANs / Claude Self-Portrait / Claude #2 / Surrealist Dreams / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point
 
-### Randoms (9)
+### Randoms (7)
 
-MoMA / Sunset Cinema / Stussy / Nike FuelBand / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling Whistles / Aesop Rock
+MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling Whistles / Aesop Rock
+
+### Sesame
+
+`/sesame` is a client-side gate: visitors enter a password whose SHA-256 is compared to `SESAME_HASH` in `sesame.ts`. After unlock, the same project layout as public work is used (`ProjectContent`), but routes live under `/sesame` and `robots` is set to noindex.
+
+`sesame.ts` defines `sesameProjects`: a curated list built from selected `projects.ts` entries and LAB experiments (mapped from `experiments.ts` into the shared `Project` shape). To change the password or the hash, edit the comment block at the top of `sesame.ts`.
 
 Each project has a `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Instagram), tags, and category. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`) that lets each page compose its own layout from mixed media.
 
@@ -92,12 +99,15 @@ src/
     projects/[slug]/page.tsx      Project detail (generateStaticParams)
     experiments/[slug]/page.tsx   Experiment detail (generateStaticParams)
     randoms/page.tsx              Shuffle-based random archive
+    sesame/page.tsx               Gated index (SesameGate + SesameContent)
+    sesame/[slug]/page.tsx        Gated project detail (generateStaticParams)
   components/
     motion/                       All 8 animation primitives
     cv/                           Homepage sections
     project/                      Project detail + PretextProjectCopy
     experiment/                   Experiment detail
     randoms/                      Random project viewer
+    sesame/                       Gate + gated listing
     layout/                       Header + Footer
   data/                           All content (no CMS)
   types/                          TypeScript interfaces
@@ -111,7 +121,7 @@ public/
   intuit-videos/                  Voice brand + desktop recordings
 ```
 
-27 statically generated pages. Build time under 2 seconds.
+41 routes in the production build (including `_not-found`). Build time stays under a few seconds.
 
 ---
 

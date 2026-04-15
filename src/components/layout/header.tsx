@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
-import { navigation } from "@/data/navigation";
-import { PretextWords } from "@/components/motion/pretext-words";
+import { navigation, sesameNavigation } from "@/data/navigation";
 
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+  const isSesame = pathname.startsWith("/sesame");
+  const nav = isSesame ? sesameNavigation : navigation;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">
@@ -17,27 +18,27 @@ export function Header() {
           href="/"
           className="text-[16px] font-light tracking-tight hover:no-underline"
         >
-          <PretextWords text="Jason Herring" />
+          Jason Herring
         </Link>
       </div>
 
       <nav>
-        {navigation.map((section, sectionIdx) => (
-          <div key={section.label} className="mb-[var(--spacing-xs)]">
-            <span className="mr-[var(--spacing-sm)] font-bold">
-              <PretextWords text={section.label} />
+        {nav.map((section, sectionIdx) => (
+          <div key={section.label} className="mb-[var(--spacing-xs)] flex flex-wrap items-baseline">
+            <span className="mr-[var(--spacing-sm)] shrink-0 font-bold">
+              {section.label}
             </span>
             {section.links.map((link, linkIdx) => {
               const isActive = pathname === link.href;
 
               return (
-                <span key={link.href}>
+                <span key={link.href} className="whitespace-nowrap">
                   {shouldReduceMotion ? (
                     <Link
                       href={link.href}
                       className={`${isActive ? "underline" : ""}`}
                     >
-                      <PretextWords text={link.title} />
+                      {link.title}
                     </Link>
                   ) : (
                     <motion.span
@@ -55,7 +56,7 @@ export function Header() {
                         href={link.href}
                         className={`${isActive ? "underline" : ""}`}
                       >
-                        <PretextWords text={link.title} />
+                        {link.title}
                       </Link>
                     </motion.span>
                   )}

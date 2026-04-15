@@ -13,12 +13,64 @@ export const experiments: Experiment[] = [
         body: '<p>During the early months of COVID lockdown, I began fine-tuning StyleGAN models on a relatively small image set built from op art, optical illusion studies, and high-contrast moire patterns. The process was slow and strangely hypnotic: overnight renders would often yield only a few hundred usable frames, and because the models were still undertrained, the outputs remained visibly unstable. That instability was precisely what made the work interesting. Objects would merge in and out of one another, grids would soften into interference bands, and recognizable forms would briefly cohere before dissolving back into patterned noise.</p><p>Rather than treating latent space as a route toward polished image synthesis, I approached it as an exploratory field. By traversing between points in the latent manifold, I was looking for moments where the model revealed its incomplete understanding of the source material: optical motifs folding into one another, figure-ground relationships collapsing, and geometric systems behaving almost like hallucinated memory. In that sense the work was less about photorealism than about watching representation fail productively under constraint.</p><p>The experiments were informed by the original <a href="https://arxiv.org/abs/1812.04948" target="_blank" rel="noreferrer">StyleGAN paper</a>, the follow-up <a href="https://arxiv.org/abs/1912.04958" target="_blank" rel="noreferrer">StyleGAN2 paper</a>, and later thinking around limited-data training in <a href="https://arxiv.org/abs/2006.06676" target="_blank" rel="noreferrer">StyleGAN2-ADA</a>. What mattered to me in practice was not only the architecture itself, but the phenomenology of undertraining: the extended render times, the low yield, and the uncanny visual threshold where patterns became images and then immediately unraveled again.</p>',
       },
       {
+        type: "text",
+        body: "<p>Earlier in summer 2020, before the op-art / moir\u00e9 fine-tunes, I ran a small portrait series: faces drifting in latent space while the model was still early and undertrained. The walks are not trying to resolve into catalog-perfect heads; they stay in the twitchy regime where identity smears, features trade places, and the network keeps negotiating what a face is allowed to be.</p>",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/424922207?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: 'StyleGAN portrait series \u2014 "Dina"',
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/424929536?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: 'StyleGAN portrait series \u2014 "Henry"',
+      },
+      {
         type: "video",
         src: "/videos/stylegan-moires.mp4",
         title: "StyleGAN2 x Op Art Patterns \u2014 Latent Walks",
       },
     ],
     tags: ["generative", "AI", "StyleGAN", "op-art"],
+  },
+  {
+    slug: "undertrained-gans-print",
+    title: "Undertrained GANs — Matt test print (1080)",
+    date: "2021-03-09",
+    description:
+      "A 1080p study from an undertrained generative model: latent drift and half-formed structure treated as print material rather than failure — the model's uncertainty made visible at scale.",
+    content: [
+      {
+        type: "text",
+        body: "<p>This piece comes from the same instinct as the early COVID StyleGAN work: staying with models that have not fully converged, and treating their artifacts as aesthetic material instead of mistakes to train away. Here the output is framed as a test print — something you would run at full resolution to see whether the noise, moiré, and collapsing geometry read as texture, rhythm, or narrative when the pixels are large enough to breathe.</p><p>Undertraining is not only a technical state. It is a compositional one. The network is still guessing; the latent walk reads as hesitation made spatial. That hesitation is often more interesting than a polished final frame, because it keeps the viewer aware that the image is provisional — that another step in the walk would have dissolved it differently.</p><p>Latent portrait walks from the same summer 2020 series (including the Henry walk) live on the <a href=\"/experiments/early-covid-gans\">Early Covid GANs</a> page alongside the moiré study.</p>",
+      },
+      {
+        type: "video",
+        src: "/videos/undertrained-gans-matt-test-print-1080.mov",
+        title: "Matt test print — 1080p capture (H.264 / QuickTime)",
+      },
+    ],
+    tags: ["generative", "AI", "StyleGAN", "print", "lab"],
+  },
+  {
+    slug: "other-stories-final-output-2024",
+    title: "Other stories — Final output",
+    date: "2024-09-01",
+    description:
+      "A square-format generative motion piece from 2024: latent drift and accumulated detail in a single pass, rendered as a short loop-friendly study.",
+    content: [
+      {
+        type: "text",
+        body: "<p>This output sits alongside the undertrained GAN work as another way of thinking about <em>process visibility</em> — not polishing the artifact until the mechanism disappears, but letting motion, texture, and instability carry meaning on their own. The square frame keeps the composition self-contained: no cinematic letterboxing, no implied narrative beyond what the walk does to the image field over time.</p><p>Final output here does not mean final in the sense of \"done forever.\" It means the render that was kept after the session — the frame of the walk that felt most honest about what the model was doing when nobody was asking it to behave.</p>",
+      },
+      {
+        type: "video",
+        src: "/videos/other-stories-2024-final-output.mp4",
+        title: "Final output — 1024×1024, ~26s (H.264)",
+      },
+    ],
+    tags: ["generative", "AI", "motion", "lab", "2024"],
   },
   {
     slug: "claude-self-portrait",
@@ -29,16 +81,7 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>An exploration of what an AI assistant might look like rendered as an abstract 3D form. Built with Three.js, the visualization uses deep blues, golds, and reds to create a constantly shifting entity that responds to audio input.</p>",
-      },
-      {
-        type: "image",
-        asset: {
-          src: "/images/experiments/claude-1/01.jpg",
-          alt: "Claude abstract Three.js visualization",
-          width: 1200,
-          height: 800,
-        },
+        body: "<p>An exploration of what an AI assistant might look like rendered as an abstract 3D form. Built with Three.js, the visualization uses deep blues, golds, and reds to create a constantly shifting entity that responds to audio input.</p><p>Audio reactivity is treated as first-class input: the mesh never settles into a single readable silhouette, so the viewer reads process\u2014reaction, latency, color drift\u2014instead of a mascot.</p>",
       },
     ],
     tags: ["three.js", "AI", "generative", "visualization"],
@@ -52,7 +95,7 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>Building on the first Claude visualization, this iteration introduced particle systems that react to conversation dynamics, creating a visual representation of dialogue between human and AI.</p>",
+        body: "<p>Building on the first Claude visualization, this iteration introduced particle systems that react to conversation dynamics, creating a visual representation of dialogue between human and AI.</p><p>The goal was to keep the form unstable enough that it never fully resolves into iconography: color fields and particles carry emotional temperature the way prosody does in speech, without illustrating the assistant literally.</p>",
       },
     ],
     tags: ["three.js", "AI", "particles"],
@@ -66,7 +109,7 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>A series of AI-generated images that explore surrealist aesthetics through the lens of machine learning. Using various diffusion models, these pieces attempt to capture the illogical beauty of dreams as interpreted by artificial intelligence.</p>",
+        body: "<p>A series of AI-generated images that explore surrealist aesthetics through the lens of machine learning. Using various diffusion models, these pieces attempt to capture the illogical beauty of dreams as interpreted by artificial intelligence.</p><p>The through-line is compositional: wrong physics, wrong scale, objects that obey prompt grammar instead of gravity. The point is not novelty for its own sake but sustained pressure on pictorial coherence \u2014 what happens when the model is pushed past the comfort zone of plausible illustration.</p>",
       },
     ],
     tags: ["AI", "generative", "surrealism"],
@@ -80,7 +123,13 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>A collection of real-time visual experiments built in TouchDesigner. These pieces explore reactive geometry, audio feedback loops, and the intersection of code and visual design in a node-based environment.</p>",
+        body: "<p>A collection of real-time visual experiments built in TouchDesigner. These pieces explore reactive geometry, audio feedback loops, and the intersection of code and visual design in a node-based environment.</p><p>The embedded reel below is a capture from that practice: a TouchDesigner sketch exploring fade, glitch, and compositing in real time\u2014signal in the chain, not an offline render pass.</p>",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183256316?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "fade-glitch-alephp-real-reel",
+        aspectClass: "aspect-[4/3]",
       },
     ],
     tags: ["touchdesigner", "real-time", "generative"],
@@ -141,6 +190,17 @@ export const experiments: Experiment[] = [
       {
         type: "text",
         body: "<p>There is a long tradition in visual art of the studio as subject. Courbet\u2019s <em>The Painter\u2019s Studio</em>. Bacon\u2019s photographs of his wrecked Reece Mews flat. The Eames\u2019 obsessive documentation of their own workspace. In each case, the environment of production becomes legible as a portrait of the mind that inhabits it \u2014 its obsessions, its tolerances for disorder, its way of holding multiple threads at once.</p><p>This screen recording is that tradition\u2019s digital equivalent. Captured during a working session in August 2024, it documents approximately 18 seconds of a desktop in full entropy: multiple AI portrait generators running simultaneously (what appears to be a real-time style transfer and several diffusion-based avatar tools), a Spotify window playing Mulatu Astatke\u2019s Ethiopian jazz, Google Maps in satellite view, a live webcam feed, browser tabs stacked deep, and the faint text overlay reading \u201cUnleash the Full Potential of AI.\u201d</p>",
+      },
+      {
+        type: "image",
+        asset: {
+          src: "/images/projects/nike-nsw/01.jpg",
+          alt: "Nike NSW — studio wall with production boards, film stills, and garment flats",
+          width: 746,
+          height: 495,
+          caption:
+            "Physical studio wall \u2014 the same density of boards, stills, and flats a chaotic desktop holds in windows instead of foam core.",
+        },
       },
       {
         type: "video",
@@ -322,29 +382,6 @@ export const experiments: Experiment[] = [
       },
     ],
     tags: ["AI", "generative", "collage", "humor", "midjourney", "dall-e", "sketchbook"],
-  },
-  {
-    slug: "the-gazer",
-    title: "The Gazer",
-    date: "2024-11-01",
-    description:
-      "A 16-second webcam capture with live face-tracking overlays — bounding boxes, landmark points, gaze vectors — turning the act of looking at a screen into a data visualization of attention itself. The computer watches you watching it.",
-    content: [
-      {
-        type: "text",
-        body: "<p>You look at the screen. The screen looks back. Between those two gazes, a green rectangle draws itself around your face, orange arrows trace the direction of your eyes, and colored dots map the topology of an expression you didn't know you were making. This is what it looks like when a computer vision model processes a human face in real time: not recognition, but <em>measurement</em>. The distance between your pupils. The angle of your jaw. The vector of your attention, rendered as an arrow pointing somewhere you weren't aware you were looking.</p><p>The Gazer is a raw screen recording of a face-tracking prototype — no post-production, no cleanup, no performance. Just a man in a Cal Poly Humboldt sweatshirt sitting in front of a bookshelf, being processed. The green bounding box follows his face with the patient accuracy of something that never blinks. The facial landmarks — tiny colored dots at the corners of the eyes, the tip of the nose, the edges of the mouth — form a constellation that updates sixty times per second, a star chart of micro-expressions drawn on top of the expressions themselves.</p>",
-      },
-      {
-        type: "video",
-        src: "/images/experiments/the-gazer/gazer.mov",
-        title: "The Gazer — Face Tracking Capture, 2024",
-      },
-      {
-        type: "text",
-        body: "<p>What makes this interesting is not the technology — face tracking is commodity infrastructure now, available in any browser with a decent webcam. What's interesting is the phenomenological inversion: the moment you see yourself being seen by a machine, your relationship to your own face changes. You become aware of movements you normally ignore. You notice that your head drifts left when you think. That your eyes don't actually look where you think they look. That the machine's model of your face — a wireframe of points and vectors — is in some ways more honest than the mirror, because it doesn't care about beauty or expression or identity. It only cares about geometry.</p><p>This recording was captured during prototyping for conversational AI systems at Intuit — exploring how gaze direction and facial engagement metrics could inform real-time personality engines. The technical question was whether a voice AI could modulate its behavior based on whether you're actually paying attention. The philosophical question, which turned out to be more interesting, was: what does 'paying attention' even look like from the outside? The bounding box doesn't know. It just follows the face. The arrows point where the eyes point. The meaning — the attention, the engagement, the care — is somewhere the model can't reach. Not yet.</p>",
-      },
-    ],
-    tags: ["computer-vision", "face-tracking", "webcam", "prototype", "intuit"],
   },
   {
     slug: "refining-the-point",

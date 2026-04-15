@@ -7,9 +7,11 @@ export interface ImageAsset {
 }
 
 export interface Embed {
-  type: "youtube" | "video" | "instagram";
+  type: "youtube" | "vimeo" | "video" | "instagram";
   src: string;
   title: string;
+  /** Tailwind aspect-ratio utility for iframe embeds (default: `aspect-video`). */
+  aspectClass?: string;
 }
 
 export interface Project {
@@ -20,7 +22,8 @@ export interface Project {
   client?: string;
   shortDescription: string;
   longDescription: string;
-  featuredImage: ImageAsset;
+  /** When omitted, the project page opens with the title block (no hero image). */
+  featuredImage?: ImageAsset;
   images: ImageAsset[];
   embeds?: Embed[];
   tags?: string[];
@@ -40,7 +43,13 @@ export type ExperimentContent =
   | { type: "text"; body: string }
   | { type: "image"; asset: ImageAsset }
   | { type: "video"; src: string; title?: string }
-  | { type: "youtube"; embedId: string; title?: string };
+  | { type: "youtube"; embedId: string; title?: string }
+  | {
+      type: "vimeo";
+      src: string;
+      title?: string;
+      aspectClass?: string;
+    };
 
 export interface CVExperience {
   company: string;
