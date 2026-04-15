@@ -60,24 +60,24 @@ The pretext system is context-based: one `PretextProvider` wraps the entire layo
 ```
 src/data/
   cv.ts              Bio, experience, education, skills, clients
-  projects.ts        13 selected projects with full image arrays
-  experiments.ts     11 experiments with mixed content blocks
-  randoms.ts         7 archival projects
+  projects.ts        14 selected projects with full image arrays
+  experiments.ts     12 experiments with mixed content blocks
+  randoms.ts         6 archival projects
   sesame.ts          Password-gated index + detail pages (see below)
   navigation.ts      Site nav structure (WORK, LAB; SESAME links from sesame.ts)
 ```
 
-### Selected Projects (13)
+### Selected Projects (14)
 
-Nike Free Plus 2 / Tracy Chapman / KQED / Helix / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Dockers Super Hard Khakis / HUF / OK Media Lab / Stussy / Nike FuelBand
+Nike Free Plus 2 / Tracy Chapman / Aesop Rock / KQED / Helix / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Nike FuelBand / Dockers Super Hard Khakis / HUF / Stussy / OK Media Lab
 
-### Experiments (11)
+### Experiments (12)
 
-Early Covid GANs / Claude Self-Portrait / Claude #2 / Surrealist Dreams / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point
+Early Covid GANs / Undertrained GANs (print) / Other Stories (2024) / Surrealist Dreams / Claude #1 / Claude #2 / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point
 
-### Randoms (7)
+### Randoms (6)
 
-MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling Whistles / Aesop Rock
+MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling Whistles
 
 ### Sesame
 
@@ -85,7 +85,7 @@ MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling
 
 `sesame.ts` defines `sesameProjects`: a curated list built from selected `projects.ts` entries and LAB experiments (mapped from `experiments.ts` into the shared `Project` shape). To change the password or the hash, edit the comment block at the top of `sesame.ts`.
 
-Each project has a `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Instagram), tags, and category. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`) that lets each page compose its own layout from mixed media.
+Each project has an optional `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Vimeo, Instagram), tags, and category. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`, `vimeo`) that lets each page compose its own layout from mixed media.
 
 ---
 
@@ -118,10 +118,11 @@ public/
     projects/{slug}/              Organized as featured.ext, 01.ext, 02.ext...
     experiments/{slug}/           Experiment-specific assets
     cv/                           Headshot video
+  videos/                         Local video assets (MP4, compressed H.264)
   intuit-videos/                  Voice brand + desktop recordings
 ```
 
-41 routes in the production build (including `_not-found`). Build time stays under a few seconds.
+42 routes in the production build (including `_not-found`). Build time stays under a few seconds.
 
 ---
 

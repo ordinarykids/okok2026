@@ -119,6 +119,9 @@ export function ProjectContent({ project }: ProjectContentProps) {
               controls
               playsInline
               preload="metadata"
+              muted
+              autoPlay
+              loop
               className="mx-auto w-full max-w-[480px] bg-black"
             >
               <source src={embed.src} type={getVideoMimeType(embed.src)} />
@@ -157,6 +160,7 @@ export function ProjectContent({ project }: ProjectContentProps) {
               width={image.width}
               height={image.height}
               className="w-full"
+              loading="lazy"
             />
             {image.caption &&
               (() => {

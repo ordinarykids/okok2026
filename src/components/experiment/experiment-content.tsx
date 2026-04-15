@@ -74,6 +74,7 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
                   width={block.asset.width}
                   height={block.asset.height}
                   className="w-full"
+                  loading="lazy"
                 />
                 {block.asset.caption && (
                   <p className="mt-[var(--spacing-sm)] text-[10px] text-ink-faint">
@@ -90,6 +91,9 @@ export function ExperimentContent({ experiment }: ExperimentContentProps) {
                   controls
                   playsInline
                   preload="metadata"
+                  muted
+                  autoPlay
+                  loop
                   className="w-full bg-black"
                 >
                   <source src={block.src} type={videoMimeType(block.src)} />

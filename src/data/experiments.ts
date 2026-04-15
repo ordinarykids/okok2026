@@ -47,8 +47,8 @@ export const experiments: Experiment[] = [
       },
       {
         type: "video",
-        src: "/videos/undertrained-gans-matt-test-print-1080.mov",
-        title: "Matt test print — 1080p capture (H.264 / QuickTime)",
+        src: "/videos/undertrained-gans-matt-test-print-1080.mp4",
+        title: "Matt test print — 1080p capture (H.264)",
       },
     ],
     tags: ["generative", "AI", "StyleGAN", "print", "lab"],
@@ -105,14 +105,44 @@ export const experiments: Experiment[] = [
     title: "Surrealist Dreams",
     date: "2023-06-01",
     description:
-      "AI-generated surrealist imagery exploring the intersection of machine learning and dream logic.",
+      "AI-generated surrealist imagery and short video loops exploring the intersection of machine learning and dream logic — wrong physics, wrong scale, objects that obey prompt grammar instead of gravity.",
     content: [
       {
         type: "text",
-        body: "<p>A series of AI-generated images that explore surrealist aesthetics through the lens of machine learning. Using various diffusion models, these pieces attempt to capture the illogical beauty of dreams as interpreted by artificial intelligence.</p><p>The through-line is compositional: wrong physics, wrong scale, objects that obey prompt grammar instead of gravity. The point is not novelty for its own sake but sustained pressure on pictorial coherence \u2014 what happens when the model is pushed past the comfort zone of plausible illustration.</p>",
+        body: "<p>A series of AI-generated images and video loops that explore surrealist aesthetics through the lens of machine learning. Using various diffusion and video-generation models, these pieces attempt to capture the illogical beauty of dreams as interpreted by artificial intelligence.</p><p>The through-line is compositional: wrong physics, wrong scale, objects that obey prompt grammar instead of gravity. The point is not novelty for its own sake but sustained pressure on pictorial coherence — what happens when the model is pushed past the comfort zone of plausible illustration.</p><p>The short loops below come from a batch of AI-generated video experiments: floating stone structures, levitating rock formations, and impossible geological arrangements rendered with enough conviction to make you question what you're looking at for at least two seconds before the seams show.</p>",
+      },
+      {
+        type: "video",
+        src: "/videos/surrealist-rock-01.mp4",
+        title: "Floating Rock Surrealism — variation 1",
+      },
+      {
+        type: "video",
+        src: "/videos/surrealist-rock-02.mp4",
+        title: "Floating Rock Surrealism — variation 2",
+      },
+      {
+        type: "video",
+        src: "/videos/surrealist-rock-03.mp4",
+        title: "Floating Rock Surrealism — variation 3",
+      },
+      {
+        type: "video",
+        src: "/videos/surrealist-rock-04.mp4",
+        title: "Floating Rock Surrealism — variation 4",
+      },
+      {
+        type: "video",
+        src: "/videos/levitating-rock-01.mp4",
+        title: "Levitating Rock Mystique — variation 1",
+      },
+      {
+        type: "video",
+        src: "/videos/levitating-rock-02.mp4",
+        title: "Levitating Rock Mystique — variation 2",
       },
     ],
-    tags: ["AI", "generative", "surrealism"],
+    tags: ["AI", "generative", "surrealism", "video"],
   },
   {
     slug: "touchdesigner",
