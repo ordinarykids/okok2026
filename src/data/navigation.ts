@@ -20,7 +20,6 @@ export const navigation: NavSection[] = [
     label: "WORK",
     links: [
       { href: "/projects/kqed", title: "KQED" },
-      { href: "/projects/helix", title: "Helix" },
       { href: "/projects/aleph-rebrand", title: "Aleph" },
       { href: "/projects/exploratorium", title: "Exploratorium" },
       { href: "/projects/nike-free", title: "Nike Free" },

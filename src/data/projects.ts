@@ -46,7 +46,14 @@ export const projects: Project[] = [
         height: 488,
       },
     ],
-    tags: ["branding", "print", "photography", "campaign", "retail", "installation"],
+    tags: [
+      "branding",
+      "print",
+      "photography",
+      "campaign",
+      "retail",
+      "installation",
+    ],
     category: "selected",
   },
   {
@@ -162,7 +169,7 @@ export const projects: Project[] = [
     role: "Director, Animator",
     client: "Aesop Rock / Def Jux",
     shortDescription:
-      "Music video for \"None Shall Pass\" — hand-drawn illustration and digital animation built to keep pace with one of the densest verses in underground hip-hop.",
+      'Music video for "None Shall Pass" — hand-drawn illustration and digital animation built to keep pace with one of the densest verses in underground hip-hop.',
     longDescription: `<p>Directed and animated the video for Aesop Rock's "None Shall Pass," released on Definitive Jux. The track is a knot of internal rhyme and sideways storytelling; the visuals had to feel equally restless without turning into a literal illustration of every line.</p>
 <p>The approach mixed hand-drawn frames and digital compositing — characters and environments that could smear, repeat, and break apart on beat, letting the surreal tone land without over-explaining the lyrics. The goal was a piece that read as its own dream logic: funny, anxious, and a little wrong in the way the song is.</p>`,
     featuredImage: {
@@ -294,83 +301,83 @@ export const projects: Project[] = [
     tags: ["product", "design-systems", "react", "public-media"],
     category: "selected",
   },
-  {
-    slug: "helix",
-    title: "Helix",
-    date: "2021-03-01",
-    role: "Director of Technology",
-    client: "Helix / Aleph",
-    shortDescription:
-      "A mobile app for clinical trials that helped doctors and clinicians align to strict protocols through notifications, emails, and dashboards.",
-    longDescription: `<p>Helix is a clinical trial management platform that connects researchers, doctors, and participants. As Director of Technology at Aleph, I led the development of their mobile application and dashboard systems.</p>
-<p>The app improved protocol compliance by providing real-time notifications and streamlined workflows for clinicians. Our work increased the user acquisition success metric by over 22%.</p>
-<p>At a time of exponential innovation in biotechnology, a focus on leveraging genomics at the scale of populations made Helix a vital repository of data and information during the COVID-19 pandemic.</p>
-<p>Aleph delivered on a purposeful project plan, including the migration of content from multiple legacy platforms, a broad approach to content strategy and management, and a complete interactive design system featuring well-documented processes, usage and development recommendations.</p>`,
-    featuredImage: {
-      src: "/images/projects/helix/featured.webp",
-      alt: "Helix clinical trial app",
-      width: 2456,
-      height: 1280,
-    },
-    images: [
-      {
-        src: "/images/projects/helix/01.webp",
-        alt: "Helix app interface — dashboard",
-        width: 2456,
-        height: 1280,
-      },
-      {
-        src: "/images/projects/helix/02.webp",
-        alt: "Helix app interface — protocol view",
-        width: 2456,
-        height: 1280,
-      },
-      {
-        src: "/images/projects/helix/03.webp",
-        alt: "Helix app interface — notifications",
-        width: 2456,
-        height: 1280,
-      },
-      {
-        src: "/images/projects/helix/04-ad.png",
-        alt: "Helix advertising creative",
-        width: 3323,
-        height: 2471,
-      },
-      {
-        src: "/images/projects/helix/05-hero.png",
-        alt: "Helix hero image — campaign",
-        width: 3784,
-        height: 2815,
-      },
-      {
-        src: "/images/projects/helix/06-hero.png",
-        alt: "Helix hero image — variant 1",
-        width: 3810,
-        height: 2834,
-      },
-      {
-        src: "/images/projects/helix/08-empower.png",
-        alt: "Helix Empower campaign — overview",
-        width: 2732,
-        height: 1641,
-      },
-      {
-        src: "/images/projects/helix/09-empower.png",
-        alt: "Helix Empower campaign — detail",
-        width: 2732,
-        height: 1560,
-      },
-      {
-        src: "/images/projects/helix/10-empower.png",
-        alt: "Helix Empower campaign — mobile",
-        width: 2732,
-        height: 1350,
-      },
-    ],
-    tags: ["mobile", "react-native", "healthcare", "ux"],
-    category: "selected",
-  },
+  //   {
+  //     slug: "helix",
+  //     title: "Helix",
+  //     date: "2021-03-01",
+  //     role: "Director of Technology",
+  //     client: "Helix / Aleph",
+  //     shortDescription:
+  //       "A mobile app for clinical trials that helped doctors and clinicians align to strict protocols through notifications, emails, and dashboards.",
+  //     longDescription: `<p>Helix is a clinical trial management platform that connects researchers, doctors, and participants. As Director of Technology at Aleph, I led the development of their mobile application and dashboard systems.</p>
+  // <p>The app improved protocol compliance by providing real-time notifications and streamlined workflows for clinicians. Our work increased the user acquisition success metric by over 22%.</p>
+  // <p>At a time of exponential innovation in biotechnology, a focus on leveraging genomics at the scale of populations made Helix a vital repository of data and information during the COVID-19 pandemic.</p>
+  // <p>Aleph delivered on a purposeful project plan, including the migration of content from multiple legacy platforms, a broad approach to content strategy and management, and a complete interactive design system featuring well-documented processes, usage and development recommendations.</p>`,
+  //     featuredImage: {
+  //       src: "/images/projects/helix/featured.webp",
+  //       alt: "Helix clinical trial app",
+  //       width: 2456,
+  //       height: 1280,
+  //     },
+  //     images: [
+  //       {
+  //         src: "/images/projects/helix/01.webp",
+  //         alt: "Helix app interface — dashboard",
+  //         width: 2456,
+  //         height: 1280,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/02.webp",
+  //         alt: "Helix app interface — protocol view",
+  //         width: 2456,
+  //         height: 1280,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/03.webp",
+  //         alt: "Helix app interface — notifications",
+  //         width: 2456,
+  //         height: 1280,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/04-ad.png",
+  //         alt: "Helix advertising creative",
+  //         width: 3323,
+  //         height: 2471,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/05-hero.png",
+  //         alt: "Helix hero image — campaign",
+  //         width: 3784,
+  //         height: 2815,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/06-hero.png",
+  //         alt: "Helix hero image — variant 1",
+  //         width: 3810,
+  //         height: 2834,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/08-empower.png",
+  //         alt: "Helix Empower campaign — overview",
+  //         width: 2732,
+  //         height: 1641,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/09-empower.png",
+  //         alt: "Helix Empower campaign — detail",
+  //         width: 2732,
+  //         height: 1560,
+  //       },
+  //       {
+  //         src: "/images/projects/helix/10-empower.png",
+  //         alt: "Helix Empower campaign — mobile",
+  //         width: 2732,
+  //         height: 1350,
+  //       },
+  //     ],
+  //     tags: ["mobile", "react-native", "healthcare", "ux"],
+  //     category: "selected",
+  //   },
   {
     slug: "aleph-rebrand",
     title: "Aleph Rebrand",
