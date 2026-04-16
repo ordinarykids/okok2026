@@ -125,6 +125,7 @@ export const projects: Project[] = [
 <p>The zine was where the philosophy lived. We shot editorials across four cities whose streets are themselves arguments about how humans inhabit space and motion. The fourth editorial was different: a collaboration with Oliver Helbig, a regular contributor to 032C, documenting the university that first inspired the Free's biomechanical logic. That one got the glossy treatment. Sixteen pages in full color, surrounded by 40 pages of heavy halftone distress \u2014 a deliberate lo-fi texture that mirrored the shoe's own democratic ethos. High and low, existing in the same binding.</p>
 <p>But the zine's most radical gesture was a data visualization that the influencers themselves generated. We flew them to Nike headquarters, tracked their movement as they ran the campus, and rendered that motion data into visual form. Then we handed the controls back to them \u2014 letting each person shape and manipulate the output of their own body in motion. The results lived in the zine as artifacts of lived experience, not illustration. For this we brought in Zach Lieberman, Theo Watson, and Emily Gobeille \u2014 three of the most consequential creative coders working anywhere \u2014 to build the system that made it possible.</p>
 <p>We photographed the full shoe line early, delivering print-ready files alongside hero images that traveled into retail, into packaging, into the distributed consciousness of an audience that didn't know they were being told a story.</p>
+<p>The team also developed the code for an in-store interactive fly-through \u2014 and this was consequential. It was the first time Nike had ever let anyone external have access to all of the Nike+ running data. They had to fight through it internally; there had been incidents around privacy, people lurking on runners\u2019 paths, and the brand was understandably careful. They got us the permission as creative artists, and we built a map where you could see every individual Nike+ run happening in real time. We focused on New York City \u2014 the original plan was every city, but we pulled back \u2014 and sped the data up about five times so you could fly around and watch the whole organism breathe. Theo and the team had fully built it out, down to the exact in-store experience. It got pulled at the last minute because the Nike brand team didn\u2019t want it associated with anything that resembled a video game. That was a hard moment. We turned what we had into videos. It\u2019s still one of my favorite projects I\u2019ve ever worked on.</p>
 <p>That's the work that lasts. Not the asset. The argument it makes.</p>`,
     featuredImage: {
       src: "/images/projects/nike-free/featured.jpg",
@@ -161,8 +162,13 @@ export const projects: Project[] = [
     embeds: [
       {
         type: "vimeo",
-        src: "https://player.vimeo.com/video/1183805176",
-        title: "Nike Free Plus 2",
+        src: "https://player.vimeo.com/video/25222988",
+        title: "Nike Free Plus 2 \u2014 City Pack Zine",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/29151772",
+        title: "Nike Free Plus 2 \u2014 21 Mercer Installation",
       },
     ],
     tags: [

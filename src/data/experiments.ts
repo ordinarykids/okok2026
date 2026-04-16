@@ -56,6 +56,11 @@ export const experiments: Experiment[] = [
         title: "Matt — lo-fi undertrained GAN",
         aspectClass: "aspect-[4/3]",
       },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183805176",
+        title: "Undertrained GAN \u2014 additional study",
+      },
     ],
     tags: ["generative", "AI", "StyleGAN", "print", "lab"],
   },
