@@ -9,7 +9,7 @@ import { ExperienceEntry } from "@/components/cv/experience-entry";
 import { Pretext } from "@/components/motion/pretext";
 import { PretextWords } from "@/components/motion/pretext-words";
 
-export function HomeContent() {
+export function CVContent() {
   return (
     <div className="grid grid-cols-1 gap-[var(--spacing-2xl)] lg:grid-cols-[2fr_1fr] lg:gap-[var(--spacing-3xl)]">
       {/* Left column */}

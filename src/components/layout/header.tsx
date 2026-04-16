@@ -1,15 +1,28 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
 import { navigation, sesameNavigation } from "@/data/navigation";
+import { useEarcon } from "@/hooks/use-earcon";
 
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
   const isSesame = pathname.startsWith("/sesame");
   const nav = isSesame ? sesameNavigation : navigation;
+  const earcon = useEarcon();
+
+  // Pre-load earcon buffer on first pointer event anywhere
+  useEffect(() => {
+    const handler = () => {
+      earcon.init();
+      window.removeEventListener("pointerdown", handler);
+    };
+    window.addEventListener("pointerdown", handler, { once: true });
+    return () => window.removeEventListener("pointerdown", handler);
+  }, [earcon]);
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">
@@ -37,6 +50,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={`${isActive ? "underline" : ""}`}
+                      onMouseEnter={earcon.play}
                     >
                       {link.title}
                     </Link>
@@ -55,6 +69,7 @@ export function Header() {
                       <Link
                         href={link.href}
                         className={`${isActive ? "underline" : ""}`}
+                        onMouseEnter={earcon.play}
                       >
                         {link.title}
                       </Link>

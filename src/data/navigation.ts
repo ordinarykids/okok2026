@@ -10,6 +10,12 @@ export const sesameNavigation: NavSection[] = [
         href: `/sesame/${p.slug}`,
         title: p.title,
       })),
+    ],
+  },
+  {
+    label: "QUESTIONS",
+    links: [
+      { href: "/sesame/questions", title: "Questions" },
       { href: "/", title: "Back" },
     ],
   },
@@ -19,6 +25,7 @@ export const navigation: NavSection[] = [
   {
     label: "WORK",
     links: [
+      { href: "/projects/sage", title: "Sage" },
       { href: "/projects/kqed", title: "KQED" },
       { href: "/projects/aleph-rebrand", title: "Aleph" },
       { href: "/projects/exploratorium", title: "Exploratorium" },
@@ -40,6 +47,7 @@ export const navigation: NavSection[] = [
       { href: "/experiments/her", title: "Her" },
       { href: "/experiments/early-covid-gans", title: "Covid GANs" },
       { href: "/experiments/undertrained-gans-print", title: "Undertrained GANs" },
+      { href: "/experiments/portraits", title: "Portraits" },
       { href: "/experiments/surrealist-dreams", title: "Surrealist Dreams" },
       { href: "/experiments/touchdesigner", title: "TouchDesigner" },
       { href: "/experiments/moires-01", title: "Moir\u00e9s" },
@@ -47,7 +55,14 @@ export const navigation: NavSection[] = [
       { href: "/experiments/junk-drawer", title: "Junk Drawer" },
       { href: "/experiments/other-stories-final-output-2024", title: "Other Stories" },
       { href: "/experiments/refining-the-point", title: "Refining the Point" },
+      { href: "/experiments/earcon-generator", title: "Earcons" },
       { href: "/projects/okml", title: "OKML" },
+    ],
+  },
+  {
+    label: "CV",
+    links: [
+      { href: "/cv", title: "Resume" },
     ],
   },
 ];

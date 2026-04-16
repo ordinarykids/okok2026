@@ -145,6 +145,25 @@ export const experiments: Experiment[] = [
     tags: ["AI", "generative", "surrealism", "video"],
   },
   {
+    slug: "portraits",
+    title: "Portraits",
+    date: "2024-06-01",
+    description:
+      "Studio studies in portraiture — video sketches exploring light, framing, and the space between a subject and the lens.",
+    content: [
+      {
+        type: "text",
+        body: "<p>These are studio studies: short portrait sessions captured as video rather than stills. The camera stays close. The light shifts. The subject exists somewhere between posed and unguarded — not performing for the lens but not ignoring it either. The interest is in what happens in that gap: the micro-expressions, the weight shifts, the moments where self-consciousness dissolves into something more honest.</p>",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183252165?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "Studio Studies",
+      },
+    ],
+    tags: ["portrait", "video", "studio"],
+  },
+  {
     slug: "touchdesigner",
     title: "TouchDesigner Experiments",
     date: "2023-08-01",
@@ -470,6 +489,20 @@ export const experiments: Experiment[] = [
       },
     ],
     tags: ["brand", "aleph", "AI", "writing", "creative-direction"],
+  },
+  {
+    slug: "earcon-generator",
+    title: "Earcon Generator",
+    date: "2025-06-01",
+    description:
+      "A web-based tool for designing earcons — short audio cues that signal LLM thinking states like processing, completion, error, and waiting. Built to explore how sonic design can make conversational AI feel more present and legible.",
+    content: [
+      {
+        type: "text",
+        body: '<p>Earcons are the sonic equivalent of icons — brief, distinctive audio signals that communicate state without language. This tool generates earcons specifically for AI assistant interactions: thinking, processing, completion, error, waiting. The question it explores is one I keep returning to: how do you make an intelligent system legible to the people around it?</p><p>The generator offers multiple sound style presets — from clean chimes to lo-fi "creepy" palettes — with granular control over voice type (bell, ding, chime), envelope shaping, filtering (LP, HP, BP), reverb, and timing. You can audition cues in real time, save presets, and export WAV files for integration into prototypes.</p><p>This project is directly connected to thinking about trust in hardware AI. When a wearable device transitions between states — listening, processing, asleep — it needs non-visual signals that are unambiguous and immediate. Earcons carry that trust in a way that UI toggles cannot, because you hear them even when you are not looking. The tool exists to make that sonic vocabulary designable and testable.</p><p><a href="https://earcon-generator.vercel.app/" target="_blank" rel="noreferrer">Try the Earcon Generator</a></p>',
+      },
+    ],
+    tags: ["audio", "AI", "design-tool", "earcon", "voice", "trust"],
   },
 ];
 

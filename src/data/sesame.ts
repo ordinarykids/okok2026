@@ -94,11 +94,13 @@ const SESAME_LAB_AFTER_HER = [
  * These follow the same Project type as selected work.
  */
 export const sesameProjects: Project[] = [
+  getProjectBySlug("sage"),
   experimentToSesameProject(getExperimentBySlug("her")),
   getProjectBySlug("nike-free"),
   ...SESAME_LAB_AFTER_HER.map((slug) =>
     experimentToSesameProject(getExperimentBySlug(slug)),
   ),
+  experimentToSesameProject(getExperimentBySlug("earcon-generator")),
   getProjectBySlug("exploratorium"),
   getProjectBySlug("kqed"),
 ];

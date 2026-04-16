@@ -2,6 +2,36 @@ import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
   {
+    slug: "sage",
+    title: "Sage",
+    date: "2024-06-01",
+    role: "Creator, Engineer, Designer",
+    shortDescription:
+      "A voice-first AI companion built around the problem nobody has solved yet: memory. Sage doesn't just talk — it remembers, reflects, and builds a mental model of who you are over time.",
+    longDescription: `<p>Sage started as a question: what would it take for a conversation with an AI to feel like a relationship instead of a series of isolated transactions? The answer, it turns out, is memory — and not the kind you get from a database. The kind that mutates, surfaces unexpectedly, and accumulates meaning the way human memory does.</p>
+<p>The system is full-duplex voice, built on LiveKit's WebRTC infrastructure with Deepgram for speech-to-text, Claude for reasoning, and Cartesia for text-to-speech. Silero handles voice activity detection. The voice pipeline is fast enough that conversation feels natural — you can interrupt, think out loud, change direction mid-sentence. But the real work isn't in the latency. It's in what happens between sessions.</p>
+<p>After each conversation, Sage extracts episodic memories, semantic insights, and recurring trajectories. It identifies patterns in what you talk about, what you care about, what you keep circling back to. A cron job runs hourly to analyze conversation arcs and build a continuously evolving model of the user — their goals, their tensions, their personality. That context gets re-injected into every new session, so the AI arrives already knowing you. Not performing knowledge. Actually holding it.</p>
+<p>The memory schema is typed across four categories: episodic (what happened), semantic (what it means), procedural (how to do things you've described), and reflective (patterns the AI notices about you over time). There's also a curated wisdom library — knowledge sources and chunks that get surfaced when contextually relevant, like a well-read friend who remembers the right passage at the right moment.</p>
+<p>The frontend is Next.js with NextAuth, Drizzle ORM on Neon Postgres, and Stripe for metered per-second billing. The agent runs Python on LiveKit's agent framework. The iOS app is native Swift on the LiveKit Swift SDK. Sage supports swappable personas — same pipeline, different voice and personality — because I wanted to test whether trust is a function of what the AI says or how it sounds saying it.</p>
+<p>I think of Sage as "conversation as a service" — the idea that what you're really delivering is a continuous, evolving conversation that transcends any single platform or model. The LLMs will change, the hardware will change, but the accumulated understanding between a person and their AI is the product. Everything else is infrastructure.</p>`,
+    featuredImage: {
+      src: "/images/projects/sage/landing-mobile.png",
+      alt: "Sage — voice AI companion, mobile landing page",
+      width: 1125,
+      height: 2436,
+    },
+    images: [
+      {
+        src: "/images/projects/sage/learn-more.png",
+        alt: "Sage — learn more screen showing voice interface and memory system",
+        width: 667,
+        height: 2426,
+      },
+    ],
+    tags: ["voice-AI", "LiveKit", "Claude", "memory", "Python", "Next.js", "Swift", "personal-project"],
+    category: "selected",
+  },
+  {
     slug: "nike-free",
     title: "Nike Free Plus 2",
     date: "2011-09-23",
