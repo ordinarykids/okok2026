@@ -1,22 +1,32 @@
 import type { NavSection } from "@/types/project";
-import { sesameProjects } from "@/data/sesame";
+import {
+  sesameCurrentThinking,
+  sesameEarlyWork,
+  sesameExperiments,
+} from "@/data/sesame";
+
+const toLink = (p: { slug: string; title: string }) => ({
+  href: `/sesame/${p.slug}`,
+  title: p.title,
+});
 
 export const sesameNavigation: NavSection[] = [
   {
-    label: "SESAME",
-    links: [
-      { href: "/sesame", title: "Projects" },
-      ...sesameProjects.map((p) => ({
-        href: `/sesame/${p.slug}`,
-        title: p.title,
-      })),
-    ],
+    label: "CURRENT",
+    links: sesameCurrentThinking.map(toLink),
+  },
+  {
+    label: "PREVIOUS",
+    links: sesameEarlyWork.map(toLink),
+  },
+  {
+    label: "EXPERIMENTS",
+    links: sesameExperiments.map(toLink),
   },
   {
     label: "QUESTIONS",
     links: [
       { href: "/sesame/questions", title: "Questions" },
-      { href: "/", title: "Back" },
     ],
   },
 ];
@@ -25,7 +35,7 @@ export const navigation: NavSection[] = [
   {
     label: "WORK",
     links: [
-      { href: "/projects/sage", title: "Sage" },
+      { href: "/projects/sage", title: "HeySage.ai" },
       { href: "/projects/kqed", title: "KQED" },
       { href: "/projects/aleph-rebrand", title: "Aleph" },
       { href: "/projects/exploratorium", title: "Exploratorium" },

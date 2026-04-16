@@ -2,7 +2,7 @@
 
 A portfolio that doesn't sit still.
 
-Built for Jason Herring — creative director, engineering leader, and someone who keeps pointing generative tools at things to see what happens. This is the public-facing record of two decades of work spanning Nike, KQED, Intuit, the Exploratorium, HUF, Dockers, Tracy Chapman, Aesop Rock, MoMA, and a fish person in an orange cardigan who showed up uninvited during a Midjourney session and refused to leave.
+Built for Jason Herring — creative director, engineering leader, and someone who keeps pointing generative tools at things to see what happens. This is the public-facing record of two decades of work spanning Nike, KQED, Intuit, the Exploratorium, Sage, HUF, Dockers, Tracy Chapman, Aesop Rock, MoMA, Stussy, and a fish person in an orange cardigan who showed up uninvited during a Midjourney session and refused to leave.
 
 The site is designed to feel like a photocopied zine that somehow learned to move. Every word on every page scatters away from your cursor. Click and they scatter harder. The paper has grain. The text reveals itself one character at a time, occasionally glitching into nonsense before resolving. Nothing loads all at once. Everything earns its presence on the page by arriving.
 
@@ -38,7 +38,7 @@ The aesthetic references are Experimental Jetset, Karel Martens, the Werkplaats 
 
 ## The Motion System
 
-Eight custom motion components, 678 lines of animation code, one pointer tracker for the entire page:
+Eight custom motion components, one pointer tracker for the entire page:
 
 | Component | What it does |
 |---|---|
@@ -51,7 +51,7 @@ Eight custom motion components, 678 lines of animation code, one pointer tracker
 | `ScanLineReveal` | Clip-path wipe that reveals images and video from top to bottom, simulating a flatbed scanner. |
 | `StaggerLines` | Sequential fade-in for lists, each item delayed slightly after the previous. |
 
-The pretext system is context-based: one `PretextProvider` wraps the entire layout, and individual `PretextWords` components register their DOM nodes via React context. This means a single pointer event handler and a single rAF loop cover every word on the page — header, footer, body copy, experience entries, skills lists, client names, everything. On mouse down, the effect intensifies: the disruption radius expands from 140px to 200px, push force doubles, skew more than doubles, and words near the cursor go weight 900 with expanding letter-spacing. Release and everything snaps back.
+The pretext system is context-based: one `PretextProvider` wraps the entire layout, and individual `PretextWords` components register their DOM nodes via React context. A single pointer event handler and a single rAF loop cover every word on the page — header, footer, body copy, CV entries, skills lists, client names, everything. On mouse down, the disruption radius expands from 140px to 200px, push force doubles, skew more than doubles, and words near the cursor go weight 900 with expanding letter-spacing. Release and everything snaps back.
 
 ---
 
@@ -60,20 +60,21 @@ The pretext system is context-based: one `PretextProvider` wraps the entire layo
 ```
 src/data/
   cv.ts              Bio, experience, education, skills, clients
-  projects.ts        14 selected projects with full image arrays
-  experiments.ts     12 experiments with mixed content blocks
+  projects.ts        13 selected projects with full image arrays
+  experiments.ts     15 experiments with mixed content blocks
   randoms.ts         6 archival projects
-  sesame.ts          Password-gated index + detail pages (see below)
-  navigation.ts      Site nav structure (WORK, LAB; SESAME links from sesame.ts)
+  questions.ts       Structured interview Q&A for the sesame gate
+  sesame.ts          Password-gated sections (Current / Previous / Experiments / Questions)
+  navigation.ts      Site nav (WORK, LAB, CV; SESAME nav from sesame.ts)
 ```
 
-### Selected Projects (14)
+### Selected Projects (13)
 
-Nike Free Plus 2 / Tracy Chapman / Aesop Rock / KQED / Helix / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Nike FuelBand / Dockers Super Hard Khakis / HUF / Stussy / OK Media Lab
+HeySage.ai / Nike Free Plus 2 / Tracy Chapman / Aesop Rock / KQED / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Nike FuelBand / Dockers Super Hard Khakis / HUF / Stussy / OK Media Lab
 
-### Experiments (12)
+### Experiments (15)
 
-Early Covid GANs / Undertrained GANs (print) / Other Stories (2024) / Surrealist Dreams / Claude #1 / Claude #2 / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point
+Early Covid GANs / Undertrained GANs (print) / Other Stories (2024) / Claude #1 / Claude #2 / Surrealist Dreams / Portraits / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point / Lead Lingo / Earcon Generator
 
 ### Randoms (6)
 
@@ -81,11 +82,9 @@ MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling
 
 ### Sesame
 
-`/sesame` is a client-side gate: visitors enter a password whose SHA-256 is compared to `SESAME_HASH` in `sesame.ts`. After unlock, the same project layout as public work is used (`ProjectContent`), but routes live under `/sesame` and `robots` is set to noindex.
+`/sesame` is a client-side gate: visitors enter a password whose SHA-256 is compared against the hash in `sesame.ts`. Behind the gate, content is organized into three curated sections — **Current Thinking** (active projects and provocations like Sage, Her, Lead Lingo, and the Earcon Generator), **Previous Work** (Nike Free, Exploratorium, KQED, Refining the Point), and **Experiments** (the generative/visual lab work). A fourth section, **Questions**, surfaces structured interview-style Q&A from `questions.ts`.
 
-`sesame.ts` defines `sesameProjects`: a curated list built from selected `projects.ts` entries and LAB experiments (mapped from `experiments.ts` into the shared `Project` shape). To change the password or the hash, edit the comment block at the top of `sesame.ts`.
-
-Each project has an optional `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Vimeo, Instagram), tags, and category. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`, `vimeo`) that lets each page compose its own layout from mixed media.
+Each project has an optional `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Vimeo, Instagram), tags, and category. Portrait-orientation embeds are automatically paired side-by-side in a 2-up grid by the `EmbedGallery` component. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`, `vimeo`) that lets each page compose its own layout from mixed media. All native video embeds autoplay muted and loop.
 
 ---
 
@@ -94,35 +93,37 @@ Each project has an optional `featuredImage`, an `images[]` array with dimension
 ```
 src/
   app/
-    layout.tsx                    PretextProvider wraps everything
-    page.tsx                      Homepage / CV
-    projects/[slug]/page.tsx      Project detail (generateStaticParams)
-    experiments/[slug]/page.tsx   Experiment detail (generateStaticParams)
-    randoms/page.tsx              Shuffle-based random archive
-    sesame/page.tsx               Gated index (SesameGate + SesameContent)
-    sesame/[slug]/page.tsx        Gated project detail (generateStaticParams)
+    layout.tsx                        PretextProvider wraps everything
+    page.tsx                          Homepage
+    cv/page.tsx                       Dedicated CV / resume page
+    projects/[slug]/page.tsx          Project detail (generateStaticParams)
+    experiments/[slug]/page.tsx       Experiment detail (generateStaticParams)
+    randoms/page.tsx                  Shuffle-based random archive
+    sesame/page.tsx                   Gated index (SesameGate + SesameContent)
+    sesame/[slug]/page.tsx            Gated project detail (generateStaticParams)
+    sesame/questions/page.tsx         Structured Q&A behind the gate
   components/
-    motion/                       All 8 animation primitives
-    cv/                           Homepage sections
-    project/                      Project detail + PretextProjectCopy
-    experiment/                   Experiment detail
-    randoms/                      Random project viewer
-    sesame/                       Gate + gated listing
-    layout/                       Header + Footer
-  data/                           All content (no CMS)
-  types/                          TypeScript interfaces
-  fonts/                          Geist Black, Geist Variable, IBM Plex Mono
-  lib/                            Utilities
+    motion/                           All 8 animation primitives
+    cv/                               Homepage + CV sections
+    project/                          Project detail, EmbedGallery, PretextProjectCopy
+    experiment/                       Experiment detail
+    randoms/                          Random project viewer
+    sesame/                           Gate + gated listing
+    layout/                           Header + Footer
+  data/                               All content (no CMS)
+  types/                              TypeScript interfaces
+  fonts/                              Geist Black, Geist Variable, IBM Plex Mono
+  lib/                                Utilities
 public/
   images/
-    projects/{slug}/              Organized as featured.ext, 01.ext, 02.ext...
-    experiments/{slug}/           Experiment-specific assets
-    cv/                           Headshot video
-  videos/                         Local video assets (MP4, compressed H.264)
-  intuit-videos/                  Voice brand + desktop recordings
+    projects/{slug}/                  Organized as featured.ext, 01.ext, 02.ext...
+    experiments/{slug}/               Experiment-specific assets
+    cv/                               Headshot video
+  videos/                             Local video assets (MP4, compressed H.264)
+  intuit-videos/                      Voice brand + desktop recordings
 ```
 
-42 routes in the production build (including `_not-found`). Build time stays under a few seconds.
+Build generates 42+ static routes. Build time stays under a few seconds.
 
 ---
 

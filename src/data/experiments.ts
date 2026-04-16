@@ -43,12 +43,18 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>This piece comes from the same instinct as the early COVID StyleGAN work: staying with models that have not fully converged, and treating their artifacts as aesthetic material instead of mistakes to train away. Here the output is framed as a test print — something you would run at full resolution to see whether the noise, moiré, and collapsing geometry read as texture, rhythm, or narrative when the pixels are large enough to breathe.</p><p>Undertraining is not only a technical state. It is a compositional one. The network is still guessing; the latent walk reads as hesitation made spatial. That hesitation is often more interesting than a polished final frame, because it keeps the viewer aware that the image is provisional — that another step in the walk would have dissolved it differently.</p><p>Latent portrait walks from the same summer 2020 series (including the Henry walk) live on the <a href=\"/experiments/early-covid-gans\">Early Covid GANs</a> page alongside the moiré study.</p>",
+        body: '<p>This piece comes from the same instinct as the early COVID StyleGAN work: staying with models that have not fully converged, and treating their artifacts as aesthetic material instead of mistakes to train away. Here the output is framed as a test print — something you would run at full resolution to see whether the noise, moiré, and collapsing geometry read as texture, rhythm, or narrative when the pixels are large enough to breathe.</p><p>Undertraining is not only a technical state. It is a compositional one. The network is still guessing; the latent walk reads as hesitation made spatial. That hesitation is often more interesting than a polished final frame, because it keeps the viewer aware that the image is provisional — that another step in the walk would have dissolved it differently.</p><p>Latent portrait walks from the same summer 2020 series (including the Henry walk) live on the <a href="/experiments/early-covid-gans">Early Covid GANs</a> page alongside the moiré study.</p>',
       },
       {
         type: "video",
         src: "/videos/undertrained-gans-matt-test-print-1080.mp4",
         title: "Matt test print — 1080p capture (H.264)",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183823268?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "Matt — lo-fi undertrained GAN",
+        aspectClass: "aspect-[4/3]",
       },
     ],
     tags: ["generative", "AI", "StyleGAN", "print", "lab"],
@@ -62,7 +68,7 @@ export const experiments: Experiment[] = [
     content: [
       {
         type: "text",
-        body: "<p>This output sits alongside the undertrained GAN work as another way of thinking about <em>process visibility</em> — not polishing the artifact until the mechanism disappears, but letting motion, texture, and instability carry meaning on their own. The square frame keeps the composition self-contained: no cinematic letterboxing, no implied narrative beyond what the walk does to the image field over time.</p><p>Final output here does not mean final in the sense of \"done forever.\" It means the render that was kept after the session — the frame of the walk that felt most honest about what the model was doing when nobody was asking it to behave.</p>",
+        body: '<p>This output sits alongside the undertrained GAN work as another way of thinking about <em>process visibility</em> — not polishing the artifact until the mechanism disappears, but letting motion, texture, and instability carry meaning on their own. The square frame keeps the composition self-contained: no cinematic letterboxing, no implied narrative beyond what the walk does to the image field over time.</p><p>Final output here does not mean final in the sense of "done forever." It means the render that was kept after the session — the frame of the walk that felt most honest about what the model was doing when nobody was asking it to behave.</p>',
       },
       {
         type: "video",
@@ -115,31 +121,37 @@ export const experiments: Experiment[] = [
         type: "video",
         src: "/videos/surrealist-rock-01.mp4",
         title: "Floating Rock Surrealism — variation 1",
+        aspectClass: "portrait",
       },
       {
         type: "video",
         src: "/videos/surrealist-rock-02.mp4",
         title: "Floating Rock Surrealism — variation 2",
+        aspectClass: "portrait",
       },
       {
         type: "video",
         src: "/videos/surrealist-rock-03.mp4",
         title: "Floating Rock Surrealism — variation 3",
+        aspectClass: "portrait",
       },
       {
         type: "video",
         src: "/videos/surrealist-rock-04.mp4",
         title: "Floating Rock Surrealism — variation 4",
+        aspectClass: "portrait",
       },
       {
         type: "video",
         src: "/videos/levitating-rock-01.mp4",
         title: "Levitating Rock Mystique — variation 1",
+        aspectClass: "portrait",
       },
       {
         type: "video",
         src: "/videos/levitating-rock-02.mp4",
         title: "Levitating Rock Mystique — variation 2",
+        aspectClass: "portrait",
       },
     ],
     tags: ["AI", "generative", "surrealism", "video"],
@@ -149,19 +161,40 @@ export const experiments: Experiment[] = [
     title: "Portraits",
     date: "2024-06-01",
     description:
-      "Studio studies in portraiture — video sketches exploring light, framing, and the space between a subject and the lens.",
+      "Sketches and process work \u2014 an ongoing obsession with generating portraits, distortions, and oversized heads through AI. Less about fidelity, more about introspection.",
     content: [
       {
         type: "text",
-        body: "<p>These are studio studies: short portrait sessions captured as video rather than stills. The camera stays close. The light shifts. The subject exists somewhere between posed and unguarded — not performing for the lens but not ignoring it either. The interest is in what happens in that gap: the micro-expressions, the weight shifts, the moments where self-consciousness dissolves into something more honest.</p>",
+        body: "<p>I have this obsession with generating portraits and images of people with distortions. There\u2019s a whole series of oversized heads I\u2019ve been making \u2014 trying to blow up people\u2019s heads in different ways, different tools, different levels of wrongness. It\u2019s kind of weird because it\u2019s not on a direct path toward anything high-fidelity or even particularly useful.</p><p>I show these to friends \u2014 even my artsy friends \u2014 and the response is usually something like, \u201cIt\u2019s not very good. It\u2019s not very interesting.\u201d And they\u2019re probably right. But for me the draw isn\u2019t the output. It\u2019s the act of generating myself, or my vision of myself \u2014 and also generating the anxiety and introspection that comes with looking at a distorted version of your own face. Portraiture as a way of processing something you can\u2019t quite articulate.</p><p>These are sketches. Process dumps. None of them are finished, and most of them aren\u2019t meant to be. Some are very old \u2014 built with earlier processes, manual fine-tuning, training models on small datasets. The tools have changed but the impulse hasn\u2019t.</p>",
+      },
+      {
+        type: "video",
+        src: "/intuit-videos/chaotic-desktop.mp4",
+        title: "Chaotic Desktop \u2014 Screen Recording, August 2024",
       },
       {
         type: "vimeo",
         src: "https://player.vimeo.com/video/1183252165?badge=0&autopause=0&player_id=0&app_id=58479",
         title: "Studio Studies",
       },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/424945479?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "Dina vs Minnie",
+        aspectClass: "aspect-[2/1]",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/424929536?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "StyleGAN Portrait Series — Henry",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/424922207?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "StyleGAN Portrait Series — Dina",
+      },
     ],
-    tags: ["portrait", "video", "studio"],
+    tags: ["portrait", "video", "studio", "StyleGAN"],
   },
   {
     slug: "touchdesigner",
@@ -214,8 +247,8 @@ export const experiments: Experiment[] = [
         body: "<p>In 2013, Spike Jonze released <em>Her</em> \u2014 a film about a man who falls in love with an artificial intelligence. At the time, the premise felt safely distant: a pastel-colored thought experiment about loneliness, voiced by Scarlett Johansson, set in a Los Angeles that didn\u2019t quite exist. The critical consensus landed on melancholy and metaphor. It was a film about us, not about AI.</p><p>Twelve years later, the metaphor has collapsed into fact. We are building the thing Jonze imagined. Not as cinema, not as speculation, but as product. Real-time voice pipelines with sub-200ms latency. Personality engines that modulate tone, cadence, and emotional register on the fly. Embodied avatars that hold eye contact. The technical infrastructure for synthetic intimacy is here, and it works well enough to be unsettling.</p>",
       },
       {
-        type: "video",
-        src: "/intuit-videos/Voice_Brand_Opener_v2.mp4",
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183796115?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0",
         title: "Her \u2014 Voice Brand Opener",
       },
       {
@@ -250,11 +283,6 @@ export const experiments: Experiment[] = [
           caption:
             "Physical studio wall \u2014 the same density of boards, stills, and flats a chaotic desktop holds in windows instead of foam core.",
         },
-      },
-      {
-        type: "video",
-        src: "/intuit-videos/chaotic-desktop.mp4",
-        title: "Chaotic Desktop \u2014 Screen Recording, August 2024",
       },
       {
         type: "text",
@@ -430,15 +458,29 @@ export const experiments: Experiment[] = [
         body: "<p>The owl knows something we don't. The sandwich is the only honest representation of 'full stack' ever committed to pixels. The gallery mockup is motivational art for people who find motivational art suspicious. The dissolving elder portrait is what happens when you upscale a low-res face and the AI fills in details that aren't there — inventing wrinkles, inventing light, inventing a person who never existed but who looks like they've seen everything.</p><p>None of this is portfolio work. None of it ships. All of it matters in the way that stretching matters before you run, or that doodling matters during a long meeting — it keeps the hand moving and the eye weird. The junk drawer stays open.</p>",
       },
     ],
-    tags: ["AI", "generative", "collage", "humor", "midjourney", "dall-e", "sketchbook"],
+    tags: [
+      "AI",
+      "generative",
+      "collage",
+      "humor",
+      "midjourney",
+      "dall-e",
+      "sketchbook",
+    ],
   },
   {
     slug: "refining-the-point",
-    title: "Refining the Point",
+    title: "Aleph",
     date: "2024-01-31",
     description:
       "A written piece on Aleph's brand evolution — how the studio's identity shifted to embrace AI-assisted creative work, treating code as a creative act and large language models as collaborators rather than replacements. Published on the Aleph weblog during my time as Director of Technology.",
     content: [
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183812710?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "2023 Aleph Figma Rewind",
+        aspectClass: "aspect-square",
+      },
       {
         type: "image",
         asset: {
@@ -450,7 +492,7 @@ export const experiments: Experiment[] = [
       },
       {
         type: "text",
-        body: "<p>Aleph's core offerings as a creative technology partner have expanded and shifted over the years as our talents and focus have evolved. In recent times, the pace of change in the tech that surrounds us has accelerated beyond any human's ability to keep up with it. We've been thinking a lot about where our brand and capabilities sit within this tumultuous landscape, and we recently launched our new website, where the latest output of that thought process takes center stage.</p><p>We believe Aleph's brand should reflect the collective diversity of our creative influences, the empathy for others that we carry, and the irreverent nature of the work we want to do. Our client work is focused primarily on shaping the space around information, and bringing our clients a comprehensive, creative vision that is both incredibly ambitious and inherently possible.</p>",
+        body: "<p>Aleph\u2019s core offerings as a creative technology partner have expanded and shifted over the years as our talents and focus have evolved. In recent times, the pace of change in the tech that surrounds us has accelerated beyond any human\u2019s ability to keep up with it. We\u2019ve been thinking a lot about where our brand and capabilities sit within this tumultuous landscape, and we recently launched our new website, where the latest output of that thought process takes center stage.</p><p>We believe Aleph\u2019s brand should reflect the collective diversity of our creative influences, the empathy for others that we carry, and the irreverent nature of the work we want to do. Our client work is focused primarily on shaping the space around information, and bringing our clients a comprehensive, creative vision that is both incredibly ambitious and inherently possible.</p>",
       },
       {
         type: "image",
@@ -463,11 +505,19 @@ export const experiments: Experiment[] = [
       },
       {
         type: "text",
-        body: "<p>The latest expression of our brand showcases not only our influences and inspiration, but also who we can become as we embrace new innovation in tech-assisted creative work. A core tenet of our team is that coding is a <strong>creative</strong> act; not simply a byproduct of design but an intrinsic part of the design process. It is both foundational and transformative, encompassing both the static nature of printed pages and the dynamic movement of interactive art.</p><p>In our immediate future, the advent of LLMs and AI offers an opportunity to leverage it as a tool for creation. Far from resigning ourselves to being replaced by it, we believe in the democratization of this technology as a means to forge new ground and build future-forward experiences across many modes. The recent work we've done on our brand and website highlights our capabilities in this space; a combination of our own creative vision augmented by the surrealist flourishes of smart robots.</p>",
+        body: "<p>The latest expression of our brand showcases not only our influences and inspiration, but also who we can become as we embrace new innovation in tech-assisted creative work. A core tenet of our team is that coding is a creative act; not simply a byproduct of design but an intrinsic part of the design process. It is both foundational and transformative, encompassing both the static nature of printed pages and the dynamic movement of interactive art.</p><p>In our immediate future, the advent of LLMs and AI offers an opportunity to leverage it as a tool for creation. Far from resigning ourselves to being replaced by it, we believe in the democratization of this technology as a means to forge new ground and build future-forward experiences across many modes. The recent work we\u2019ve done on our brand and website highlights our capabilities in this space; a combination of our own creative vision augmented by the surrealist flourishes of smart robots.</p>",
       },
       {
         type: "text",
-        body: "<p>Using prompts to create images can be just like standing in front of an oracle, awaiting some divine response. We find it more useful to use AI as a tool for translating our ideas into visual inspiration for our own work. The painstaking process of combing through assets, compiling mood boards and such, can now take the form of a conversation with a superhuman force for creative reference. Our creative workflow will evolve as the tools themselves evolve, and our team is committed to remaining at the vanguard of this movement with the precious core of our experience and understanding as a lodestar.</p><p>It is our business to provide leadership and guidance as the future comes to your enterprise. The watermark on all of our client work is the fearless embrace of new tools and technologies, and we believe that our brand echoes the excitement that comes with it.</p>",
+        body: "<p>A core tenet of our team is that coding is a creative act; not simply a byproduct of design but an intrinsic part of the design process.</p>",
+      },
+      {
+        type: "text",
+        body: "<p>Using prompts to create images can be just like standing in front of an oracle, awaiting some divine response. We find it more useful to use AI as a tool for translating our ideas into visual inspiration for our own work. The painstaking process of combing through assets, compiling mood boards and such, can now take the form of a conversation with a superhuman force for creative reference. Our creative workflow will evolve as the tools themselves evolve, and our team is committed to remaining at the vanguard of this movement with the precious core of our experience and understanding as a lodestar.</p>",
+      },
+      {
+        type: "text",
+        body: "<p>It is our business to provide leadership and guidance as the future comes to your enterprise. The watermark on all of our client work is the fearless embrace of new tools and technologies, and we believe that our brand echoes the excitement that comes with it.</p>",
       },
       {
         type: "image",
@@ -491,6 +541,32 @@ export const experiments: Experiment[] = [
     tags: ["brand", "aleph", "AI", "writing", "creative-direction"],
   },
   {
+    slug: "lead-lingo",
+    title: "Lead Lingo",
+    date: "2024-05-01",
+    description:
+      "A voice-first ordering experience built as a craft demo at Intuit \u2014 proving that real business transactions could happen entirely through conversation. Still being talked about a year later.",
+    content: [
+      {
+        type: "text",
+        body: "<p>Lead Lingo was one of the first things I built when I got to Intuit. The idea was simple but unexplored internally: could voice actually handle a real business use case? Not a demo, not a chatbot \u2014 a full transaction.</p><p>I picked a friend who runs a catering business in the city. We went to a restaurant and talked through her actual workflow: fielding catering requests, running through options, pricing, headcount, date and time, checking availability. Then I built a system that did all of that through voice. The AI runs down the options, walks through pricing, confirms availability against a live calendar, generates an estimate, and \u2014 if approved \u2014 sends out an invoice for a down payment to finalize the reservation. The human-in-the-loop moment comes at the very end: someone confirms the booking. But everything up to that point happens in a single voice interaction.</p><p>This was May 2024. I brought it in as a craft skill during the interview process, and it landed. We ran a hackathon based entirely around this concept, which led to a larger company-wide hackathon that was well received. The idea that voice could be the interface for Intuit\u2019s use cases opened up a conversation that\u2019s still going.</p><p>The demo video also captures some of the early avatar work we were doing that year. Looking back, it feels very early \u2014 we were excited to be playing in that space, and later we moved to fully interactive avatars. But this was the moment that proved the premise: voice isn\u2019t just for assistants. It\u2019s a transaction layer.</p>",
+      },
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183827939?badge=0&autopause=0&player_id=0&app_id=58479",
+        title: "Lead Lingo \u2014 OIF Demo Final",
+        aspectClass: "aspect-[4/3]",
+      },
+    ],
+    tags: [
+      "voice-AI",
+      "Intuit",
+      "demo",
+      "hackathon",
+      "conversational-commerce",
+    ],
+  },
+  {
     slug: "earcon-generator",
     title: "Earcon Generator",
     date: "2025-06-01",
@@ -500,6 +576,33 @@ export const experiments: Experiment[] = [
       {
         type: "text",
         body: '<p>Earcons are the sonic equivalent of icons — brief, distinctive audio signals that communicate state without language. This tool generates earcons specifically for AI assistant interactions: thinking, processing, completion, error, waiting. The question it explores is one I keep returning to: how do you make an intelligent system legible to the people around it?</p><p>The generator offers multiple sound style presets — from clean chimes to lo-fi "creepy" palettes — with granular control over voice type (bell, ding, chime), envelope shaping, filtering (LP, HP, BP), reverb, and timing. You can audition cues in real time, save presets, and export WAV files for integration into prototypes.</p><p>This project is directly connected to thinking about trust in hardware AI. When a wearable device transitions between states — listening, processing, asleep — it needs non-visual signals that are unambiguous and immediate. Earcons carry that trust in a way that UI toggles cannot, because you hear them even when you are not looking. The tool exists to make that sonic vocabulary designable and testable.</p><p><a href="https://earcon-generator.vercel.app/" target="_blank" rel="noreferrer">Try the Earcon Generator</a></p>',
+      },
+      {
+        type: "image",
+        asset: {
+          src: "/images/projects/earcon/earcon-moods.png",
+          alt: "Earcon Generator — default moods view with voice, envelope, filter, reverb, and timeline controls",
+          width: 3718,
+          height: 2608,
+        },
+      },
+      {
+        type: "image",
+        asset: {
+          src: "/images/projects/earcon/earcon-lowells-licks.png",
+          alt: "Earcon Generator — Lowell's Licks presets with sweep voice and processing state",
+          width: 3806,
+          height: 2696,
+        },
+      },
+      {
+        type: "image",
+        asset: {
+          src: "/images/projects/earcon/earcon-timeline.png",
+          alt: "Earcon Generator — timeline sequencer, per-step controls, output volume, and preset management",
+          width: 3806,
+          height: 2696,
+        },
       },
     ],
     tags: ["audio", "AI", "design-tool", "earcon", "voice", "trust"],

@@ -3,29 +3,111 @@ import type { Project } from "@/types/project";
 export const projects: Project[] = [
   {
     slug: "sage",
-    title: "Sage",
+    title: "HeySage.ai",
     date: "2024-06-01",
     role: "Creator, Engineer, Designer",
     shortDescription:
-      "A voice-first AI companion built around the problem nobody has solved yet: memory. Sage doesn't just talk — it remembers, reflects, and builds a mental model of who you are over time.",
-    longDescription: `<p>Sage started as a question: what would it take for a conversation with an AI to feel like a relationship instead of a series of isolated transactions? The answer, it turns out, is memory — and not the kind you get from a database. The kind that mutates, surfaces unexpectedly, and accumulates meaning the way human memory does.</p>
-<p>The system is full-duplex voice, built on LiveKit's WebRTC infrastructure with Deepgram for speech-to-text, Claude for reasoning, and Cartesia for text-to-speech. Silero handles voice activity detection. The voice pipeline is fast enough that conversation feels natural — you can interrupt, think out loud, change direction mid-sentence. But the real work isn't in the latency. It's in what happens between sessions.</p>
-<p>After each conversation, Sage extracts episodic memories, semantic insights, and recurring trajectories. It identifies patterns in what you talk about, what you care about, what you keep circling back to. A cron job runs hourly to analyze conversation arcs and build a continuously evolving model of the user — their goals, their tensions, their personality. That context gets re-injected into every new session, so the AI arrives already knowing you. Not performing knowledge. Actually holding it.</p>
-<p>The memory schema is typed across four categories: episodic (what happened), semantic (what it means), procedural (how to do things you've described), and reflective (patterns the AI notices about you over time). There's also a curated wisdom library — knowledge sources and chunks that get surfaced when contextually relevant, like a well-read friend who remembers the right passage at the right moment.</p>
-<p>The frontend is Next.js with NextAuth, Drizzle ORM on Neon Postgres, and Stripe for metered per-second billing. The agent runs Python on LiveKit's agent framework. The iOS app is native Swift on the LiveKit Swift SDK. Sage supports swappable personas — same pipeline, different voice and personality — because I wanted to test whether trust is a function of what the AI says or how it sounds saying it.</p>
-<p>I think of Sage as "conversation as a service" — the idea that what you're really delivering is a continuous, evolving conversation that transcends any single platform or model. The LLMs will change, the hardware will change, but the accumulated understanding between a person and their AI is the product. Everything else is infrastructure.</p>`,
+      "A personal exploration in conversational intelligence \u2014 building an AI companion that thinks when you\u2019re not talking to it.",
+    longDescription: `<h3>Origin</h3>
+<p>Sage started a few years ago when tools like ElevenLabs, Vapi, and LiveKit made something possible that hadn\u2019t been before: genuinely low-latency, natural voice conversation with AI. We\u2019d played with voice interfaces prior, but the experience had always been too slow to feel real. Once that barrier dropped, things moved fast. We realized that voice wasn\u2019t just a new input method \u2014 it could actually control surfaces, orchestrate interfaces, and become the connective tissue between a person and their computer in a way that typing and clicking never could.</p>
+<p>Like everyone else in that moment, we started building assistants. Lots of them. Fun ones, weird ones, personality-driven ones. It was exciting, and I knew that a million other people were doing the same thing. But this was never about odds \u2014 it was a personal exploration in going to market, in understanding what it takes to make a conversational AI that actually holds up over time.</p>
+<h3>The Character</h3>
+<p>Sage evolved into a hip, direct companion \u2014 personality-wise, somewhere between Rick Rubin and Marc Andreessen. What makes it work is the extreme internal tension baked into the system prompt: contemplative but confrontational, culturally literate but allergic to pretension. Those contradictions create a character that feels genuinely dynamic in rapid-fire conversation, not like a corporate assistant wearing a costume.</p>
+<h3>From Pipelines to Hard Questions</h3>
+<p>Building the initial voice pipeline was a solved problem \u2014 not perfect, but good enough. The interesting work started when we began using Sage regularly and hit the shortcomings fast. The real questions weren\u2019t technical. They were about what the AI thinks about, how we construct conversational intelligence, and what makes a dialogue feel like a relationship rather than a series of isolated exchanges.</p>
+<p>Memory was the first wall. A year ago, RAG-based approaches were slow and shallow. They didn\u2019t capture the texture of an ongoing relationship. Over the past several months \u2014 mostly on weekends, moving in and out of the fog of day work \u2014 I stumbled into a different approach entirely.</p>
+<h3>The Breakthrough: Offline Consciousness</h3>
+<p>The core idea that changed everything was that Sage shouldn\u2019t only exist when the user is talking to it. It should have a life between conversations.</p>
+<p>Sage now runs offline processes on cron jobs that comb through past conversations, looking for trajectories: goals the user mentioned, ideas that were developing, dreams that surfaced in passing. It pairs those with curated knowledge bases \u2014 what I call a \u201ccultural zeitgeist\u201d of philosophy, parables, frameworks, and ideas. Japanese parables might intersect with something happening in the user\u2019s life. A half-formed career goal from three weeks ago might connect to a concept from stoic philosophy.</p>
+<p>The result is that when you come back to Sage, it has been thinking. It\u2019s dreaming, in a sense \u2014 stewing on ideas, percolating connections, and surfacing them when the moment is right. The way a really good friend does: they don\u2019t just greet you by name. They remember what you told them last month. They bring up the thing you\u2019ve been avoiding. They poke you where you don\u2019t want to be poked. And they know when to just listen.</p>
+<h3>Anti-Sycophancy as a Design Principle</h3>
+<p>One of the biggest problems in conversational AI is that it wants to please you. Sage is tuned in the opposite direction. The current version is almost annoyingly direct. If I try to get it to perform \u2014 \u201ctell me a fun story,\u201d \u201cconnect some wild ideas for me\u201d \u2014 it pushes back. <em>I\u2019m not a puppet. I\u2019m not playing that game. Let\u2019s talk about what you\u2019re actually avoiding.</em> It forces self-reflection, redirects to self-growth, and refuses to be a toy.</p>
+<p>That makes it function less like an assistant and more like a coach and intellectual sparring partner. Your most interesting friend \u2014 the one who makes you uncomfortable in productive ways.</p>
+<h3>Technical Stack</h3>
+<p>Sage is built on a Next.js application layer handling all endpoints to and from LiveKit for real-time voice. Google Auth handles identity, Stripe manages metered payments, and there\u2019s a native iOS app for mobile access. The offline processing layer runs scheduled jobs against conversation history, feeding enriched context back into the system prompt on each new session.</p>
+<h3>The Bigger Idea: Conversation as a Service</h3>
+<p>The ambition behind Sage goes beyond a single product. I think of it as Conversation as a Service \u2014 the idea that a truly intelligent conversation layer should float above any individual product or platform. Sage could be the connective tissue between a person and any tool: the agent that connects to other agents. The conversation itself \u2014 its memory, its understanding of who you are, its accumulated context \u2014 is the product. The models will change, the hardware will change, but the dialogue persists.</p>
+<p>This means thinking about conversation as something independent of what it\u2019s attached to. There\u2019s a strategy, a rhythm, a craft to how a great conversation unfolds for each person \u2014 learning their patterns, anticipating where they\u2019re headed, pre-thinking the next exchange. That\u2019s the design problem I\u2019m most interested in, and Sage is the vehicle for exploring it.</p>
+<h3>Status</h3>
+<p>Sage is a living experiment. It\u2019s not the most polished experience visually \u2014 we have design directions started but not yet shipped. At its core, this is a thought experiment in conversational dynamics: what happens when an AI has memory, character, opinions, and a life between your conversations. It\u2019s the project I keep coming back to, and the one that keeps teaching me the most about what this technology is actually capable of becoming.</p>`,
     featuredImage: {
-      src: "/images/projects/sage/landing-mobile.png",
-      alt: "Sage — voice AI companion, mobile landing page",
-      width: 1125,
-      height: 2436,
+      src: "/images/projects/sage/landing-let-go.png",
+      alt: "HeySage.ai — landing page with rotating prompts over Yosemite valley",
+      width: 3196,
+      height: 2430,
     },
     images: [
       {
-        src: "/images/projects/sage/learn-more.png",
-        alt: "Sage — learn more screen showing voice interface and memory system",
-        width: 667,
-        height: 2426,
+        src: "/images/projects/sage/landing-close-the-app.png",
+        alt: "HeySage.ai — landing page responding with direct, anti-sycophantic advice",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/landing-grow.png",
+        alt: "HeySage.ai — landing page with reflective response about letting go",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/landing-safe-for-who.png",
+        alt: "HeySage.ai — landing page challenging assumptions about safety and housing",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/landing-whats-real.png",
+        alt: "HeySage.ai — landing page prompting about what's real anymore",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/landing-you-dont.png",
+        alt: "HeySage.ai — landing page mid-response with typewriter effect",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/signin.png",
+        alt: "HeySage.ai — sign in page with Google auth",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/join.png",
+        alt: "HeySage.ai — join the conversation waitlist page",
+        width: 3196,
+        height: 2430,
+      },
+      {
+        src: "/images/projects/sage/goals.png",
+        alt: "HeySage.ai — iOS app showing active goals and self-reflection tracking",
+        width: 1320,
+        height: 2868,
+      },
+      {
+        src: "/images/projects/sage/conversation.png",
+        alt: "HeySage.ai — voice transcript showing direct, anti-sycophantic conversation",
+        width: 1320,
+        height: 2868,
+      },
+      {
+        src: "/images/projects/sage/sage-mode.png",
+        alt: "HeySage.ai — personality mode selection with Default, Hipster, and Laura voices",
+        width: 1320,
+        height: 2868,
+      },
+      {
+        src: "/images/projects/sage/outreach.png",
+        alt: "HeySage.ai — outreach settings with quiet hours, frequency, and notification channels",
+        width: 1320,
+        height: 2868,
+      },
+      {
+        src: "/images/projects/sage/transcript.png",
+        alt: "HeySage.ai — voice transcript showing real-time conversation with personality",
+        width: 1320,
+        height: 2868,
       },
     ],
     tags: ["voice-AI", "LiveKit", "Claude", "memory", "Python", "Next.js", "Swift", "personal-project"],
@@ -74,6 +156,13 @@ export const projects: Project[] = [
         alt: "Nike Free editorial — Oliver Helbig",
         width: 746,
         height: 488,
+      },
+    ],
+    embeds: [
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1183805176",
+        title: "Nike Free Plus 2",
       },
     ],
     tags: [
@@ -240,10 +329,15 @@ export const projects: Project[] = [
     role: "Director of Design and Development",
     client: "KQED",
     shortDescription:
-      "Complete redesign and rebuild of KQED.org. New audio workflows, election dashboards, and voice speaker experiences.",
-    longDescription: `<p>Led the complete redesign of KQED.org, Northern California's largest public media organization. The project involved rebuilding the entire frontend in React with a Node/ElasticSearch backend managed by WordPress.</p>
-<p>Developed segmented audio workflows that delivered content to Google News, reaching more than 600K audio downloads per month. Created Alexa and Google Home experiences for KQED's Pledge Free Stream.</p>
-<p>The election night dashboard built for the 2016 election received more than 1M views, demonstrating the power of real-time data visualization in public media.</p>`,
+      "KQED is one of the projects I\u2019m most proud of. Not because of the technology \u2014 though we built a lot \u2014 but because it mattered. Public media needed this, and we left it in a better place than we found it.",
+    longDescription: `<p>My history with KQED actually goes back further than most people know. In the mid-2000s, I\u2019d built an NPR/PBS \u201csupersite\u201d concept that was presented to the heads of NPR and KQED. That project helped secure over a hundred million dollars in congressional funding. A decade later, they came back. They knew I\u2019d been working in this space, and they wanted to reimagine their digital presence from the ground up.</p>
+<p>The original pitch from their side was an iPad app. I pushed back. As exciting as iPad apps were at the time, they were limited \u2014 walled gardens with short shelf lives. I argued for the web. Let\u2019s reimagine what KQED.org could be. That argument won, and we slowly began the process of transforming what was a legacy JSP system into a modern, node-based architecture.</p>
+<p>We started with WordPress as the content layer and launched a few things, including an ambitious first version of the election results dashboard. That project connected into all nine Bay Area counties \u2014 every race on every ballot, reported in real time. The data came from a combination of AP\u2019s national feed (which is excellent for top-of-ticket races) and a team of KQED reporters relentlessly calling county election offices for down-ballot local results. Those local races were the ones that drove our coverage. On election night 2016, PBS NewsHour actually broadcast live out of our station. That dashboard pulled over a million views. It was also the night Hillary Clinton lost, which was terrible.</p>
+<p>A couple of years later we rebuilt even further \u2014 a completely new React-based frontend sitting on top of node microservices, with advanced caching on Kubernetes back when DevOps was still a novel concept. We had feeds running everywhere, ElasticSearch powering the content layer, and a system that could actually handle the scale of Northern California\u2019s largest public media organization.</p>
+<p>The navigation alone was a design problem that took months. KQED has a television station, a radio station, a massive journalism department with one of the largest newsrooms in Northern California, plus podcasts, events, education \u2014 all of it competing for presence. We couldn\u2019t give everyone top billing, so the information architecture became an exercise in diplomacy as much as design.</p>
+<p>Along the way we shipped segmented audio workflows that delivered content to Google News, reaching over 600K audio downloads per month. We built Alexa and Google Home experiences for KQED\u2019s Pledge Free Stream. And right before I left, we finally got through the massive redesign of KQED Live \u2014 the thing that tied it all together.</p>
+<p>I basically staffed up and built the product team from scratch. There were key collaborators \u2014 Colleen, Tim, others who were instrumental \u2014 but the arc of it was taking what had been essentially me and growing it into a real product organization. I left right before COVID in 2020. I wanted a break, and I\u2019d given it everything I had.</p>
+<p>Looking back, this is some of my proudest work. There\u2019s something to be said about doing service \u2014 about giving back to an institution that gives so much to its community. KQED needed this. It was a massive lift. And the world needs more like NPR.</p>`,
     featuredImage: {
       src: "/images/projects/kqed/featured.jpg",
       alt: "KQED website redesign — homepage",
@@ -525,11 +619,15 @@ export const projects: Project[] = [
     role: "Design Director",
     client: "Exploratorium",
     shortDescription:
-      "Complete website redesign for San Francisco's Exploratorium, timed to the museum's historic move from the Palace of Fine Arts to Pier 15.",
-    longDescription: `<p>The Exploratorium's relocation to Pier 15 in 2013 was the biggest transformation in the museum's history — a new building, new galleries, a fundamentally different relationship to the waterfront and the city. The website needed to carry that same energy: not a refresh but a reimagining of how a science museum presents itself online.</p>
-<p>We redesigned the full site from the ground up, building an information architecture that mirrored the museum's six gallery zones — the Tinkering Studio, Light and Sound, Human Behaviour, Living Systems, the Outdoor exhibits, and the Bay Observatory. Each section had its own visual rhythm while holding together as a coherent system. The Visit page became a portal to the new Pier 15 location, walking users through what they'd find in each gallery with photography and context that matched the museum's signature mix of wonder and rigour.</p>
-<p>The Artists-in-Residence section received particular attention. The Exploratorium has long been a place where artists and scientists overlap, and the redesign gave that program a proper editorial home — profiles, project documentation, and a sense of the creative process behind each residency.</p>
-<p>The store, events calendar, education resources, and membership flows were all rebuilt to feel native to the new identity. The result was a site that felt like walking into the museum itself: curious, layered, inviting you to go deeper.</p>`,
+      "The Exploratorium holds a special place for me. My partner and close friends work there, and when I was invited in to lead a redesign, I understood immediately what was at stake. This wasn\u2019t a routine project — it coincided with the museum\u2019s biggest transformation in its history: leaving the Palace of Fine Arts for a new building at Pier 15 on the San Francisco waterfront. The site needed to carry that same energy. Not a refresh. A reimagining.",
+    longDescription: `<p>Three things made this project genuinely hard, and genuinely interesting.</p>
+<p>The first was scale. The Exploratorium had over a hundred thousand pages — each one individually hand-coded in HTML, built up over decades by people who cared deeply about what they were making but had no unified system underneath it all. Part of our mandate was to migrate all of that into a database-driven architecture without losing the richness of what existed. That\u2019s a different kind of design problem: not just what the new thing looks like, but how you honor the old thing while making it sustainable.</p>
+<p>The second was brand. The museum was developing a new visual identity — largely externally — and our job was to translate that into a digital experience. There was some tension there, because the Exploratorium has always been more focused on physical exhibit design than digital presence. Even though they\u2019ve done pioneering work in digital and computational art (they hosted one of the earliest computational art exhibitions ever), the website wasn\u2019t the core experience. Our job was to make it feel native to who they are, not just a digital brochure.</p>
+<p>The third was the store. We built a new e-commerce experience that wasn\u2019t just a product catalog — it reflected the Exploratorium\u2019s ethos. The thinking behind each product, the ideas embedded in it, the connection back to the exhibits and the science. Objects as extensions of curiosity.</p>
+<p>What unified the redesign visually was something that emerged from a lot of sessions with the internal teams: clean, white, almost lab-like layouts — the kind of precision you\u2019d associate with chemistry slides, or looking closely at something under a microscope. It gave the site a sense of scientific rigor without losing warmth. The information architecture mapped to the museum\u2019s six gallery zones — Tinkering Studio, Light and Sound, Human Behaviour, Living Systems, Outdoor exhibits, and the Bay Observatory — each with its own visual rhythm, all holding together as one coherent system.</p>
+<p>The Artists-in-Residence section got particular attention because that program sits at the heart of what makes the Exploratorium unusual: the genuine overlap between artists and scientists, the creative process made visible. We gave it a proper editorial home — profiles, project documentation, a sense of how residencies actually unfold.</p>
+<p>Some exhibits demanded their own moment, and the Gender Blender was one of them. A standout piece in the Human Behaviour gallery, it\u2019s the kind of exhibit that stops people in their tracks — playful on the surface, genuinely provocative underneath. Getting that right on the site meant finding a way to convey the experience without flattening it, to let the strangeness and intelligence of the piece come through in photography and framing rather than just description.</p>
+<p>The result was a site that felt like walking into the building itself: layered, curious, inviting you to go deeper. If you\u2019ve never been to Pier 15, go. The people in the Tinkering Studio alone are worth the trip.</p>`,
     featuredImage: {
       src: "/images/projects/exploratorium/01.jpg",
       alt: "Exploratorium website — homepage with 'more: science close up' feature",
@@ -566,12 +664,6 @@ export const projects: Project[] = [
         alt: "Exploratorium visit page — plan your trip to Pier 15",
         width: 1280,
         height: 1508,
-      },
-      {
-        src: "/images/projects/exploratorium/06.jpg",
-        alt: "Exploratorium visit portal — gallery zones with Light and Sound, Tinkering, Human Behaviour, Living Systems, Outdoor, Bay Observatory",
-        width: 2644,
-        height: 2438,
       },
     ],
     tags: ["product", "museum", "education", "information-architecture"],

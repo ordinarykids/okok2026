@@ -15,6 +15,8 @@ interface PretextProps {
   html?: string;
   className?: string;
   paragraphClassName?: string;
+  /** Extra classes applied only to the first paragraph (e.g. italic) */
+  firstParagraphClassName?: string;
 }
 
 export function Pretext({
@@ -22,6 +24,7 @@ export function Pretext({
   html,
   className,
   paragraphClassName,
+  firstParagraphClassName,
 }: PretextProps) {
   const ctx = usePretextRegister();
 
@@ -39,12 +42,34 @@ export function Pretext({
   return (
     <div className={cn("relative isolate", className)}>
       {paragraphs.map((paragraph, pi) => {
-        const words = paragraph.split(/\s+/).filter(Boolean);
+        /* If this paragraph is purely a link, render it as a styled anchor */
+        if (paragraph.link && paragraph.text === paragraph.link.label) {
+          return (
+            <p
+              key={pi}
+              className={cn(
+                "mb-[var(--spacing-lg)] leading-relaxed",
+                paragraphClassName,
+              )}
+            >
+              <a
+                href={paragraph.link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4 transition-opacity hover:opacity-60"
+              >
+                {paragraph.link.label}
+              </a>
+            </p>
+          );
+        }
+        const words = paragraph.text.split(/\s+/).filter(Boolean);
         return (
           <p
             key={pi}
             className={cn(
               "mb-[var(--spacing-lg)] leading-relaxed",
+              pi === 0 && firstParagraphClassName,
               paragraphClassName,
             )}
           >
@@ -69,16 +94,30 @@ export function Pretext({
 /*  Helpers                                                           */
 /* ------------------------------------------------------------------ */
 
-function buildParagraphs(raw?: string[], html?: string): string[] {
-  const out: string[] = [];
-  if (raw) out.push(...raw.filter(Boolean));
+interface ParsedParagraph {
+  text: string;
+  link?: { href: string; label: string };
+}
+
+function buildParagraphs(raw?: string[], html?: string): ParsedParagraph[] {
+  const out: ParsedParagraph[] = [];
+  if (raw) out.push(...raw.filter(Boolean).map((t) => ({ text: t })));
   if (html) {
     const matches = html.match(/<p>[\s\S]*?<\/p>/g);
     if (matches) {
-      out.push(...matches.map(stripHtml).filter(Boolean));
+      for (const m of matches) {
+        const linkMatch = m.match(/<a\s+href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/);
+        const text = stripHtml(m);
+        if (text) {
+          out.push({
+            text,
+            link: linkMatch ? { href: linkMatch[1], label: linkMatch[2] } : undefined,
+          });
+        }
+      }
     } else {
       const stripped = stripHtml(html);
-      if (stripped) out.push(stripped);
+      if (stripped) out.push({ text: stripped });
     }
   }
   return out;

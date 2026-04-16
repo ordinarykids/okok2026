@@ -43,6 +43,7 @@ function experimentToSesameProject(exp: Experiment): Project {
         type: "video",
         src: block.src,
         title: block.title ?? exp.title,
+        aspectClass: block.aspectClass,
       });
     }
     if (block.type === "vimeo") {
@@ -55,9 +56,8 @@ function experimentToSesameProject(exp: Experiment): Project {
     }
   }
 
-  const featuredImage = imageAssets[0] ?? LAB_FALLBACK_IMAGE;
-  const images =
-    imageAssets.length > 0 ? imageAssets.slice(1) : [];
+  const featuredImage = imageAssets[0] ?? undefined;
+  const images = imageAssets.length > 0 ? imageAssets.slice(1) : [];
 
   const longDescription = exp.content
     .filter((b): b is { type: "text"; body: string } => b.type === "text")
@@ -79,28 +79,55 @@ function experimentToSesameProject(exp: Experiment): Project {
   };
 }
 
-/** LAB nav order minus Claude #2 and Moirés; Her is listed first separately. */
-const SESAME_LAB_AFTER_HER = [
+/** Current thinking — active projects and recent provocations. */
+const CURRENT_THINKING_SLUGS = {
+  projects: ["sage"] as const,
+  experiments: ["her", "lead-lingo", "earcon-generator"] as const,
+};
+
+/** Previous professional work. */
+const EARLY_WORK_SLUGS = ["nike-free", "exploratorium", "kqed"] as const;
+
+/** Experiments that sit in the "previous exports" section. */
+const EARLY_WORK_EXPERIMENT_SLUGS = ["refining-the-point"] as const;
+
+/** Experimental / generative / visual work. */
+const EXPERIMENTS_SLUGS = [
   "chaotic-desktop",
   "junk-drawer",
-  "early-covid-gans",
   "claude-self-portrait",
   "surrealist-dreams",
+  "early-covid-gans",
+  "undertrained-gans-print",
+  "other-stories-final-output-2024",
+  "portraits",
   "touchdesigner",
 ] as const;
 
-/**
- * Special projects visible only behind the password gate.
- * These follow the same Project type as selected work.
- */
-export const sesameProjects: Project[] = [
-  getProjectBySlug("sage"),
-  experimentToSesameProject(getExperimentBySlug("her")),
-  getProjectBySlug("nike-free"),
-  ...SESAME_LAB_AFTER_HER.map((slug) =>
-    experimentToSesameProject(getExperimentBySlug(slug)),
+/** Current thinking section. */
+export const sesameCurrentThinking: Project[] = [
+  ...CURRENT_THINKING_SLUGS.projects.map(getProjectBySlug),
+  ...CURRENT_THINKING_SLUGS.experiments.map((s) =>
+    experimentToSesameProject(getExperimentBySlug(s)),
   ),
-  experimentToSesameProject(getExperimentBySlug("earcon-generator")),
-  getProjectBySlug("exploratorium"),
-  getProjectBySlug("kqed"),
+];
+
+/** Previous / early work section. */
+export const sesameEarlyWork: Project[] = [
+  ...EARLY_WORK_SLUGS.map(getProjectBySlug),
+  ...EARLY_WORK_EXPERIMENT_SLUGS.map((s) =>
+    experimentToSesameProject(getExperimentBySlug(s)),
+  ),
+];
+
+/** Experiments section. */
+export const sesameExperiments: Project[] = EXPERIMENTS_SLUGS.map((s) =>
+  experimentToSesameProject(getExperimentBySlug(s)),
+);
+
+/** All sesame projects (flat list for static generation). */
+export const sesameProjects: Project[] = [
+  ...sesameCurrentThinking,
+  ...sesameEarlyWork,
+  ...sesameExperiments,
 ];

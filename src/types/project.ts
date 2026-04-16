@@ -42,7 +42,7 @@ export interface Experiment {
 export type ExperimentContent =
   | { type: "text"; body: string }
   | { type: "image"; asset: ImageAsset }
-  | { type: "video"; src: string; title?: string }
+  | { type: "video"; src: string; title?: string; aspectClass?: string }
   | { type: "youtube"; embedId: string; title?: string }
   | {
       type: "vimeo";
