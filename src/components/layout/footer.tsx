@@ -10,6 +10,14 @@ export function Footer() {
         <span>
           <PretextWords text="jason@ordinarykids.com" />
         </span>
+        <a
+          href="https://www.linkedin.com/in/ok-jason-herring/"
+          target="_blank"
+          rel="noreferrer"
+          className="transition-opacity hover:opacity-60"
+        >
+          <PretextWords text="LinkedIn" />
+        </a>
         <span>
           <PretextWords text={`\u00A9 ${new Date().getFullYear()}`} />
         </span>

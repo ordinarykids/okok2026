@@ -25,9 +25,11 @@ export const sesameNavigation: NavSection[] = [
   },
   {
     label: "QUESTIONS",
-    links: [
-      { href: "/sesame/questions", title: "Questions" },
-    ],
+    links: [{ href: "/sesame/questions", title: "Questions" }],
+  },
+  {
+    label: "CV",
+    links: [{ href: "/cv", title: "Resume" }],
   },
 ];
 
@@ -56,23 +58,18 @@ export const navigation: NavSection[] = [
     links: [
       { href: "/experiments/her", title: "Her" },
       { href: "/experiments/early-covid-gans", title: "Covid GANs" },
-      { href: "/experiments/undertrained-gans-print", title: "Undertrained GANs" },
+      {
+        href: "/experiments/undertrained-gans-print",
+        title: "Undertrained GAN",
+      },
       { href: "/experiments/portraits", title: "Portraits" },
       { href: "/experiments/surrealist-dreams", title: "Surrealist Dreams" },
       { href: "/experiments/touchdesigner", title: "TouchDesigner" },
-      { href: "/experiments/moires-01", title: "Moir\u00e9s" },
-      { href: "/experiments/chaotic-desktop", title: "Chaotic Desktop" },
-      { href: "/experiments/junk-drawer", title: "Junk Drawer" },
-      { href: "/experiments/other-stories-final-output-2024", title: "Other Stories" },
+      { href: "/experiments/moires-01", title: "Latent Drift Dream" },
+      // { href: "/experiments/junk-drawer", title: "Junk Drawer" },
       { href: "/experiments/refining-the-point", title: "Refining the Point" },
       { href: "/experiments/earcon-generator", title: "Earcons" },
       { href: "/projects/okml", title: "OKML" },
-    ],
-  },
-  {
-    label: "CV",
-    links: [
-      { href: "/cv", title: "Resume" },
     ],
   },
 ];

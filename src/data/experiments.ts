@@ -36,7 +36,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "undertrained-gans-print",
-    title: "Undertrained GANs — Matt test print (1080)",
+    title: "Undertrained GAN",
     date: "2021-03-09",
     description:
       "A 1080p study from an undertrained generative model: latent drift and half-formed structure treated as print material rather than failure — the model's uncertainty made visible at scale.",
@@ -55,11 +55,6 @@ export const experiments: Experiment[] = [
         src: "https://player.vimeo.com/video/1183823268?badge=0&autopause=0&player_id=0&app_id=58479",
         title: "Matt — lo-fi undertrained GAN",
         aspectClass: "aspect-[4/3]",
-      },
-      {
-        type: "vimeo",
-        src: "https://player.vimeo.com/video/1183805176",
-        title: "Undertrained GAN \u2014 additional study",
       },
     ],
     tags: ["generative", "AI", "StyleGAN", "print", "lab"],
@@ -223,22 +218,22 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "moires-01",
-    title: "Moires 01",
+    title: "Latent Drift Dream",
     date: "2020-09-01",
     description:
-      "Generative moire patterns created through overlapping geometric grids. Exploring interference patterns as a design medium.",
+      "A diptych assembled from latent drift through a GAN trained on several hundred black-and-white moir\u00e9 patterns and op-art studies \u2014 an early attempt at treating the latent space of a model as a medium in its own right.",
     content: [
       {
         type: "text",
-        body: "<p>Moire patterns emerge from the interference of overlapping geometric grids. This series explores these patterns as a design medium, using code to generate complex visual textures from simple mathematical rules.</p>",
+        body: "<p>The source material was purely optical: a few hundred black-and-white moir\u00e9s, interference diagrams, and op-art plates from the Vasarely-Riley tradition. Rigid, geometric, flattened against the picture plane. The model was asked to learn the statistical shape of that vocabulary \u2014 not to reproduce individual images, but to build an interior understanding of how such patterns hold together.</p><p>Latent drift is the term for what comes next. You move slowly through the model\u2019s internal space and let it render its own interpolations \u2014 positions it never explicitly learned, stitched between memories it did. The interesting moment in this piece is that the moir\u00e9, a pattern rooted in perceptual interference, begins to behave as though it were biological. Lines loosen. Forms breathe. What enters as rigid geometry leaves as something closer to tissue, or membrane, or a figure attempting to surface.</p><p>The work is presented as a diptych \u2014 two channels drifting in parallel \u2014 and scored to music. The pairing matters: op-art has always been concerned with the body of the viewer, the eye that is implicated in completing the image. In this case the model itself becomes a second viewer, one whose interpretation is also the work. Full-screen is recommended.</p>",
       },
       {
         type: "video",
         src: "/videos/stylegan-moires.mp4",
-        title: "Generative Moire Patterns",
+        title: "Latent Drift Dream",
       },
     ],
-    tags: ["generative", "patterns", "op-art"],
+    tags: ["generative", "StyleGAN", "op-art", "moir\u00e9", "latent-space", "early-work"],
   },
   {
     slug: "her",

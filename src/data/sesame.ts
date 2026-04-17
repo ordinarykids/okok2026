@@ -86,7 +86,15 @@ const CURRENT_THINKING_SLUGS = {
 };
 
 /** Previous professional work. */
-const EARLY_WORK_SLUGS = ["nike-free", "exploratorium", "kqed"] as const;
+const EARLY_WORK_SLUGS = [
+  "nike-free",
+  "nike-nsw",
+  "nike-fuelband",
+  "huf-sf",
+  "stussy",
+  "exploratorium",
+  "kqed",
+] as const;
 
 /** Experiments that sit in the "previous exports" section. */
 const EARLY_WORK_EXPERIMENT_SLUGS = ["refining-the-point"] as const;
@@ -94,12 +102,9 @@ const EARLY_WORK_EXPERIMENT_SLUGS = ["refining-the-point"] as const;
 /** Experimental / generative / visual work. */
 const EXPERIMENTS_SLUGS = [
   "chaotic-desktop",
-  "junk-drawer",
-  "claude-self-portrait",
   "surrealist-dreams",
   "early-covid-gans",
   "undertrained-gans-print",
-  "other-stories-final-output-2024",
   "portraits",
   "touchdesigner",
 ] as const;

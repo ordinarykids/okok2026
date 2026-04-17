@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRef, useState, useCallback } from "react";
 
 const VIMEO_ID = "1183827334";
@@ -26,40 +27,47 @@ export function HomeContent() {
   }, [muted]);
 
   return (
-    <div className="flex min-h-[70vh] flex-col justify-between">
-      {/* Video area */}
-      <div className="mb-[var(--spacing-2xl)] flex-1">
-        <button
-          type="button"
-          onClick={toggleSound}
-          className="group relative block aspect-square w-full cursor-pointer overflow-hidden"
-          aria-label={muted ? "Turn sound on" : "Turn sound off"}
-        >
-          <iframe
-            ref={iframeRef}
-            src={VIMEO_SRC}
-            title="Other Stories — 2024"
-            className="pointer-events-none absolute inset-0 h-full w-full border-0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
-          {/* Sound indicator */}
-          <span
-            className="absolute bottom-[var(--spacing-md)] right-[var(--spacing-md)] font-mono text-[10px] uppercase tracking-[0.2em] text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-          >
-            {muted ? "click for sound" : "sound on"}
-          </span>
-        </button>
-      </div>
+    <div className="flex min-h-[80vh] flex-col gap-[var(--spacing-xl)] pt-[var(--spacing-xl)]">
+      {/* Name */}
+      <h1 className="text-[16px] font-light tracking-tight">Jason Herring</h1>
 
-      {/* Bottom: name + studio */}
-      <div className="flex items-baseline justify-between border-t border-rule pt-[var(--spacing-lg)]">
-        <span className="font-heading text-[clamp(14px,2vw,18px)] tracking-tight">
-          Jason Herring
+      {/* Video teaser */}
+      <button
+        type="button"
+        onClick={toggleSound}
+        className="group relative block aspect-square w-full cursor-pointer overflow-hidden"
+        aria-label={muted ? "Turn sound on" : "Turn sound off"}
+      >
+        <iframe
+          ref={iframeRef}
+          src={VIMEO_SRC}
+          title="Other Stories — 2024"
+          className="pointer-events-none absolute inset-0 h-full w-full border-0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+        />
+        {/* Sound indicator */}
+        <span className="absolute bottom-[var(--spacing-md)] right-[var(--spacing-md)] font-mono text-[10px] uppercase tracking-[0.2em] text-white/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          {muted ? "click for sound" : "sound on"}
         </span>
-        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
-          ordinarykids
-        </span>
+      </button>
+
+      {/* Actions */}
+      <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-ink-faint">
+        <a
+          href="https://www.linkedin.com/in/ok-jason-herring/"
+          target="_blank"
+          rel="noreferrer"
+          className="transition-opacity hover:opacity-60"
+        >
+          LinkedIn
+        </a>
+        <Link
+          href="/auth"
+          className="border border-ink px-[var(--spacing-md)] py-[var(--spacing-sm)] text-ink transition-colors hover:bg-ink hover:text-paper"
+        >
+          Login
+        </Link>
       </div>
     </div>
   );

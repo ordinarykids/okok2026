@@ -11,6 +11,8 @@ export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
   const isSesame = pathname.startsWith("/sesame");
+  const isHome = pathname === "/";
+  const isAuth = pathname === "/auth";
   const nav = isSesame ? sesameNavigation : navigation;
   const earcon = useEarcon();
 
@@ -23,6 +25,9 @@ export function Header() {
     window.addEventListener("pointerdown", handler, { once: true });
     return () => window.removeEventListener("pointerdown", handler);
   }, [earcon]);
+
+  // Home + auth pages render their own chrome
+  if (isHome || isAuth) return null;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">

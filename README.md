@@ -2,9 +2,11 @@
 
 A portfolio that doesn't sit still.
 
-Built for Jason Herring — creative director, engineering leader, and someone who keeps pointing generative tools at things to see what happens. This is the public-facing record of two decades of work spanning Nike, KQED, Intuit, the Exploratorium, Sage, HUF, Dockers, Tracy Chapman, Aesop Rock, MoMA, Stussy, and a fish person in an orange cardigan who showed up uninvited during a Midjourney session and refused to leave.
+Built for Jason Herring — creative director, engineering leader, and someone who keeps pointing generative tools at things to see what happens. This is the public-facing record of two decades of work spanning Nike, KQED, Intuit, the Exploratorium, HeySage.ai, HUF, Dockers, Tracy Chapman, Aesop Rock, MoMA, Stussy, and a fish person in an orange cardigan who showed up uninvited during a Midjourney session and refused to leave.
 
-The site is designed to feel like a photocopied zine that somehow learned to move. Every word on every page scatters away from your cursor. Click and they scatter harder. The paper has grain. The text reveals itself one character at a time, occasionally glitching into nonsense before resolving. Nothing loads all at once. Everything earns its presence on the page by arriving.
+The homepage is a single looping Vimeo video, muted on arrival, click-to-unmute. Name in the corner, LinkedIn on one side, a Login button on the other. Everything else — the work, the writing, the experiments, the CV — lives behind a password gate at `/auth` that redirects to the Sesame section once you type the right words. The public site is a teaser. The real site is curated.
+
+The pages behind the gate are designed to feel like a photocopied zine that somehow learned to move. Every word on every page scatters away from your cursor. Click and they scatter harder. The paper has grain. The text reveals itself one character at a time, occasionally glitching into nonsense before resolving. Nothing loads all at once. Everything earns its presence on the page by arriving.
 
 ---
 
@@ -60,31 +62,40 @@ The pretext system is context-based: one `PretextProvider` wraps the entire layo
 ```
 src/data/
   cv.ts              Bio, experience, education, skills, clients
-  projects.ts        13 selected projects with full image arrays
-  experiments.ts     15 experiments with mixed content blocks
-  randoms.ts         6 archival projects
+  projects.ts        Selected projects with full image arrays
+  experiments.ts     Experiments with mixed content blocks
+  randoms.ts         Archival projects
   questions.ts       Structured interview Q&A for the sesame gate
-  sesame.ts          Password-gated sections (Current / Previous / Experiments / Questions)
-  navigation.ts      Site nav (WORK, LAB, CV; SESAME nav from sesame.ts)
+  home-videos.ts     Pool of videos for legacy random-home mode (now superseded)
+  sesame.ts          Password-gated sections (Current / Previous / Experiments / Questions / CV)
+  navigation.ts      Site nav (WORK, LAB for public pages; full sesame nav from sesame.ts)
 ```
 
-### Selected Projects (13)
+### Selected Projects
 
 HeySage.ai / Nike Free Plus 2 / Tracy Chapman / Aesop Rock / KQED / Aleph Rebrand / Mercurius Beer / Exploratorium / Nike NSW / Nike FuelBand / Dockers Super Hard Khakis / HUF / Stussy / OK Media Lab
 
-### Experiments (15)
+### Experiments
 
-Early Covid GANs / Undertrained GANs (print) / Other Stories (2024) / Claude #1 / Claude #2 / Surrealist Dreams / Portraits / TouchDesigner / Moires 01 / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Refining the Point / Lead Lingo / Earcon Generator
+Early Covid GANs / Undertrained GAN / Claude #1 / Claude #2 / Surrealist Dreams / Portraits / TouchDesigner / Latent Drift Dream / Her — A Manifesto About Now / Chaotic Desktop / Junk Drawer / Aleph / Lead Lingo / Earcon Generator / Other Stories (unlinked)
 
-### Randoms (6)
+### Randoms
 
 MoMA / Sunset Cinema / Pepsi Now / Adidas Skateboarding / Mitch Ranger / Falling Whistles
 
-### Sesame
+### Auth and Sesame
 
-`/sesame` is a client-side gate: visitors enter a password whose SHA-256 is compared against the hash in `sesame.ts`. Behind the gate, content is organized into three curated sections — **Current Thinking** (active projects and provocations like Sage, Her, Lead Lingo, and the Earcon Generator), **Previous Work** (Nike Free, Exploratorium, KQED, Refining the Point), and **Experiments** (the generative/visual lab work). A fourth section, **Questions**, surfaces structured interview-style Q&A from `questions.ts`.
+`/auth` is a generic client-side password gate — a square password field under a glitching `////` mark. Enter the right phrase and the SHA-256 hash is compared against `SESAME_HASH` in `sesame.ts`; on success, the session is stored and the router redirects to `/sesame`. Revisits with a valid session skip the form.
 
-Each project has an optional `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Vimeo, Instagram), tags, and category. Portrait-orientation embeds are automatically paired side-by-side in a 2-up grid by the `EmbedGallery` component. Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`, `vimeo`) that lets each page compose its own layout from mixed media. All native video embeds autoplay muted and loop.
+Behind the gate, content is organized into five curated sections:
+
+- **Current** — active projects and provocations (HeySage.ai, Her, Lead Lingo, Earcon Generator)
+- **Previous** — professional work (Nike Free, Nike NSW, Nike FuelBand, HUF, Stussy, Exploratorium, KQED, Aleph)
+- **Experiments** — the generative / visual lab work
+- **Questions** — structured interview-style Q&A from `questions.ts`
+- **CV** — resume route
+
+Each project has an optional `featuredImage`, an `images[]` array with dimensions, optional `embeds[]` (video, YouTube, Vimeo, Instagram), tags, and category. Portrait-orientation embeds are automatically paired side-by-side in a 2-up grid by the `EmbedGallery` component (same logic as the `ImageGallery`). Experiments use a flexible content block system (`text`, `image`, `video`, `youtube`, `vimeo`) that lets each page compose its own layout from mixed media. All Vimeo embeds force `title=0&byline=0&portrait=0` to hide creator branding. Native video embeds autoplay muted and loop. Short-description intros render italicized as lead paragraphs, and any paragraph whose body is purely a link is rendered as an actual styled anchor rather than stripped to plain text by the Pretext disruption engine.
 
 ---
 
@@ -93,9 +104,10 @@ Each project has an optional `featuredImage`, an `images[]` array with dimension
 ```
 src/
   app/
-    layout.tsx                        PretextProvider wraps everything
-    page.tsx                          Homepage
-    cv/page.tsx                       Dedicated CV / resume page
+    layout.tsx                        PretextProvider wraps everything; Header conditionally hides
+    page.tsx                          Homepage (Vimeo teaser + Login button)
+    auth/page.tsx                     Generic password gate → redirects to /sesame on success
+    cv/page.tsx                       CV / resume page
     projects/[slug]/page.tsx          Project detail (generateStaticParams)
     experiments/[slug]/page.tsx       Experiment detail (generateStaticParams)
     randoms/page.tsx                  Shuffle-based random archive
@@ -104,15 +116,18 @@ src/
     sesame/questions/page.tsx         Structured Q&A behind the gate
   components/
     motion/                           All 8 animation primitives
-    cv/                               Homepage + CV sections
-    project/                          Project detail, EmbedGallery, PretextProjectCopy
+    home/                             Homepage teaser (Vimeo iframe + click-to-unmute)
+    auth/                             AuthForm (password → redirect)
+    cv/                               CV sections
+    project/                          Project detail, ImageGallery, EmbedGallery, PretextProjectCopy
     experiment/                       Experiment detail
     randoms/                          Random project viewer
     sesame/                           Gate + gated listing
-    layout/                           Header + Footer
+    layout/                           Header + Footer (header hides on / and /auth)
   data/                               All content (no CMS)
   types/                              TypeScript interfaces
   fonts/                              Geist Black, Geist Variable, IBM Plex Mono
+  hooks/                              use-earcon and friends
   lib/                                Utilities
 public/
   images/
@@ -121,6 +136,7 @@ public/
     cv/                               Headshot video
   videos/                             Local video assets (MP4, compressed H.264)
   intuit-videos/                      Voice brand + desktop recordings
+  audio/                              Earcon WAVs for hover cues
 ```
 
 Build generates 42+ static routes. Build time stays under a few seconds.
