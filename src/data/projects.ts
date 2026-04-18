@@ -759,7 +759,7 @@ export const projects: Project[] = [
   },
   {
     slug: "moma",
-    title: "MoMA \u2014 Design and the Elastic Mind",
+    title: "MoMA \u2014 Design Takes on Risk",
     date: "2005-03-01",
     role: "Designer, Developer",
     client: "MoMA",

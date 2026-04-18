@@ -37,7 +37,8 @@ export function QuestionsContent() {
           <PaperFeed delay={0.1 * i + 0.15}>
             <Pretext
               paragraphs={q.answer}
-              className="text-ink-light"
+              className="columns-1 gap-[var(--spacing-2xl)] text-ink-light lg:columns-2"
+              paragraphClassName="break-inside-avoid-column"
             />
           </PaperFeed>
         </section>
