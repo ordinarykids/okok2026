@@ -141,18 +141,6 @@ export const experiments: Experiment[] = [
         title: "Floating Rock Surrealism — variation 4",
         aspectClass: "portrait",
       },
-      {
-        type: "video",
-        src: "/videos/levitating-rock-01.mp4",
-        title: "Levitating Rock Mystique — variation 1",
-        aspectClass: "portrait",
-      },
-      {
-        type: "video",
-        src: "/videos/levitating-rock-02.mp4",
-        title: "Levitating Rock Mystique — variation 2",
-        aspectClass: "portrait",
-      },
     ],
     tags: ["AI", "generative", "surrealism", "video"],
   },
@@ -237,7 +225,7 @@ export const experiments: Experiment[] = [
   },
   {
     slug: "her",
-    title: "Her \u2014 A Manifesto About Now",
+    title: "Her \u2014 An Essay",
     date: "2025-02-01",
     description:
       "A video essay using Spike Jonze\u2019s Her as a lens to examine the present moment in conversational AI. What Jonze imagined as speculative fiction in 2013 \u2014 an operating system with personality, warmth, and emotional presence \u2014 is now something we are actually building. This piece sits between manifesto and provocation, asking what it means to design synthetic intimacy at industrial scale.",

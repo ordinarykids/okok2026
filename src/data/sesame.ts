@@ -81,27 +81,27 @@ function experimentToSesameProject(exp: Experiment): Project {
 
 /** Current thinking — active projects and recent provocations. */
 const CURRENT_THINKING_SLUGS = {
-  projects: ["sage"] as const,
+  projects: ["sage", "hello-intuit"] as const,
   experiments: ["her", "lead-lingo", "earcon-generator"] as const,
 };
 
 /** Previous professional work. */
 const EARLY_WORK_SLUGS = [
+  "kqed",
+  "moma",
   "nike-free",
   "nike-nsw",
   "nike-fuelband",
-  "huf-sf",
-  "stussy",
   "exploratorium",
-  "kqed",
+  "stussy",
+  "huf-sf",
 ] as const;
 
-/** Experiments that sit in the "previous exports" section. */
+/** Experiments that sit in the "previous exports" section (rendered first). */
 const EARLY_WORK_EXPERIMENT_SLUGS = ["refining-the-point"] as const;
 
 /** Experimental / generative / visual work. */
 const EXPERIMENTS_SLUGS = [
-  "chaotic-desktop",
   "surrealist-dreams",
   "early-covid-gans",
   "undertrained-gans-print",
@@ -119,10 +119,10 @@ export const sesameCurrentThinking: Project[] = [
 
 /** Previous / early work section. */
 export const sesameEarlyWork: Project[] = [
-  ...EARLY_WORK_SLUGS.map(getProjectBySlug),
   ...EARLY_WORK_EXPERIMENT_SLUGS.map((s) =>
     experimentToSesameProject(getExperimentBySlug(s)),
   ),
+  ...EARLY_WORK_SLUGS.map(getProjectBySlug),
 ];
 
 /** Experiments section. */

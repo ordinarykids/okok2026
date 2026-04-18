@@ -2,36 +2,6 @@ import type { Project } from "@/types/project";
 
 export const randoms: Project[] = [
   {
-    slug: "moma",
-    title: "MoMA — Design Takes on Risk",
-    date: "2006-03-01",
-    role: "Designer, Developer",
-    client: "MoMA",
-    shortDescription:
-      "The best part about working on this fun project with MoMA in NYC was not the project although that was amazing too.",
-    longDescription: `<p>Worked with MoMA on their Design Takes on Risk exhibition, creating interactive digital experiences that complemented the physical exhibition space.</p>`,
-    featuredImage: {
-      src: "/images/projects/moma/01.jpg",
-      alt: "MoMA Design Takes on Risk",
-      width: 746,
-      height: 510,
-    },
-    images: [
-      { src: "/images/projects/moma/01.jpg", alt: "MoMA exhibition overview", width: 746, height: 510 },
-      { src: "/images/projects/moma/02.jpg", alt: "MoMA exhibition detail", width: 800, height: 524 },
-      { src: "/images/projects/moma/03.jpg", alt: "MoMA exhibition space", width: 1200, height: 800 },
-      { src: "/images/projects/moma/04.jpg", alt: "MoMA interactive display", width: 746, height: 497 },
-      { src: "/images/projects/moma/05.jpg", alt: "MoMA design showcase", width: 800, height: 524 },
-      { src: "/images/projects/moma/06.jpg", alt: "MoMA exhibition gallery", width: 1200, height: 800 },
-      { src: "/images/projects/moma/07.jpg", alt: "MoMA visitor interaction", width: 800, height: 524 },
-      { src: "/images/projects/moma/08.jpg", alt: "MoMA exhibition signage", width: 800, height: 524 },
-      { src: "/images/projects/moma/09.jpg", alt: "MoMA installation view", width: 800, height: 524 },
-      { src: "/images/projects/moma/10.jpg", alt: "MoMA exhibition closing", width: 800, height: 524 },
-    ],
-    tags: ["interactive", "museum", "exhibition"],
-    category: "random",
-  },
-  {
     slug: "sunset-cinema",
     title: "Sunset Cinema",
     date: "2008-06-01",

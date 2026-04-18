@@ -7,7 +7,7 @@ export const projects: Project[] = [
     date: "2024-06-01",
     role: "Creator, Engineer, Designer",
     shortDescription:
-      "A personal exploration in conversational intelligence \u2014 building an AI companion that thinks when you\u2019re not talking to it.",
+      "An early, undesigned functional prototype exploring the idea of conversation as a medium \u2014 an AI companion that thinks when you\u2019re not talking to it.",
     longDescription: `<h3>Origin</h3>
 <p>Sage started a few years ago when tools like ElevenLabs, Vapi, and LiveKit made something possible that hadn\u2019t been before: genuinely low-latency, natural voice conversation with AI. We\u2019d played with voice interfaces prior, but the experience had always been too slow to feel real. Once that barrier dropped, things moved fast. We realized that voice wasn\u2019t just a new input method \u2014 it could actually control surfaces, orchestrate interfaces, and become the connective tissue between a person and their computer in a way that typing and clicking never could.</p>
 <p>Like everyone else in that moment, we started building assistants. Lots of them. Fun ones, weird ones, personality-driven ones. It was exciting, and I knew that a million other people were doing the same thing. But this was never about odds \u2014 it was a personal exploration in going to market, in understanding what it takes to make a conversational AI that actually holds up over time.</p>
@@ -31,86 +31,168 @@ export const projects: Project[] = [
 <h3>Status</h3>
 <p>Sage is a living experiment. It\u2019s not the most polished experience visually \u2014 we have design directions started but not yet shipped. At its core, this is a thought experiment in conversational dynamics: what happens when an AI has memory, character, opinions, and a life between your conversations. It\u2019s the project I keep coming back to, and the one that keeps teaching me the most about what this technology is actually capable of becoming.</p>`,
     featuredImage: {
-      src: "/images/projects/sage/landing-let-go.png",
-      alt: "HeySage.ai — landing page with rotating prompts over Yosemite valley",
-      width: 3196,
-      height: 2430,
+      src: "/images/projects/sage/landing-hired-mirrors.jpg",
+      alt: "HeySage.ai — landing page: Then you hired mirrors — not people",
+      width: 1920,
+      height: 1135,
     },
     images: [
       {
-        src: "/images/projects/sage/landing-close-the-app.png",
-        alt: "HeySage.ai — landing page responding with direct, anti-sycophantic advice",
-        width: 3196,
-        height: 2430,
+        src: "/images/projects/sage/landing-pushes-back.jpg",
+        alt: "HeySage.ai — landing page: Nobody on my team pushes back",
+        width: 1920,
+        height: 1135,
       },
       {
-        src: "/images/projects/sage/landing-grow.png",
-        alt: "HeySage.ai — landing page with reflective response about letting go",
-        width: 3196,
-        height: 2430,
+        src: "/images/projects/sage/landing-believe-in-it.jpg",
+        alt: "HeySage.ai — landing page: They don't need to understand it — they need to see you believe in it",
+        width: 1920,
+        height: 1135,
       },
       {
-        src: "/images/projects/sage/landing-safe-for-who.png",
-        alt: "HeySage.ai — landing page challenging assumptions about safety and housing",
-        width: 3196,
-        height: 2430,
+        src: "/images/projects/sage/landing-join-conversation.jpg",
+        alt: "HeySage.ai — join the conversation page",
+        width: 1920,
+        height: 1135,
       },
       {
-        src: "/images/projects/sage/landing-whats-real.png",
-        alt: "HeySage.ai — landing page prompting about what's real anymore",
-        width: 3196,
-        height: 2430,
+        src: "/images/projects/sage/dashboard.jpg",
+        alt: "HeySage.ai — user dashboard showing memories, insights, goals, and past conversations",
+        width: 1920,
+        height: 1135,
       },
       {
-        src: "/images/projects/sage/landing-you-dont.png",
-        alt: "HeySage.ai — landing page mid-response with typewriter effect",
-        width: 3196,
-        height: 2430,
+        src: "/images/projects/sage/conversation-transcript.jpg",
+        alt: "HeySage.ai — real-time voice conversation transcript with Sage",
+        width: 1920,
+        height: 1135,
       },
       {
-        src: "/images/projects/sage/signin.png",
-        alt: "HeySage.ai — sign in page with Google auth",
-        width: 3196,
-        height: 2430,
-      },
-      {
-        src: "/images/projects/sage/join.png",
-        alt: "HeySage.ai — join the conversation waitlist page",
-        width: 3196,
-        height: 2430,
-      },
-      {
-        src: "/images/projects/sage/goals.png",
+        src: "/images/projects/sage/goals.jpg",
         alt: "HeySage.ai — iOS app showing active goals and self-reflection tracking",
-        width: 1320,
-        height: 2868,
+        width: 660,
+        height: 1434,
       },
       {
-        src: "/images/projects/sage/conversation.png",
+        src: "/images/projects/sage/conversation.jpg",
         alt: "HeySage.ai — voice transcript showing direct, anti-sycophantic conversation",
-        width: 1320,
-        height: 2868,
+        width: 660,
+        height: 1434,
       },
       {
-        src: "/images/projects/sage/sage-mode.png",
+        src: "/images/projects/sage/sage-mode.jpg",
         alt: "HeySage.ai — personality mode selection with Default, Hipster, and Laura voices",
-        width: 1320,
-        height: 2868,
+        width: 660,
+        height: 1434,
       },
       {
-        src: "/images/projects/sage/outreach.png",
+        src: "/images/projects/sage/outreach.jpg",
         alt: "HeySage.ai — outreach settings with quiet hours, frequency, and notification channels",
-        width: 1320,
-        height: 2868,
+        width: 660,
+        height: 1434,
       },
       {
-        src: "/images/projects/sage/transcript.png",
+        src: "/images/projects/sage/transcript.jpg",
         alt: "HeySage.ai — voice transcript showing real-time conversation with personality",
-        width: 1320,
-        height: 2868,
+        width: 660,
+        height: 1434,
       },
     ],
     tags: ["voice-AI", "LiveKit", "Claude", "memory", "Python", "Next.js", "Swift", "personal-project"],
+    category: "selected",
+  },
+  {
+    slug: "hello-intuit",
+    title: "Hello Intuit",
+    date: "2024-05-01",
+    role: "Design Technology Lead",
+    client: "Intuit",
+    shortDescription:
+      "The arc from a voice-first prototype to a company-wide AI platform \u2014 building the case that conversation could be Intuit\u2019s next operating system.",
+    longDescription: `<h3>Hello Intuit</h3>
+<p>It started with a question nobody was asking yet: what if the first thing a new small business owner heard from Intuit wasn\u2019t a dashboard \u2014 it was a voice?</p>
+<p>In May 2024, our team pitched Hello Intuit to senior leadership \u2014 an AI-driven voice assistant that could help solopreneurs and micro-businesses get off the ground. Not a chatbot bolted onto a product page. A real conversation that could walk someone through forming an LLC, understanding their tax obligations, and finding the right Intuit products for their situation. The insight was simple: these customers are overwhelmed and anxious about making the wrong choices. They don\u2019t want to read documentation. They want someone to talk to.</p>
+<p>We built a working prototype around a persona named Alex \u2014 a content creator operating as a sole proprietor, trying to reduce taxes and set up for growth. The demo showed Hello Intuit recognizing Alex\u2019s QuickBooks data, recommending an S-corp conversion, surfacing tax filing steps, and jumpstarting a business tax return \u2014 all through natural voice conversation. It wasn\u2019t hypothetical. It worked.</p>
+<h3>Intuit Intelligence</h3>
+<p>Hello Intuit proved the concept. What came next was proving the architecture. The project evolved into Intuit Intelligence \u2014 a broader platform vision for how conversational AI could work across TurboTax, QuickBooks, Credit Karma, and Mailchimp. The question shifted from "can we build a voice bot?" to "can conversation become the connective tissue between all of Intuit\u2019s products?"</p>
+<p>This meant designing systems that could hold context across product boundaries \u2014 understanding that a tax question in TurboTax might have implications for a QuickBooks setup, and that the AI should know that without being told. The work here was architectural: defining how voice, data, and personalization layers compose into something that feels like a single intelligence, even when it\u2019s reaching across multiple backend systems.</p>
+<h3>Omni Voice</h3>
+<p>The third evolution was Omni Voice \u2014 the realization that voice wasn\u2019t just another input modality. It was the missing orchestration layer. We were designing for a future where a customer could talk to Intuit the way they\u2019d talk to a trusted advisor: fluidly, across topics, across products, across time.</p>
+<p>Omni Voice meant multi-modal experiences where the UI responded to the conversation in real time \u2014 voice controlling surfaces, pulling up relevant data, navigating between contexts. It meant ambient intelligence: the system anticipating what you\u2019d need based on where you were in your financial lifecycle. And it meant designing for trust \u2014 because when you\u2019re talking about someone\u2019s money, their business, their livelihood, the conversation has to earn the right to advise.</p>
+<h3>The Arc</h3>
+<p>What made this work meaningful wasn\u2019t any single prototype. It was the arc \u2014 from a scrappy voice demo to a platform strategy to a vision for how 100 million customers might interact with financial software through conversation. Each phase built on the last. Hello Intuit proved voice could carry real business logic. Intuit Intelligence proved it could scale across products. Omni Voice proved it could become the primary interface.</p>
+<p>This is the work I keep thinking about: not the technology, but the design problem underneath it. How do you make a conversation feel like a relationship? How do you build trust through a speaker? How do you design an intelligence that knows when to lead, when to follow, and when to just listen?</p>`,
+    featuredImage: {
+      src: "/images/projects/hello-intuit/page-06.jpg",
+      alt: "Hello Intuit \u2014 AI-driven voice assistant to power prosperity",
+      width: 1920,
+      height: 1082,
+    },
+    images: [
+      {
+        src: "/images/projects/hello-intuit/page-04.jpg",
+        alt: "Hello Intuit \u2014 TL;DR: building a business-in-AI voice bot for solopreneurs and micro-businesses",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-05.jpg",
+        alt: "Hello Intuit \u2014 problem statement: sole proprietors overwhelmed by compliance and tax decisions",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-07.jpg",
+        alt: "Hello Intuit \u2014 benefits of using voice: accessibility, efficiency, personalization, hands-free, cost-effectiveness",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-08.jpg",
+        alt: "Hello Intuit \u2014 Meet Alex, a content creator and QuickBooks customer seeking to reduce taxes",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-09.jpg",
+        alt: "Hello Intuit \u2014 proactive outreach: notifying Alex about S-corp tax savings based on QuickBooks data",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-10.jpg",
+        alt: "Hello Intuit \u2014 voice and UI confirming connected accounts for an accurate financial view",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-11.jpg",
+        alt: "Hello Intuit \u2014 voice asks Alex about income goals and hiring plans to determine best entity type",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-17.jpg",
+        alt: "Hello Intuit \u2014 conversation history, cross-app navigation, and ecosystem search",
+        width: 1920,
+        height: 1082,
+      },
+      {
+        src: "/images/projects/hello-intuit/page-19.jpg",
+        alt: "Hello Intuit \u2014 additional use-cases: access to money, scenario planning, proactive insights, hands-free operation",
+        width: 1920,
+        height: 1082,
+      },
+    ],
+    embeds: [
+      {
+        type: "vimeo",
+        src: "https://player.vimeo.com/video/1184401504",
+        title: "Hello Intuit \u2014 voice assistant demo",
+        aspectClass: "aspect-[4/3]",
+      },
+    ],
+    tags: ["voice-AI", "conversational-AI", "Intuit", "platform", "strategy", "prototyping"],
     category: "selected",
   },
   {
@@ -673,6 +755,39 @@ export const projects: Project[] = [
       },
     ],
     tags: ["product", "museum", "education", "information-architecture"],
+    category: "selected",
+  },
+  {
+    slug: "moma",
+    title: "MoMA \u2014 Design and the Elastic Mind",
+    date: "2005-03-01",
+    role: "Designer, Developer",
+    client: "MoMA",
+    shortDescription:
+      "A set of kiosks and a companion website for MoMA\u2019s exhibition on speculative design, built with Paola Antonelli. The brief, delivered directly: \u201cthis looks too professional. I want Santa Claus pissing in the snow. I want something radical.\u201d",
+    longDescription: `<p>This project started in 2005 with a cold call from Paola Antonelli\u2019s office. She had seen our work in Howe Magazine after it won an award, and out of nowhere they wanted to talk about an exhibition MoMA was organizing on speculative and provocative design.</p>
+<p>They asked for an RFP. We didn\u2019t really know how to respond to an RFP at MoMA, so we didn\u2019t write one. We got the whole team together, wrote about our own experiences with risk for a week, and hardbound it into a single copy of a book. We mailed it to her. We all thought it was a joke \u2014 that this was a moment we didn\u2019t have a real shot at. She was very stoked.</p>
+<p>We got the project. The first presentation went badly and it made the project. \u201cThis looks too professional,\u201d she told us. \u201cI didn\u2019t pay you guys to come here and do this. This is just design. Go throw this shit away. I want Santa Claus pissing in the snow. I want something radical.\u201d</p>
+<p>We came back with a treatment that staged the whole exhibition as a dystopian future landscape you could navigate through. Each zone held a collection. Each object you could click on and surface, as if you were finding it in the wreckage. The navigation wasn\u2019t a menu \u2014 it was an environment. They liked it enough to ask us to build a physical kiosk version of it that sat inside MoMA for three months alongside the exhibition.</p>
+<p>This was the first show at the new MoMA after they\u2019d come back from PS1 during the renovation. Being part of that \u2014 the opening show in the new building \u2014 was a big deal for the whole team. Twenty years later it\u2019s still one of the projects I\u2019m proudest of having worked on.</p>`,
+    featuredImage: {
+      src: "/images/projects/moma/01.jpg",
+      alt: "MoMA \u2014 Design Takes on Risk, kiosk and microsite",
+      width: 746,
+      height: 510,
+    },
+    images: [
+      { src: "/images/projects/moma/02.jpg", alt: "MoMA exhibition detail", width: 800, height: 524 },
+      { src: "/images/projects/moma/03.jpg", alt: "MoMA exhibition space", width: 1200, height: 800 },
+      { src: "/images/projects/moma/04.jpg", alt: "MoMA interactive display", width: 746, height: 497 },
+      { src: "/images/projects/moma/05.jpg", alt: "MoMA design showcase", width: 800, height: 524 },
+      { src: "/images/projects/moma/06.jpg", alt: "MoMA exhibition gallery", width: 1200, height: 800 },
+      { src: "/images/projects/moma/07.jpg", alt: "MoMA visitor interaction", width: 800, height: 524 },
+      { src: "/images/projects/moma/08.jpg", alt: "MoMA exhibition signage", width: 800, height: 524 },
+      { src: "/images/projects/moma/09.jpg", alt: "MoMA installation view", width: 800, height: 524 },
+      { src: "/images/projects/moma/10.jpg", alt: "MoMA exhibition closing", width: 800, height: 524 },
+    ],
+    tags: ["interactive", "museum", "exhibition", "kiosk", "MoMA"],
     category: "selected",
   },
   {

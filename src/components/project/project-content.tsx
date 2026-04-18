@@ -268,14 +268,29 @@ function EmbedGallery({ embeds }: { embeds?: Embed[] }) {
 
   while (i < embeds.length) {
     const embed = embeds[i];
-    const next = embeds[i + 1];
 
-    if (next && isPortraitEmbed(embed) && isPortraitEmbed(next)) {
+    // Count how many consecutive portrait embeds start here
+    let run = 0;
+    while (i + run < embeds.length && isPortraitEmbed(embeds[i + run])) run++;
+
+    if (run >= 4) {
+      // Pack 4 portrait embeds into a single 4-column row
+      elements.push(
+        <PaperFeed key={`quad-${keyIdx++}`} className="mb-[var(--spacing-2xl)]">
+          <div className="grid grid-cols-4 gap-[var(--spacing-md)]">
+            {embeds.slice(i, i + 4).map((e, idx) => (
+              <SingleEmbed key={idx} embed={e} />
+            ))}
+          </div>
+        </PaperFeed>,
+      );
+      i += 4;
+    } else if (run >= 2) {
       elements.push(
         <PaperFeed key={`pair-${keyIdx++}`} className="mb-[var(--spacing-2xl)]">
           <div className="grid grid-cols-2 gap-[var(--spacing-lg)]">
             <SingleEmbed embed={embed} />
-            <SingleEmbed embed={next} />
+            <SingleEmbed embed={embeds[i + 1]} />
           </div>
         </PaperFeed>,
       );

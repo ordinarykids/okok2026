@@ -1,9 +1,5 @@
 import type { NavSection } from "@/types/project";
-import {
-  sesameCurrentThinking,
-  sesameEarlyWork,
-  sesameExperiments,
-} from "@/data/sesame";
+import { sesameCurrentThinking, sesameEarlyWork } from "@/data/sesame";
 
 const toLink = (p: { slug: string; title: string }) => ({
   href: `/sesame/${p.slug}`,
@@ -19,10 +15,7 @@ export const sesameNavigation: NavSection[] = [
     label: "PREVIOUS",
     links: sesameEarlyWork.map(toLink),
   },
-  {
-    label: "EXPERIMENTS",
-    links: sesameExperiments.map(toLink),
-  },
+  // EXPERIMENTS section hidden — pages still live at /sesame/[slug] but unlinked
   {
     label: "QUESTIONS",
     links: [{ href: "/sesame/questions", title: "Questions" }],
@@ -38,6 +31,7 @@ export const navigation: NavSection[] = [
     label: "WORK",
     links: [
       { href: "/projects/sage", title: "HeySage.ai" },
+      { href: "/projects/hello-intuit", title: "Hello Intuit" },
       { href: "/projects/kqed", title: "KQED" },
       { href: "/projects/aleph-rebrand", title: "Aleph" },
       { href: "/projects/exploratorium", title: "Exploratorium" },

@@ -1,6 +1,6 @@
 import { PageWrapper } from "@/components/layout/page-wrapper";
 import { SesameGate } from "@/components/sesame/sesame-gate";
-import { SesameContent } from "@/components/sesame/sesame-content";
+import { CVContent } from "@/components/cv/home-content";
 
 export const metadata = {
   title: "Jason Herring",
@@ -11,7 +11,7 @@ export default function SesamePage() {
   return (
     <PageWrapper>
       <SesameGate>
-        <SesameContent />
+        <CVContent />
       </SesameGate>
     </PageWrapper>
   );

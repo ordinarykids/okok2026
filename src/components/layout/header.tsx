@@ -10,21 +10,23 @@ import { useEarcon } from "@/hooks/use-earcon";
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
-  const isSesame = pathname.startsWith("/sesame");
+  const isSesame = pathname.startsWith("/sesame") || pathname === "/cv";
   const isHome = pathname === "/";
   const isAuth = pathname === "/auth";
   const nav = isSesame ? sesameNavigation : navigation;
   const earcon = useEarcon();
+  const clickEarcon = useEarcon("/sounds/earcon-done.wav");
 
   // Pre-load earcon buffer on first pointer event anywhere
   useEffect(() => {
     const handler = () => {
       earcon.init();
+      clickEarcon.init();
       window.removeEventListener("pointerdown", handler);
     };
     window.addEventListener("pointerdown", handler, { once: true });
     return () => window.removeEventListener("pointerdown", handler);
-  }, [earcon]);
+  }, [earcon, clickEarcon]);
 
   // Home + auth pages render their own chrome
   if (isHome || isAuth) return null;
@@ -56,6 +58,7 @@ export function Header() {
                       href={link.href}
                       className={`${isActive ? "underline" : ""}`}
                       onMouseEnter={earcon.play}
+                      onClick={clickEarcon.play}
                     >
                       {link.title}
                     </Link>
@@ -75,6 +78,7 @@ export function Header() {
                         href={link.href}
                         className={`${isActive ? "underline" : ""}`}
                         onMouseEnter={earcon.play}
+                        onClick={clickEarcon.play}
                       >
                         {link.title}
                       </Link>
