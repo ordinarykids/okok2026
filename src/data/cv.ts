@@ -65,7 +65,7 @@ export const cv: CVData = {
         "Built multi-modal prototypes and conversational AI systems exploring how voice, vision, and ambient intelligence reshape financial interactions.",
       bullets: [
         "Designed and built a real-time AI personality engine from the ground up \u2014 a living framework where natural language, emotional intelligence, and embodied avatars converge.",
-        "Pioneered ultra-low-latency conversational pipelines (Vapi, Hume AI, LiveKit, HeyGen) creating digital agents that are character-driven and emotionally present.",
+        "Prototyped ultra-low-latency conversational pipelines (Vapi, LiveKit, HeyGen) creating digital agents that are character-driven and emotionally present.",
         "Built hands-on workshops that seeded organization-wide momentum: Demystifying Python, Shipping Conversations, AI Avatars and Voice.",
       ],
     },
@@ -172,14 +172,14 @@ export const cv: CVData = {
   references: [
     {
       name: "Jodi Twilleger",
-      title: "ECD \u2014 Collins, Buck, Hush",
+      title: "ECD \u2014 Collins, Magic Leap, Hush",
       email: "",
     },
-    {
-      name: "Scott Barry",
-      title: "Founder \u2014 Rose, Plant Paper",
-      email: "",
-    },
+    // {
+    //   name: "Scott Barry",
+    //   title: "Founder \u2014 Rose, Plant Paper",
+    //   email: "",
+    // },
     {
       name: "Justin Marr",
       title: "Design Director \u2014 Uber, Intuit",
@@ -195,10 +195,10 @@ export const cv: CVData = {
       title: "SVP Strategic Partnerships \u2014 KQED",
       email: "",
     },
-    {
-      name: "Lowell Robinson",
-      title: "Senior Producer, Voice & AI \u2014 KQED",
-      email: "",
-    },
+    // {
+    //   name: "Lowell Robinson",
+    //   title: "Senior Producer, Voice & AI \u2014 KQED",
+    //   email: "",
+    // },
   ],
 };
