@@ -2,16 +2,6 @@ import type { Embed, Experiment, ImageAsset, Project } from "@/types/project";
 import { experiments } from "@/data/experiments";
 import { projects } from "@/data/projects";
 
-/**
- * Password hash for the sesame gate.
- * To change the password, run in Node:
- *   require("crypto").createHash("sha256").update("newpassword").digest("hex")
- *
- * Current password: "let's talk"
- */
-export const SESAME_HASH =
-  "77dfcc0955728960f2c2c055b9da41db51389caebf1fab8b70f61e701e79507a";
-
 /** Used when an experiment has no image block before video or text-only bodies. */
 const LAB_FALLBACK_IMAGE: ImageAsset = {
   src: "/images/experiments/junk-drawer/01.jpg",
@@ -81,7 +71,15 @@ function experimentToSesameProject(exp: Experiment): Project {
 
 /** Current thinking — active projects and recent provocations. */
 const CURRENT_THINKING_SLUGS = {
-  projects: ["sage", "hello-intuit"] as const,
+  projects: [
+    "sage",
+    "hello-intuit",
+    "intuit-ai",
+    "delphi",
+    "delphi-context",
+    "horizon",
+    "conversation-studio",
+  ] as const,
   experiments: ["her", "lead-lingo", "earcon-generator"] as const,
 };
 

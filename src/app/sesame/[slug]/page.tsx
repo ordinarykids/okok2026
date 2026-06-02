@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { sesameProjects } from "@/data/sesame";
 import { PageWrapper } from "@/components/layout/page-wrapper";
 import { ProjectContent } from "@/components/project/project-content";
-import { SesameGate } from "@/components/sesame/sesame-gate";
 
 interface SesameProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -18,7 +17,6 @@ export async function generateMetadata({ params }: SesameProjectPageProps) {
   if (!project) return { title: "Not Found" };
   return {
     title: `Jason Herring`,
-    robots: { index: false, follow: false },
   };
 }
 
@@ -32,9 +30,7 @@ export default async function SesameProjectPage({
 
   return (
     <PageWrapper>
-      <SesameGate>
-        <ProjectContent project={project} />
-      </SesameGate>
+      <ProjectContent project={project} />
     </PageWrapper>
   );
 }

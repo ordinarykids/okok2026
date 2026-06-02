@@ -1179,6 +1179,180 @@ export const projects: Project[] = [
     tags: ["content", "events", "data-visualization", "wearable", "nike"],
     category: "selected",
   },
+  {
+    slug: "intuit-ai",
+    title: "Intuit AI",
+    date: "2026-02-01",
+    role: "Concept, Design, Prototype",
+    client: "Intuit",
+    liveUrl: "https://intuit-ai-r1.vercel.app/",
+    shortDescription:
+      "A public front door for Intuit’s financial-AI work — a site that leads with experiments and research rather than press releases, framing the models already running inside TurboTax, QuickBooks, Credit Karma, and Mailchimp.",
+    longDescription: `<h3>The Problem</h3>
+<p>Intuit has been doing serious AI research for years — published papers at NeurIPS, EMNLP, EACL, models quietly working inside products used by a hundred million people. But almost none of that was legible from the outside. The work was real; the story wasn’t being told. This was an exploration of what it looks like to give that body of work a front door.</p>
+<h3>The Frame</h3>
+<p>The organizing line — “The world’s financial data talks to us first. Here’s what we’re building with it.” — sets the posture: confident, specific, and grounded in a genuine data advantage. Rather than a corporate “AI” landing page, the site is built like a research lab’s public face: lead with a featured experiment, show the work, name the people.</p>
+<h3>Structure</h3>
+<p>The page moves from a featured experiment (Delphi) into proof — AI-assisted returns, published research, resolution speed, the size of the team — then into peer-reviewed publications, press, the leadership behind the work, and university collaborations. Each section is designed to make the research feel active and human rather than abstract. The goal was a site that a researcher would be proud to share and a skeptic would actually believe.</p>`,
+    featuredImage: {
+      src: "/images/projects/intuit-ai/01.jpg",
+      alt: "Intuit AI — hero: The world’s financial data talks to us first",
+      width: 2880,
+      height: 1800,
+    },
+    images: [
+      {
+        src: "/images/projects/intuit-ai/02.jpg",
+        alt: "Intuit AI — Introducing Delphi, the featured experiment",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/images/projects/intuit-ai/03.jpg",
+        alt: "Intuit AI — featured publications and press coverage",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/images/projects/intuit-ai/04.jpg",
+        alt: "Intuit AI — leadership and university research collaborations",
+        width: 2880,
+        height: 1800,
+      },
+    ],
+    tags: ["ai", "product-design", "research", "intuit", "web"],
+    category: "selected",
+  },
+  {
+    slug: "conversation-studio",
+    title: "Conversation Studio",
+    date: "2026-03-01",
+    role: "Concept, Design, Prototype",
+    liveUrl: "https://futures-offsite.vercel.app/",
+    shortDescription:
+      "A real-time conversation prototype built for a design-futures offsite — a studio for exploring what it feels like to talk with, and design alongside, a live AI rather than type at one.",
+    longDescription: `<h3>Context</h3>
+<p>This was built as a provocation for a design-futures offsite: a working sketch instead of a slide deck. The premise was that conversation — spoken, real-time, two-way — is itself a design surface, and the only way to feel that is to actually sit inside one.</p>
+<h3>The Idea</h3>
+<p>Conversation Studio runs a live, low-latency session (built on a real-time WebRTC stack) where a person can talk with an AI while a selectable “studio” style shapes what comes back. Switching presets reframes the same conversation — a way to make the abstract question “what should this feel like?” into something you can hear and steer in the moment.</p>
+<h3>Why It Matters</h3>
+<p>It’s deliberately rough — a tool for a room, not a product. But it sits squarely in the thread I keep pulling on across this work: that voice and real-time presence change the design problem entirely, and that the fastest way to think about a future is to build a crude, honest version of it and have a real conversation with it.</p>`,
+    featuredImage: {
+      src: "/images/projects/conversation-studio/01.jpg",
+      alt: "Conversation Studio — Design Futures real-time conversation prototype with style presets",
+      width: 2880,
+      height: 1800,
+    },
+    images: [],
+    tags: ["ai", "voice", "real-time", "prototype", "design-futures"],
+    category: "selected",
+  },
+  {
+    slug: "horizon",
+    title: "Project Horizon",
+    date: "2026-03-15",
+    role: "Concept, Design, Prototype",
+    liveUrl: "https://ged-project-horizon.vercel.app/",
+    shortDescription:
+      "A voice-first assistant prototype where personality is a dial and the interface paints data on demand — built to test how persona and a reactive visual canvas change the feel of a spoken conversation.",
+    longDescription: `<h3>The Idea</h3>
+<p>Horizon is a sandbox for a single question: what happens to a voice assistant when persona becomes a control surface and the screen reacts to what’s being said? Instead of one fixed voice, there’s a rack of presets — Std, Snap, Zen, Advisor, Cold, Hype, Gen Z, Therapist, Comedian, Check-In — each a different posture for the same underlying system.</p>
+<h3>Voice Plus a Canvas</h3>
+<p>The assistant is built to show, not just tell: the system is instructed to surface data visually “when needed” rather than narrate numbers. Speech is shaped with SSML for natural pacing, and the prompt is tuned hard against over-talking — short, confident, action-oriented, never more than it needs to be. The editable system prompt is exposed right in the interface so the character can be re-tuned live.</p>
+<h3>Why I Built It</h3>
+<p>This continues the work I care most about — conversation as a medium, and the connective tissue between a person and a computer. Horizon is the test rig: a place to feel how much of a “relationship” with an interface comes from latency, persona, and the willingness to stay quiet, versus the words themselves.</p>`,
+    featuredImage: {
+      src: "/images/projects/horizon/01.jpg",
+      alt: "Project Horizon — voice assistant prototype with persona presets and editable system prompt",
+      width: 2880,
+      height: 1800,
+    },
+    images: [],
+    tags: ["ai", "voice", "interface", "prototype", "ssml"],
+    category: "selected",
+  },
+  {
+    slug: "delphi",
+    title: "Delphi",
+    date: "2026-01-15",
+    role: "Concept, Design, Prototype",
+    client: "Intuit",
+    liveUrl: "https://delphi-fe.vercel.app/idea-01",
+    shortDescription:
+      "A product concept for Delphi — an AI that doesn’t just answer questions but gives opinions, turning a small business’s books into the point of view of a seasoned CFO.",
+    longDescription: `<h3>Origin</h3>
+<p>Delphi came out of an Intuit innovation sprint with one sharp question: what if AI could advise a small business the way a seasoned CFO would — not answer questions, but give opinions? Most financial AI retrieves and summarizes. Delphi is designed to take a position.</p>
+<h3>The Positioning</h3>
+<p>This concept and landing page work out how to make that believable. The argument is built on a real asset: aggregated, anonymized patterns from millions of QuickBooks businesses and decades of outcomes — a dataset no competitor can match. So Delphi isn’t a chatbot bolted onto a dashboard; it’s advisory-first, where every interaction is shaped to end in a clear, grounded recommendation.</p>
+<h3>The Design Problem</h3>
+<p>The hard part isn’t the data — it’s trust. An opinion is only useful if you believe it. So the page is structured to earn that: a simple three-step path from QuickBooks login to insight, the scale of the data made concrete, and four pillars of advisory — margin, cash flow, big decisions, benchmarking — each phrased as something Delphi <em>says</em>, not a feature it has.</p>`,
+    featuredImage: {
+      src: "/images/projects/delphi/01.jpg",
+      alt: "Delphi — hero: Hi, I’m Delphi, your AI business advisor by Intuit",
+      width: 2880,
+      height: 1800,
+    },
+    images: [
+      {
+        src: "/images/projects/delphi/02.jpg",
+        alt: "Delphi — how it works: from login to insight in under two minutes",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/images/projects/delphi/03.jpg",
+        alt: "Delphi — four pillars of business advisory",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/images/projects/delphi/04.jpg",
+        alt: "Delphi — built different, on purpose: from an innovation lab to Intuit.ai",
+        width: 2880,
+        height: 1800,
+      },
+      {
+        src: "/images/projects/delphi/05.jpg",
+        alt: "Delphi — closing: stop wondering, start deciding",
+        width: 2880,
+        height: 1800,
+      },
+    ],
+    tags: ["ai", "product-design", "fintech", "intuit", "advisory"],
+    category: "selected",
+  },
+  {
+    slug: "delphi-context",
+    title: "Delphi — Same Model, Different Context",
+    date: "2026-02-15",
+    role: "Concept, Design, Prototype",
+    client: "Intuit",
+    liveUrl: "https://delphi-fe.vercel.app/intuitai-18-option-3",
+    shortDescription:
+      "An interactive proof for Delphi’s core claim: same model, two contexts. Ask one small-business question and watch a generic AI and a context-rich Delphi answer side by side — then see what actually happened six months later.",
+    longDescription: `<h3>The Argument</h3>
+<p>The point of this demo is to make an abstract claim visceral: the model isn’t the moat — the context is. The same underlying AI, given two different views of a business, gives two very different answers. One of them is generic. One of them could save the business.</p>
+<h3>How It Works</h3>
+<p>You pick a real-feeling small business — a dental practice, a charter company, a chimney service — and ask one question both ways. The “General AI” sees only the books. Delphi sees the same books <em>plus</em> a State of Business read, detected signals, and a peer index built from millions of anonymized businesses. The two answers stream in side by side, and you can reveal exactly what context each side was given.</p>
+<h3>The Payoff</h3>
+<p>The generic answer hedges — “that’s a big decision, talk to your CPA.” Delphi names the number: you’re burning $99K a month, your payroll-to-revenue is at 73% against a healthy 50–55%, peers your size run lean — fix that first, revisit expansion in Q3. Then the demo jumps forward six months to show what following each call would actually have been worth. It’s the most persuasive way I found to argue that context, not raw model capability, is where the value lives.</p>`,
+    featuredImage: {
+      src: "/images/projects/delphi-context/01.jpg",
+      alt: "Delphi — Same model, different context: pick a business and ask both AIs",
+      width: 2880,
+      height: 1800,
+    },
+    images: [
+      {
+        src: "/images/projects/delphi-context/02.jpg",
+        alt: "Delphi — side-by-side comparison: General AI (books only) vs Delphi (books + peer context)",
+        width: 2880,
+        height: 1800,
+      },
+    ],
+    tags: ["ai", "product-design", "fintech", "intuit", "prototype"],
+    category: "selected",
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {

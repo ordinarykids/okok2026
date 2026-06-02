@@ -22,6 +22,8 @@ export interface Project {
   client?: string;
   shortDescription: string;
   longDescription: string;
+  /** Optional link to the live site / prototype, rendered in the title block. */
+  liveUrl?: string;
   /** When omitted, the project page opens with the title block (no hero image). */
   featuredImage?: ImageAsset;
   images: ImageAsset[];

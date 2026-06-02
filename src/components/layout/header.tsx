@@ -10,9 +10,8 @@ import { useEarcon } from "@/hooks/use-earcon";
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
-  const isSesame = pathname.startsWith("/sesame") || pathname === "/cv";
-  const isHome = pathname === "/";
-  const isAuth = pathname === "/auth";
+  const isSesame =
+    pathname === "/" || pathname.startsWith("/sesame") || pathname === "/cv";
   const nav = isSesame ? sesameNavigation : navigation;
   const earcon = useEarcon();
   const clickEarcon = useEarcon("/sounds/earcon-done.wav");
@@ -27,9 +26,6 @@ export function Header() {
     window.addEventListener("pointerdown", handler, { once: true });
     return () => window.removeEventListener("pointerdown", handler);
   }, [earcon, clickEarcon]);
-
-  // Home + auth pages render their own chrome
-  if (isHome || isAuth) return null;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">
