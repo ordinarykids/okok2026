@@ -50,6 +50,7 @@ export const navigation: NavSection[] = [
   {
     label: "LAB",
     links: [
+      { href: "/experiments/veo-day-one", title: "Veo, Day One" },
       { href: "/experiments/her", title: "Her" },
       { href: "/experiments/early-covid-gans", title: "Covid GANs" },
       {

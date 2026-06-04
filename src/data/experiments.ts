@@ -595,6 +595,25 @@ export const experiments: Experiment[] = [
     ],
     tags: ["audio", "AI", "design-tool", "earcon", "voice", "trust"],
   },
+  {
+    slug: "veo-day-one",
+    title: "Veo, Day One",
+    date: "2025-05-20",
+    description:
+      "What I made on the first morning Veo opened the gates — including a single prompt that cost $175 and went straight in the bin. Notes from the gold-rush hours of text-to-video, when every render was a bet.",
+    content: [
+      {
+        type: "text",
+        body: "<p>The morning Veo opened up, I did what I always do with a new model: I tried to break it before I tried to use it. Text-to-video had crossed some threshold overnight — you could type a sentence and get back something that looked like footage, not a tech demo. So I spent the first day in a kind of gold-rush fever, queuing generations, refining prompts, and watching the meter climb.</p><p>Because that is the other thing about day one: every render is a bet. These are not free clips — each generation costs real money, and the ones you actually want are expensive. I kept chasing a specific shot in my head: re-roll, tweak, re-roll again. By the time I stepped back I had put $175 into a single prompt. The result is the video below, and its title says exactly how I felt about it — <em>dumped</em>. Straight in the bin.</p><p>I keep this one in the lab on purpose. It is a small monument to the cost of curiosity at the precise moment a technology becomes possible — when the prompts are expensive, the outputs are unpredictable, and you pay, gladly, to be early. The $175 was not for the clip. It was for finding out what the model would and would not do, on the first day anyone could ask.</p>",
+      },
+      {
+        type: "youtube",
+        embedId: "NIgnR3p-Dn4",
+        title: "One hundred seventy five dollars — dumped",
+      },
+    ],
+    tags: ["generative", "AI", "veo", "text-to-video", "video", "lab"],
+  },
 ];
 
 export function getExperiment(slug: string): Experiment | undefined {
