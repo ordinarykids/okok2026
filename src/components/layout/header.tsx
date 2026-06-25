@@ -10,12 +10,11 @@ import { useEarcon } from "@/hooks/use-earcon";
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
-  const isOk = pathname === "/ok" || pathname.startsWith("/ok/");
-  const isSesame =
-    !isOk &&
-    (pathname === "/" || pathname.startsWith("/sesame") || pathname === "/cv");
+  const isOk =
+    pathname === "/ok" || pathname.startsWith("/ok/") || pathname === "/cv";
+  const isSesame = !isOk && pathname.startsWith("/sesame");
   const nav = isOk ? okNavigation : isSesame ? sesameNavigation : navigation;
-  const homeHref = isOk ? "/ok" : "/";
+  const homeHref = "/ok";
   const earcon = useEarcon();
   const clickEarcon = useEarcon("/sounds/earcon-done.wav");
 
@@ -29,6 +28,9 @@ export function Header() {
     window.addEventListener("pointerdown", handler, { once: true });
     return () => window.removeEventListener("pointerdown", handler);
   }, [earcon, clickEarcon]);
+
+  // The unlock gate renders its own full-screen chrome.
+  if (pathname === "/unlock") return null;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">

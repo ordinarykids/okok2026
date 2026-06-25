@@ -1,8 +1,14 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { PretextWords } from "@/components/motion/pretext-words";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // The unlock gate renders its own full-screen chrome.
+  if (pathname === "/unlock") return null;
+
   return (
     <footer className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pb-[var(--spacing-2xl)] pt-[var(--spacing-4xl)]">
       <div className="h-px bg-rule" />

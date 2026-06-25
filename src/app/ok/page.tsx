@@ -1,5 +1,4 @@
 import { PageWrapper } from "@/components/layout/page-wrapper";
-import { OkGate } from "@/components/ok/ok-gate";
 import { CVContent } from "@/components/cv/home-content";
 
 export const metadata = {
@@ -10,9 +9,7 @@ export const metadata = {
 export default function OkPage() {
   return (
     <PageWrapper>
-      <OkGate>
-        <CVContent />
-      </OkGate>
+      <CVContent />
     </PageWrapper>
   );
 }

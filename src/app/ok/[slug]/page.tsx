@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { sesameProjects } from "@/data/sesame";
 import { PageWrapper } from "@/components/layout/page-wrapper";
 import { ProjectContent } from "@/components/project/project-content";
-import { OkGate } from "@/components/ok/ok-gate";
 
 interface OkProjectPageProps {
   params: Promise<{ slug: string }>;
@@ -30,9 +29,7 @@ export default async function OkProjectPage({ params }: OkProjectPageProps) {
 
   return (
     <PageWrapper>
-      <OkGate>
-        <ProjectContent project={project} />
-      </OkGate>
+      <ProjectContent project={project} />
     </PageWrapper>
   );
 }

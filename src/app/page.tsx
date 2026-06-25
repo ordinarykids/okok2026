@@ -1,14 +1,6 @@
-import { PageWrapper } from "@/components/layout/page-wrapper";
-import { CVContent } from "@/components/cv/home-content";
+import { redirect } from "next/navigation";
 
-export const metadata = {
-  title: "Jason Herring",
-};
-
+// The site lives behind the /ok section now (gated by middleware).
 export default function HomePage() {
-  return (
-    <PageWrapper>
-      <CVContent />
-    </PageWrapper>
-  );
+  redirect("/ok");
 }
