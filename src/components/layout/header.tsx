@@ -4,15 +4,18 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
-import { navigation, sesameNavigation } from "@/data/navigation";
+import { navigation, sesameNavigation, okNavigation } from "@/data/navigation";
 import { useEarcon } from "@/hooks/use-earcon";
 
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
+  const isOk = pathname === "/ok" || pathname.startsWith("/ok/");
   const isSesame =
-    pathname === "/" || pathname.startsWith("/sesame") || pathname === "/cv";
-  const nav = isSesame ? sesameNavigation : navigation;
+    !isOk &&
+    (pathname === "/" || pathname.startsWith("/sesame") || pathname === "/cv");
+  const nav = isOk ? okNavigation : isSesame ? sesameNavigation : navigation;
+  const homeHref = isOk ? "/ok" : "/";
   const earcon = useEarcon();
   const clickEarcon = useEarcon("/sounds/earcon-done.wav");
 
@@ -31,7 +34,7 @@ export function Header() {
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">
       <div className="mb-[var(--spacing-sm)]">
         <Link
-          href="/"
+          href={homeHref}
           className="text-[16px] font-light tracking-tight hover:no-underline"
         >
           Jason Herring
