@@ -46,15 +46,7 @@ export const cv: CVData = {
   experience: [
     {
       company: "Intuit",
-      role: "Senior Staff Design Technologist",
-      period: "JUN 2026 — PRESENT",
-      description:
-        "Leading hands-on design technology at the frontier of Intuit’s AI work — architecting and shipping multi-modal, agentic prototypes that turn speculative ideas into experiences leadership can hold in their hands.",
-      bullets: [],
-    },
-    {
-      company: "Intuit",
-      role: "Group Manager, Design Technology — Foresight",
+      role: "Senior Staff Design Technologist and Group Manager, Design — Foresight",
       period: "FEB 2026 — JUN 2026",
       description:
         "Led Design Technology within Foresight, Intuit’s 100+ person innovation team, composing agentic systems — multi-agent architectures that orchestrate voice, vision, and ambient intelligence into coherent product experiences.",
@@ -157,30 +149,6 @@ export const cv: CVData = {
         "Collaborated with Nike, Stüssy, UNDFTD, Vans OTW, Pepsi, DreamWorks, and SA Studios — work spanning digital products, retail environments, and large-scale installations.",
         "Produced a microsite and directed six short films for Nike NSW (Sportswear).",
       ],
-    },
-    {
-      company: "Oven Digital",
-      role: "Senior Web Developer",
-      period: "SEP 2000 — JUL 2002",
-      description:
-        "Lead developer on numerous projects — primarily DHTML (HTML / CSS / JavaScript), with Java and JSP.",
-      bullets: [],
-    },
-    {
-      company: "Inspired Arts",
-      role: "Senior Web Developer",
-      period: "MAR 1999 — SEP 2001",
-      description:
-        "Led a small team of creatives and coders to build the website for Bank of California and other regional accounts; also led design on the FUCT website.",
-      bullets: [],
-    },
-    {
-      company: "iXL",
-      role: "Jr Web Designer",
-      period: "MAR 1998 — APR 1999",
-      description:
-        "The job where I earned my chops — built homepages for Holiday Inn, Mazda, AOL, Andersen Consulting, and more.",
-      bullets: [],
     },
   ],
   education: [
