@@ -6,8 +6,9 @@ import { PretextWords } from "@/components/motion/pretext-words";
 export function Footer() {
   const pathname = usePathname();
 
-  // The unlock gate renders its own full-screen chrome.
-  if (pathname === "/unlock") return null;
+  // Home, the CV, and the unlock gate render with no nav chrome.
+  if (pathname === "/" || pathname === "/cv" || pathname === "/unlock")
+    return null;
 
   return (
     <footer className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pb-[var(--spacing-2xl)] pt-[var(--spacing-4xl)]">

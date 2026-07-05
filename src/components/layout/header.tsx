@@ -29,8 +29,9 @@ export function Header() {
     return () => window.removeEventListener("pointerdown", handler);
   }, [earcon, clickEarcon]);
 
-  // The unlock gate renders its own full-screen chrome.
-  if (pathname === "/unlock") return null;
+  // Home, the CV, and the unlock gate render with no nav chrome.
+  if (pathname === "/" || pathname === "/cv" || pathname === "/unlock")
+    return null;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">

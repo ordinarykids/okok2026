@@ -14,6 +14,9 @@ const AUTH_TOKEN =
 const COOKIE_NAME = "site-auth";
 
 export function middleware(req: NextRequest) {
+  // The home page is public.
+  if (req.nextUrl.pathname === "/") return NextResponse.next();
+
   const token = req.cookies.get(COOKIE_NAME)?.value;
   if (token === AUTH_TOKEN) return NextResponse.next();
 

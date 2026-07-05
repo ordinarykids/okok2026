@@ -3,6 +3,7 @@ import { CVContent } from "@/components/cv/home-content";
 
 export const metadata = {
   title: "Jason Herring \u2014 CV",
+  robots: { index: false, follow: false },
 };
 
 export default function CVPage() {

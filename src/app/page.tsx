@@ -1,6 +1,13 @@
-import { redirect } from "next/navigation";
+export const metadata = {
+  title: "OrdinaryKids",
+};
 
-// The site lives behind the /ok section now (gated by middleware).
 export default function HomePage() {
-  redirect("/ok");
+  return (
+    <main className="flex min-h-screen items-center justify-center">
+      <h1 className="text-[clamp(28px,6vw,64px)] font-light tracking-tight">
+        ordinarykids
+      </h1>
+    </main>
+  );
 }
