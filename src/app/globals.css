@@ -20,6 +20,36 @@
   font-display: swap;
 }
 
+/* Atkinson Hyperlegible — Braille Institute (via googlefonts/atkinson-hyperlegible) */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../fonts/AtkinsonHyperlegible-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../fonts/AtkinsonHyperlegible-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../fonts/AtkinsonHyperlegible-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("../fonts/AtkinsonHyperlegible-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --paper: #f9f9f9;
   --ink: #1a1a1a;
@@ -42,7 +72,8 @@
 
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, "SF Mono",
     Menlo, Consolas, "Liberation Mono", monospace;
-  --font-heading: "Geist Black", "Geist Variable", system-ui, sans-serif;
+  --font-sans: "Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+  --font-heading: "Atkinson Hyperlegible", system-ui, sans-serif;
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;
@@ -63,7 +94,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
