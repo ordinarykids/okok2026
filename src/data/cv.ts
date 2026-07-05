@@ -2,10 +2,9 @@ import type { CVData } from "@/types/project";
 
 export const cv: CVData = {
   name: "Jason Herring",
-  title: "Design Technologist / AI + Voice Systems / Builder",
+  title: "Design Technologist / Principal — Creative Engineer",
   bio: [
-    "We’re living through the most exciting moment in creative technology — and I’m building at its edge. Design and engineering have collapsed into each other. AI isn’t a tool anymore; it’s a collaborator, a medium, a new kind of raw material. For the first time, the distance between imagining something and making it real is nearly zero, and I’ve never felt more capable of building anything I can dream up.",
-    "As a Design Technologist at Intuit, I lead experimentation where design, AI, and product vision converge — transforming speculative ideas into high-fidelity prototypes that change how leadership thinks about what’s possible. My work lives in that charged space between storytelling and engineering: multimodal intelligence, voice interfaces, and dynamic systems that feel genuinely alive.",
+    "Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering, now leading AI prototyping on Intuit’s Foresight team: conversational and voice interfaces, real-time personality engines, and agentic systems that move from speculative demo to shipped product. Recently shipped Intuit Labs (public beta to 1M+ users) and Delphi (delphi.intuit.com).",
     "I’ve architected AI-driven personality engines, created lifelike conversational avatars, and led immersive workshops that give creatives and executives hands-on fluency with emerging tech. Whether I’m teaching designers to code or designing systems that feel human, I’m chasing the same question: what happens when intelligence itself becomes a creative medium?",
     "This is the moment. The tools are here. The only limit is what we’re willing to prototype. I don’t wait for the future — I make it visible. The goal: move beyond imagining the future, and prototype it.",
   ],
@@ -46,40 +45,16 @@ export const cv: CVData = {
   experience: [
     {
       company: "Intuit",
-      role: "Senior Staff Design Technologist and Group Manager, Design — Foresight",
-      period: "FEB 2026 — JUN 2026",
+      role: "Senior Staff Design Technologist — Foresight (AI)",
+      period: "APR 2024 — PRESENT",
       description:
-        "Led Design Technology within Foresight, Intuit’s 100+ person innovation team, composing agentic systems — multi-agent architectures that orchestrate voice, vision, and ambient intelligence into coherent product experiences.",
+        "Key builder on Foresight, Intuit’s 100+ person AI innovation team (reporting into the Chief AI Officer org). Promoted Staff → Senior Staff, and served as Group Manager (Feb–Jun 2026) before returning to a senior IC leadership track to keep building.",
       bullets: [
-        "Managed builders across multi-modal prototyping and experience innovation, driving rapid experimentation across design, engineering, and AI.",
-        "Architected and shipped agentic systems — autonomous AI agents that reason, act, and collaborate across voice, vision, and data pipelines.",
-        "Delivered flagship demos across executive forums and summits, shifting organizational culture around AI as a creative medium.",
-        "Member of the senior leadership team, reporting directly to Intuit’s Chief AI Officer.",
-      ],
-    },
-    {
-      company: "Intuit",
-      role: "Senior Staff Design Technologist — AI + Futures",
-      period: "FEB 2025 — FEB 2026",
-      description:
-        "Key builder on Futures, a 100+ person innovation team. The interfaces of the future won’t live on a single screen — they’ll flow across devices, voices, and contexts. I led rapid experimentation to discover what that actually feels like.",
-      bullets: [
-        "Built high-fidelity provocations for leadership — functional prototypes showing how voice, vision, and ambient intelligence could reshape financial interactions with real data, natural language, and multi-device ecosystems.",
-        "Designed and built a real-time AI personality engine from the ground up — a living framework where natural language, emotional intelligence, and embodied avatars converge.",
-        "Pioneered ultra-low-latency conversational pipelines (Vapi, Hume AI, LiveKit, HeyGen), creating character-driven agents that don’t just respond — they communicate, emotionally present.",
-        "Delivered flagship demos across executive forums and built learning experiences — Demystifying Python, Shipping Conversations, AI Avatars and Voice — that seeded organization-wide momentum.",
-      ],
-    },
-    {
-      company: "Intuit",
-      role: "Staff Design Technologist — AI + Futures",
-      period: "APR 2024 — FEB 2025",
-      description:
-        "Built functional prototypes exploring how voice, vision, and ambient intelligence could change financial interactions — turning speculative ideas into tools leadership could actually use.",
-      bullets: [
-        "Built multi-modal prototypes with real data, natural language, and multi-device flows across design, engineering, and AI.",
-        "Designed and built real-time conversational pipelines from scratch — low-latency, character-driven, emotionally present (Vapi, Hume AI, LiveKit, HeyGen).",
-        "Delivered demos at executive forums and built hands-on workshops to help teams start building with AI — Demystifying Python, Shipping Conversations, AI Avatars and Voice.",
+        "Shipped Intuit Labs — a public beta live to 1M+ international users, with rollout to all of QuickBooks underway — the surface that turns AI innovation prototypes into shipping product.",
+        "Launched Delphi (delphi.intuit.com), an AI business advisor that turns QuickBooks data into forward-looking recommendations.",
+        "Designed and built a real-time AI personality engine from scratch — natural language, emotional intelligence, and embodied avatars — on ultra-low-latency voice pipelines (Vapi, Hume, LiveKit, HeyGen).",
+        "Delivered flagship demos at executive forums and summits that shifted how leadership invests in AI as a product medium.",
+        "Built org-wide AI-literacy workshops (Demystifying Python, Shipping Conversations, AI Avatars & Voice), seeding hands-on fluency across teams.",
       ],
     },
     {
@@ -130,11 +105,9 @@ export const cv: CVData = {
       description:
         "Formed in the midst of the dot-com fallout, OrdinaryKids produced over a decade of award-winning, thought-provoking work. By building mostly direct-to-client relationships, the studio shaped and augmented brands across the skate, architecture, and fashion worlds.",
       bullets: [
-        "Clients included MoMA, Nike NSW, Adidas Skateboarding, Arta Tequila, Aesop Rock, Tracy Chapman, Rebel8, The North Face, Stüssy, HUF, and BART.",
-        "Created an animated coloring-book web experience for Tracy Chapman / Elektra Records — recognized by Communication Arts and FWA.",
-        "Designed and developed an ecommerce experience for Stüssy in Flash and Magento — one of the last great Flash sites.",
-        "Directed the music video for Aesop Rock’s “None Shall Pass” — hand-drawn illustration meets digital animation.",
-        "Founded OKML, a 6-week Arduino workshop for creatives that culminated in gallery exhibitions.",
+        "Pioneered early Flash and creative-technology work that set a bar for interactive brand expression across sport, skate, fashion, music, and architecture.",
+        "Delivered flagship brand work for Nike (Skateboarding, Running, Sportswear), Adidas Skateboarding, and Brita, alongside cultural projects for MoMA, Stüssy, HUF, Tracy Chapman, and Aesop Rock — including the “None Shall Pass” music video.",
+        "Recognized with How Magazine Best of Show and a Communication Arts Interactive Annual cover; ran a small team that anchored the SF design scene and launched a generation of Bay Area careers.",
       ],
     },
     {
@@ -165,7 +138,7 @@ export const cv: CVData = {
   awards: [
     "How Magazine — Best of Show, Interactive Annual",
     "FWA — Site of the Day (multiple)",
-    "Communication Arts — Interactive Annual",
+    "Communication Arts — Interactive Annual (cover)",
     "Print Magazine — MoMA Design Takes on Risk",
     "One Club — Judge",
     "Featured in History of Web Design (Taschen)",
