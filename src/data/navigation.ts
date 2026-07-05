@@ -1,24 +1,37 @@
 import type { NavSection } from "@/types/project";
 import { sesameCurrentThinking, sesameEarlyWork } from "@/data/sesame";
 
-const toLink = (p: { slug: string; title: string }) => ({
-  href: `/sesame/${p.slug}`,
-  title: p.title,
-});
+const toLink =
+  (base: string) => (p: { slug: string; title: string }) => ({
+    href: `${base}/${p.slug}`,
+    title: p.title,
+  });
 
 export const sesameNavigation: NavSection[] = [
   {
     label: "CURRENT",
-    links: sesameCurrentThinking.map(toLink),
+    links: sesameCurrentThinking.map(toLink("/sesame")),
   },
   {
     label: "PREVIOUS",
-    links: sesameEarlyWork.map(toLink),
+    links: sesameEarlyWork.map(toLink("/sesame")),
   },
   // EXPERIMENTS section hidden — pages still live at /sesame/[slug] but unlinked
   {
-    label: "QUESTIONS",
-    links: [{ href: "/sesame/questions", title: "Questions" }],
+    label: "CV",
+    links: [{ href: "/cv", title: "Resume" }],
+  },
+];
+
+// Parallel navigation for the password-gated /ok section.
+export const okNavigation: NavSection[] = [
+  {
+    label: "CURRENT",
+    links: sesameCurrentThinking.map(toLink("/ok")),
+  },
+  {
+    label: "PREVIOUS",
+    links: sesameEarlyWork.map(toLink("/ok")),
   },
   {
     label: "CV",
@@ -50,6 +63,7 @@ export const navigation: NavSection[] = [
   {
     label: "LAB",
     links: [
+      { href: "/experiments/veo-day-one", title: "Veo, Day One" },
       { href: "/experiments/her", title: "Her" },
       { href: "/experiments/early-covid-gans", title: "Covid GANs" },
       {

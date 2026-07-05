@@ -67,6 +67,18 @@ export function ProjectContent({ project }: ProjectContentProps) {
           </div>
         </PaperFeed>
 
+        {project.liveUrl && (
+          <PaperFeed delay={0.35}>
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-[var(--spacing-md)] inline-block border border-ink px-[var(--spacing-md)] py-[var(--spacing-sm)] font-mono text-[10px] uppercase tracking-[0.2em] transition-colors hover:bg-ink hover:text-paper"
+            >
+              View Live ↗
+            </a>
+          </PaperFeed>
+        )}
       </div>
 
       {/* Project copy */}

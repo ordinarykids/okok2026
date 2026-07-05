@@ -4,16 +4,17 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "motion/react";
-import { navigation, sesameNavigation } from "@/data/navigation";
+import { navigation, sesameNavigation, okNavigation } from "@/data/navigation";
 import { useEarcon } from "@/hooks/use-earcon";
 
 export function Header() {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();
-  const isSesame = pathname.startsWith("/sesame") || pathname === "/cv";
-  const isHome = pathname === "/";
-  const isAuth = pathname === "/auth";
-  const nav = isSesame ? sesameNavigation : navigation;
+  const isOk =
+    pathname === "/ok" || pathname.startsWith("/ok/") || pathname === "/cv";
+  const isSesame = !isOk && pathname.startsWith("/sesame");
+  const nav = isOk ? okNavigation : isSesame ? sesameNavigation : navigation;
+  const homeHref = "/ok";
   const earcon = useEarcon();
   const clickEarcon = useEarcon("/sounds/earcon-done.wav");
 
@@ -28,14 +29,15 @@ export function Header() {
     return () => window.removeEventListener("pointerdown", handler);
   }, [earcon, clickEarcon]);
 
-  // Home + auth pages render their own chrome
-  if (isHome || isAuth) return null;
+  // Home, the CV, and the unlock gate render with no nav chrome.
+  if (pathname === "/" || pathname === "/cv" || pathname === "/unlock")
+    return null;
 
   return (
     <header className="mx-auto w-full max-w-[var(--content-max)] px-[var(--gutter)] pt-[var(--spacing-xl)]">
       <div className="mb-[var(--spacing-sm)]">
         <Link
-          href="/"
+          href={homeHref}
           className="text-[16px] font-light tracking-tight hover:no-underline"
         >
           Jason Herring

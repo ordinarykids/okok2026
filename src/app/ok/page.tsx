@@ -2,11 +2,11 @@ import { PageWrapper } from "@/components/layout/page-wrapper";
 import { CVContent } from "@/components/cv/home-content";
 
 export const metadata = {
-  title: "Jason Herring \u2014 CV",
+  title: "Jason Herring",
   robots: { index: false, follow: false },
 };
 
-export default function CVPage() {
+export default function OkPage() {
   return (
     <PageWrapper>
       <CVContent />

@@ -9,52 +9,53 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
-import { SESAME_HASH } from "@/data/sesame";
 import { XeroxText } from "@/components/motion/xerox-text";
 
-const SESSION_KEY = "sesame-auth";
-
-async function hashString(input: string): Promise<string> {
-  const encoded = new TextEncoder().encode(input);
-  const buffer = await crypto.subtle.digest("SHA-256", encoded);
-  return Array.from(new Uint8Array(buffer))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-export function AuthForm() {
+export function UnlockForm() {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
   const [shaking, setShaking] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // If already authed, bounce straight to sesame
   useEffect(() => {
-    const stored = sessionStorage.getItem(SESSION_KEY);
-    if (stored === SESAME_HASH) {
-      router.replace("/sesame");
-    }
-  }, [router]);
+    inputRef.current?.focus();
+  }, []);
 
-  // Auto-focus input
-  useEffect(() => {
-    if (inputRef.current) inputRef.current.focus();
+  const fail = useCallback(() => {
+    setError(true);
+    setShaking(true);
+    setTimeout(() => setShaking(false), 500);
+    setInput("");
+    setSubmitting(false);
+    inputRef.current?.focus();
   }, []);
 
   const attempt = useCallback(async () => {
-    const hash = await hashString(input.toLowerCase().trim());
-    if (hash === SESAME_HASH) {
-      sessionStorage.setItem(SESSION_KEY, SESAME_HASH);
-      router.push("/sesame");
-    } else {
-      setError(true);
-      setShaking(true);
-      setTimeout(() => setShaking(false), 500);
-      setInput("");
-      inputRef.current?.focus();
+    if (submitting) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/unlock", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: input }),
+      });
+      if (res.ok) {
+        const next = new URLSearchParams(window.location.search).get("next");
+        const dest =
+          next && next.startsWith("/") && !next.startsWith("//") && next !== "/"
+            ? next
+            : "/ok";
+        router.replace(dest);
+        router.refresh();
+        return;
+      }
+    } catch {
+      // network error — fall through to failure state
     }
-  }, [input, router]);
+    fail();
+  }, [input, router, submitting, fail]);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -64,7 +65,7 @@ export function AuthForm() {
   );
 
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center">
+    <main className="flex min-h-screen flex-col items-center justify-center px-[var(--gutter)]">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -96,6 +97,7 @@ export function AuthForm() {
             className="w-full border-b border-ink bg-transparent py-[var(--spacing-sm)] text-center font-mono text-[14px] tracking-[0.3em] outline-none placeholder:text-ink-faint focus:border-ink"
             autoComplete="off"
             spellCheck={false}
+            disabled={submitting}
           />
         </motion.div>
 
@@ -114,11 +116,12 @@ export function AuthForm() {
 
         <button
           onClick={attempt}
-          className="mt-[var(--spacing-2xl)] border border-ink px-[var(--spacing-xl)] py-[var(--spacing-sm)] text-[10px] uppercase tracking-[0.2em] transition-colors hover:bg-ink hover:text-paper"
+          disabled={submitting}
+          className="mt-[var(--spacing-2xl)] border border-ink px-[var(--spacing-xl)] py-[var(--spacing-sm)] text-[10px] uppercase tracking-[0.2em] transition-colors hover:bg-ink hover:text-paper disabled:opacity-50"
         >
           Enter
         </button>
       </motion.div>
-    </div>
+    </main>
   );
 }
