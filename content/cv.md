@@ -3,11 +3,11 @@ Title: Design Technologist / Principal — Creative Engineer
 
 ## Profile
 
-Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering, now leading AI prototyping on Intuit’s Foresight team: conversational and voice interfaces, real-time personality engines, and agentic systems that move from speculative demo to shipped product. Recently shipped Intuit Labs (public beta to 1M+ users) and Delphi (delphi.intuit.com).
+Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering. Currently shipping innovation out of Foresight, Intuit’s foundational AI team — including the new Intuit Labs and Delphi.
 
-I’ve architected AI-driven personality engines, created lifelike conversational avatars, and led immersive workshops that give creatives and executives hands-on fluency with emerging tech. Whether I’m teaching designers to code or designing systems that feel human, I’m chasing the same question: what happens when intelligence itself becomes a creative medium?
+I’ve explored and prototyped AI-driven personality engines, conversational streaming, and real-time avatars, and led immersive workshops that give creatives and executives hands-on fluency with emerging tech. Whether I’m teaching designers to code or designing systems that feel human, I’m chasing the same question: what happens when intelligence itself becomes a creative medium?
 
-This is the moment. The tools are here. The only limit is what we’re willing to prototype. I don’t wait for the future — I make it visible. The goal: move beyond imagining the future, and prototype it.
+What I’m looking for next is a place to build the future with forward-thinking optimists — people who’d rather put working things in front of real users.
 
 ## Skills
 
