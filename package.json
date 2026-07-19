@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cv": "node scripts/build-cv-data.mjs",
+    "cv:pdf": "node scripts/build-cv-pdf.mjs",
+    "prebuild": "node scripts/build-cv-data.mjs",
+    "resume:pdf": "node scripts/build-resume-pdf.mjs",
+    "resume:docx": "node scripts/build-resume-docx.mjs",
+    "resume": "npm run resume:docx && npm run resume:pdf"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.5",
@@ -25,6 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "agentation": "^3.0.2",
+    "docx": "^9.7.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
