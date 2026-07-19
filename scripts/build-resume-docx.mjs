@@ -6,7 +6,7 @@
  */
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { dirname, join, basename, isAbsolute } from "node:path";
 import {
   Document,
   Packer,
@@ -20,7 +20,14 @@ import {
 import { parseCv } from "./cv-parse.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const cv = parseCv(readFileSync(join(root, "content", "resume.md"), "utf8"));
+
+// Optional source arg lets you tailor per posting:
+//   node scripts/build-resume-docx.mjs content/resume-superhuman.md
+const srcArg = process.argv[2] || "content/resume.md";
+const srcPath = isAbsolute(srcArg) ? srcArg : join(root, srcArg);
+const slug = basename(srcArg).replace(/\.md$/i, "");
+
+const cv = parseCv(readFileSync(srcPath, "utf8"));
 
 const INK = "1A1A1A";
 const MUTED = "555555";
@@ -167,7 +174,7 @@ const doc = new Document({
 });
 
 mkdirSync(join(root, "cv"), { recursive: true });
-const out = join(root, "cv", "jason-herring-resume.docx");
+const out = join(root, "cv", `jason-herring-${slug}.docx`);
 const buf = await Packer.toBuffer(doc);
 writeFileSync(out, buf);
 console.log(`✓ ${out} (${cv.experience.length} roles, ${cv.skills.length} skills)`);

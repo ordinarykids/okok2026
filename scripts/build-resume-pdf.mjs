@@ -7,12 +7,19 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { dirname, join } from "node:path";
+import { dirname, join, basename, isAbsolute } from "node:path";
 import { tmpdir } from "node:os";
 import { parseCv } from "./cv-parse.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const cv = parseCv(readFileSync(join(root, "content", "resume.md"), "utf8"));
+
+// Optional source arg lets you tailor per posting:
+//   node scripts/build-resume-pdf.mjs content/resume-superhuman.md
+const srcArg = process.argv[2] || "content/resume.md";
+const srcPath = isAbsolute(srcArg) ? srcArg : join(root, srcArg);
+const slug = basename(srcArg).replace(/\.md$/i, "");
+
+const cv = parseCv(readFileSync(srcPath, "utf8"));
 
 const CHROME =
   process.env.CHROME_PATH ||
@@ -93,11 +100,11 @@ ${education}
   <p>${awards}</p>
 </body></html>`;
 
-const tmpHtml = join(tmpdir(), "ok-resume.html");
+const tmpHtml = join(tmpdir(), `ok-${slug}.html`);
 writeFileSync(tmpHtml, html);
 
 mkdirSync(join(root, "cv"), { recursive: true });
-const out = join(root, "cv", "jason-herring-resume.pdf");
+const out = join(root, "cv", `jason-herring-${slug}.pdf`);
 
 execFileSync(CHROME, [
   "--headless=new",
