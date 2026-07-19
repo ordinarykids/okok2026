@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "cv": "node scripts/build-cv-data.mjs",
+    "cv:pdf": "node scripts/build-cv-pdf.mjs",
+    "prebuild": "node scripts/build-cv-data.mjs"
   },
   "dependencies": {
     "@chenglou/pretext": "^0.0.5",
