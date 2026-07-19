@@ -6,9 +6,9 @@ export const cv: CVData = {
   "name": "Jason Herring",
   "title": "Design Technologist / Principal — Creative Engineer",
   "bio": [
-    "Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering. Currently shipping real customer impact with Foresight, Intuit’s AI innovation team — including the new Intuit Labs and Delphi.",
-    "I’ve explored and prototyped AI-driven personality engines, conversational streaming, and real-time avatars, and led immersive workshops that give creatives and executives hands-on fluency with emerging tech. Whether I’m teaching designers to code or designing systems that feel human, I’m chasing the same question: what happens when intelligence itself becomes a creative medium?",
-    "What I’m looking for next is a place to build the future with forward-thinking optimists — people who’d rather put working things in front of real users."
+    "Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering, now leading AI prototyping on Intuit’s Foresight team: conversational and voice interfaces, real-time personality engines, and agentic systems that move from speculative demo to shipped product. Recently shipped Intuit Labs (public beta to 1M+ users) and Delphi (delphi.intuit.com).",
+    "I’ve architected AI-driven personality engines, created lifelike conversational avatars, and led immersive workshops that give creatives and executives hands-on fluency with emerging tech. Whether I’m teaching designers to code or designing systems that feel human, I’m chasing the same question: what happens when intelligence itself becomes a creative medium?",
+    "This is the moment. The tools are here. The only limit is what we’re willing to prototype. I don’t wait for the future — I make it visible. The goal: move beyond imagining the future, and prototype it."
   ],
   "skills": [
     "Conversational AI / Voice / Multi-Modal",
@@ -103,20 +103,11 @@ export const cv: CVData = {
         "Pioneered generative and interactive work in ActionScript, Processing, and early creative-coding tools — building custom, code-driven visual systems, generative type and identity, and audio-reactive experiences years before \"creative technology\" was a discipline.",
         "Set the bar for interactive brand expression on the web, treating each site as a bespoke, experimental system rather than a template — motion, sound, and real-time behavior woven into the brand itself.",
         "Delivered flagship brand work for Nike (Skateboarding, Running, Sportswear), Adidas Skateboarding, and Brita, alongside cultural projects for MoMA, Stüssy, HUF, Tracy Chapman, and Aesop Rock — including the “None Shall Pass” music video.",
+        "Creative-directed the Nike Free visual center — the first public use of real Nike+ data in a marketing campaign — and produced a 56-page zine shot in London, NYC, and Tokyo.",
+        "Ran the Nike FuelBand influencer campaign in NYC: 60+ events in 90 days with a large content team; produced a microsite and directed six short films for Nike NSW (Sportswear).",
+        "Collaborated with Nike, Stüssy, UNDFTD, Vans OTW, Pepsi, DreamWorks, HUF, MoMA, and SA Studios — work spanning digital products, retail environments, and large-scale installations.",
         "Recognized with How Magazine Best of Show, a Communication Arts Interactive Annual cover, and FWA Site of the Day honors; work later archived in the Taschen History of Web Design.",
         "Ran a small, tight studio that anchored the SF design scene and launched a generation of Bay Area design and creative-technology careers."
-      ]
-    },
-    {
-      "company": "DualForces",
-      "role": "Partner & Creative Director",
-      "period": "SEP 2010 — DEC 2013",
-      "description": "A creative application studio working at the intersection of fashion, streetwear, and emerging culture — designing experiences that move fluidly between digital, physical, and cinematic worlds, merging art direction, technology, and cultural storytelling into one practice.",
-      "bullets": [
-        "Creative-directed the Nike Free visual center — the first public use of real Nike+ data in a marketing campaign — and produced a 56-page zine shot in London, NYC, and Tokyo.",
-        "Ran the Nike FuelBand influencer campaign in NYC: 60+ events in 90 days with a large content team.",
-        "Collaborated with Nike, Stüssy, UNDFTD, Vans OTW, Pepsi, DreamWorks, and SA Studios — work spanning digital products, retail environments, and large-scale installations.",
-        "Produced a microsite and directed six short films for Nike NSW (Sportswear)."
       ]
     }
   ],
@@ -135,30 +126,9 @@ export const cv: CVData = {
     "How Magazine — Best of Show, Interactive Annual",
     "FWA — Site of the Day (multiple)",
     "Communication Arts — Interactive Annual (cover)",
-    "Print Magazine — MoMA Design Takes on Risk",
+    "Print Magazine — showcase MoMA Design Takes on Risk",
     "One Club — Judge",
-    "Featured in History of Web Design (Taschen)"
+    "Featured in History of Web Design(Taschen)"
   ],
-  "references": [
-    {
-      "name": "Jodi Twilleger",
-      "title": "ECD — Collins, Magic Leap, Hush",
-      "email": ""
-    },
-    {
-      "name": "Justin Marr",
-      "title": "Design Director — Uber, Intuit",
-      "email": ""
-    },
-    {
-      "name": "Phouphet Sihavong",
-      "title": "Director, Applied AI — Intuit",
-      "email": ""
-    },
-    {
-      "name": "Tim Olson",
-      "title": "SVP Strategic Partnerships — KQED",
-      "email": ""
-    }
-  ]
+  "references": []
 };

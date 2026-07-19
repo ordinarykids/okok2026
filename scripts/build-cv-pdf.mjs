@@ -67,6 +67,33 @@ const references = cv.references
   .join("\n          ");
 const bio = cv.bio.map((p) => `<p>${esc(p)}</p>`).join("\n      ");
 
+/** Only render a sidebar section when it actually has content. */
+const sec = (label, inner) =>
+  inner && inner.trim()
+    ? `
+      <section>
+        <div class="label">${label}</div>
+        ${inner}
+      </section>`
+    : "";
+
+const aside = [
+  sec(
+    "Skills &amp; Expertise",
+    cv.skills.length ? `<ul class="tight">\n          ${skills}\n        </ul>` : "",
+  ),
+  sec("Select Clients", cv.clients.length ? `<p class="clients">${clients}</p>` : ""),
+  sec("Education", cv.education.length ? education : ""),
+  sec(
+    "Awards &amp; Recognition",
+    cv.awards.length ? `<ul class="tight">\n          ${awards}\n        </ul>` : "",
+  ),
+  sec(
+    "References",
+    cv.references.length ? `<ul class="refs">\n          ${references}\n        </ul>` : "",
+  ),
+].join("\n");
+
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,37 +170,7 @@ const html = `<!DOCTYPE html>
       </section>
     </div>
 
-    <aside class="side">
-      <section>
-        <div class="label">Skills &amp; Expertise</div>
-        <ul class="tight">
-          ${skills}
-        </ul>
-      </section>
-
-      <section>
-        <div class="label">Select Clients</div>
-        <p class="clients">${clients}</p>
-      </section>
-
-      <section>
-        <div class="label">Education</div>
-        ${education}
-      </section>
-
-      <section>
-        <div class="label">Awards &amp; Recognition</div>
-        <ul class="tight">
-          ${awards}
-        </ul>
-      </section>
-
-      <section>
-        <div class="label">References</div>
-        <ul class="refs">
-          ${references}
-        </ul>
-      </section>
+    <aside class="side">${aside}
     </aside>
   </div>
 </body>

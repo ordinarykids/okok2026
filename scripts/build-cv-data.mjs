@@ -13,11 +13,12 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = join(root, "content", "cv.md");
 const OUT = join(root, "src", "data", "cv.ts");
 
-const cv = parseCv(readFileSync(SRC, "utf8"));
+const warnings = [];
+const cv = parseCv(readFileSync(SRC, "utf8"), warnings);
 
 // Basic sanity checks so a malformed edit fails loudly instead of silently
 // shipping an empty CV.
-const problems = [];
+const problems = [...warnings];
 if (!cv.name) problems.push("missing name (expected a `# Name` heading)");
 if (!cv.title) problems.push("missing title (expected a `Title:` line)");
 if (!cv.bio.length) problems.push("no Profile paragraphs");

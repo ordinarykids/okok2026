@@ -31,7 +31,28 @@
 
 const FIELD_RE = /^(Title|Role|Dates|Degree|Note|Email):\s*(.*)$/;
 
-export function parseCv(md) {
+/**
+ * Section headings are matched by keyword, so "Selected Awards", "Core Skills",
+ * "Select Clients", "Summary", etc. all land in the right bucket. Anything
+ * unrecognized is reported so a renamed heading can't silently drop content.
+ */
+const SECTION_ALIASES = [
+  [/profile|summary|about/, "profile"],
+  [/skill/, "skills"],
+  [/client/, "clients"],
+  [/experience|work history/, "experience"],
+  [/education/, "education"],
+  [/award|recognition|honou?r/, "awards"],
+  [/reference/, "references"],
+];
+
+function normalizeSection(heading) {
+  const h = heading.toLowerCase();
+  for (const [re, name] of SECTION_ALIASES) if (re.test(h)) return name;
+  return null;
+}
+
+export function parseCv(md, warnings = []) {
   const lines = String(md).replace(/\r\n/g, "\n").split("\n");
 
   const cv = {
@@ -81,7 +102,13 @@ export function parseCv(md) {
     if (line.startsWith("## ")) {
       flushPara();
       flushEntry();
-      section = line.slice(3).trim().toLowerCase();
+      const heading = line.slice(3).trim();
+      section = normalizeSection(heading);
+      if (!section) {
+        warnings.push(
+          `Unrecognized section "## ${heading}" — its content would be dropped.`,
+        );
+      }
       continue;
     }
 
