@@ -100,6 +100,10 @@ const html = `<!DOCTYPE html>
   .side section{ margin-bottom:16px; break-inside:avoid; }
 
   .entry{ margin-bottom:13px; page-break-inside:avoid; break-inside:avoid; }
+  /* Trailing margins can spill past the last page and create a blank page. */
+  .entry:last-child{ margin-bottom:0; }
+  .side section:last-child{ margin-bottom:0; }
+  .main section:last-child, .body{ margin-bottom:0; }
   .entry-head{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
   .entry-title{ margin:0; font-size:11.5px; font-weight:400; }
   .company{ font-weight:700; } .sep{ color:var(--muted); margin:0 6px; } .role{ color:var(--soft); }

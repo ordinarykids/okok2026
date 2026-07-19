@@ -18,9 +18,14 @@ This is the moment. The tools are here. The only limit is what we’re willing t
 - Real-Time Voice Pipelines (Vapi, LiveKit, Hume, HeyGen)
 - Rapid Prototyping / High-Fidelity Provocation
 - Multi-Modal Interfaces / Voice UI
-- Design Systems / Interaction Design / Figma
+- Product Design / UX / Design Systems / Figma
+- Web Design / Art Direction / Visual Design
+- Front-End Engineering (React / Next.js / TypeScript)
+- Motion Design / Animation / Interaction Design
 - Python / TypeScript / React / Next.js / Node.js
 - API Design / Real-Time Systems
+- Creative Direction / Brand & Campaign Vision
+- Creative Strategy / Concept Development
 - Innovation Strategy / Design Technology Leadership
 - Workshop Facilitation / Executive Communication
 
@@ -53,8 +58,11 @@ Dates: APR 2024 — PRESENT
 
 Key builder on Foresight, Intuit’s 100+ person AI innovation team (reporting into the Chief AI Officer org). Promoted Staff → Senior Staff, and served as Group Manager (Feb–Jun 2026) before returning to a senior IC leadership track to keep building.
 
-- Shipped Intuit Labs — a public beta live to 1M+ international users, with rollout to all of QuickBooks underway — the surface that turns AI innovation prototypes into shipping product.
-- Launched Delphi (delphi.intuit.com), an AI business advisor that turns QuickBooks data into forward-looking recommendations.
+- Shipped Intuit Labs (labs.intuit.com/ai) — the internal and external-facing platform that turns AI innovation prototypes into shipping product. Live in public beta to 1M+ international users, with rollout to all of QuickBooks underway.
+- Built both the site and the strategy behind Labs — defining how experiments graduate from speculative demo to guest-facing feature, and the surface that makes that pipeline visible inside and outside the company.
+- Developed Labs' first experiment, the Delphi guest experience (delphi.intuit.com) — financial general intelligence that turns QuickBooks data into forward-looking, advisory recommendations.
+- Launched QuickBooks Labs, an internal experimentation surface embedded directly inside QuickBooks proper, extending the Labs model to Intuit's core product.
+- Spend most of my time in R&D — prototyping and pressure-testing emerging technologies as they land: generative AI, real-time voice systems, and AI personality and emotion detection (Hume).
 - Designed and built a real-time AI personality engine from scratch — natural language, emotional intelligence, and embodied avatars — on ultra-low-latency voice pipelines (Vapi, Hume, LiveKit, HeyGen).
 - Delivered flagship demos at executive forums and summits that shifted how leadership invests in AI as a product medium.
 - Built org-wide AI-literacy workshops (Demystifying Python, Shipping Conversations, AI Avatars & Voice), seeding hands-on fluency across teams.
@@ -72,37 +80,30 @@ Creative and technical leadership for an enterprise development studio. Managed 
 - Introduced AI workflows (ChatGPT, Midjourney, Stable Diffusion) into the studio’s design and development process.
 
 ### KQED
-Role: Director of Digital Design and Development
-Dates: AUG 2018 — MAR 2020
+Role: Lead UX Designer → Director of Digital Design and Development
+Dates: JAN 2015 — MAR 2020
 
-Modernized how public media connects with its audience — leading design and technology that transformed KQED.org and the systems behind it. Focused on prototyping, modernization, and building the technical foundation for new kinds of storytelling.
-
-- Led the multi-year redesign of KQED.org, partnering with design, engineering, product, and AlephSF to build a modern, accessible platform for public media in the Bay Area.
-- Rebuilt the CI/CD pipeline, migrating Docker containers from AWS to Kubernetes on Google Cloud — enabling canary deployments, instant rollbacks, and faster experimentation.
-- Migrated KQED’s massive WordPress CMS to GCP Kubernetes, powering hundreds of thousands of articles and partner feeds (NPR, Apple News, Google News).
-- Designed automated audio workflows for Alexa, Google Assistant, and NPR One — normalizing audio levels and publishing segmented clips for emerging voice platforms.
-- Created real-time election infrastructure across every Bay Area county for 2018 — scrapers, editorial workflows, and automated publishing that made coverage fast and reliable.
-
-### KQED
-Role: Lead UX Designer
-Dates: JAN 2015 — AUG 2018
-
-Helped transform KQED’s digital presence from a traditional broadcaster into a modern, audience-driven media platform — blending UX strategy, product design, and hands-on prototyping for millions of listeners and readers.
+Joined as Lead UX Designer and was promoted to Director of Digital Design and Development — growing from hands-on product design into leading the design and technology that transformed KQED.org and the systems behind it. Helped move public media from a traditional broadcaster into a modern, audience-driven platform for millions of listeners and readers, focused on prototyping, modernization, and the technical foundation for new kinds of storytelling.
 
 - The Listening Project: led a complete redesign of KQED Radio, News, Arts, Science, and the homepage — a persistent audio player, a flexible editorial content system, and a real-time “trending” experience.
 - 2016 Election Voter Guide: spearheaded one of the first single-page apps deployed by a public media org — a custom WordPress-to-Elasticsearch pipeline and React front end that became a model for civic engagement design across NPR member stations.
 - Prototyped and built a real-time election dashboard that drew 1M+ views on election night 2016.
-- WordPress Modernization: migrated KQED’s core properties into WordPress — first as an external vendor, then full-time — unifying content management and design across teams.
+- Led the multi-year redesign of KQED.org, partnering with design, engineering, product, and AlephSF to build a modern, accessible platform for public media in the Bay Area.
+- Rebuilt the CI/CD pipeline and migrated KQED’s massive WordPress CMS from AWS to Kubernetes on Google Cloud — enabling canary deployments and instant rollbacks while powering hundreds of thousands of articles and partner feeds (NPR, Apple News, Google News).
+- Designed automated audio workflows for Alexa, Google Assistant, and NPR One — normalizing audio levels and publishing segmented clips for emerging voice platforms.
+- Created real-time election infrastructure across every Bay Area county for 2018 — scrapers, editorial workflows, and automated publishing that made coverage fast and reliable.
 
 ### OrdinaryKids
 Role: Founder & Creative Director
 Dates: JAN 2001 — JAN 2015
 
-Formed in the midst of the dot-com fallout, OrdinaryKids produced over a decade of award-winning, thought-provoking work. By building mostly direct-to-client relationships, the studio shaped and augmented brands across the skate, architecture, and fashion worlds.
+Formed in the midst of the dot-com fallout, OrdinaryKids grew into a cutting-edge generative art and creative-technology studio — over a decade of award-winning, thought-provoking work at the frontier of what the browser and code could do. Building mostly direct-to-client relationships, the studio treated code as a creative medium, shaping and augmenting brands across the skate, architecture, fashion, and music worlds.
 
-- Pioneered early Flash and creative-technology work that set a bar for interactive brand expression across sport, skate, fashion, music, and architecture.
+- Pioneered generative and interactive work in ActionScript, Processing, and early creative-coding tools — building custom, code-driven visual systems, generative type and identity, and audio-reactive experiences years before "creative technology" was a discipline.
+- Set the bar for interactive brand expression on the web, treating each site as a bespoke, experimental system rather than a template — motion, sound, and real-time behavior woven into the brand itself.
 - Delivered flagship brand work for Nike (Skateboarding, Running, Sportswear), Adidas Skateboarding, and Brita, alongside cultural projects for MoMA, Stüssy, HUF, Tracy Chapman, and Aesop Rock — including the “None Shall Pass” music video.
-- Recognized with How Magazine Best of Show and a Communication Arts Interactive Annual cover; ran a small team that anchored the SF design scene and launched a generation of Bay Area careers.
+- Recognized with How Magazine Best of Show, a Communication Arts Interactive Annual cover, and FWA Site of the Day honors; work later archived in the Taschen History of Web Design.
+- Ran a small, tight studio that anchored the SF design scene and launched a generation of Bay Area design and creative-technology careers.
 
 ### DualForces
 Role: Partner & Creative Director
