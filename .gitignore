@@ -29,6 +29,9 @@ old-portfolio/
 public/intuit-videos/chaotic-desktop.mov
 public/c8d8c5e87ed1917106545837de051d717c60de62.mov
 
+# resume build intermediate (cv/build_resume.py)
+cv/.resume.build.html
+
 # debug
 npm-debug.log*
 yarn-debug.log*

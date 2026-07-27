@@ -1,0 +1,119 @@
+{
+  "name": "Jason Herring",
+  "title": "Design Technologist / Principal — Creative Engineer",
+  "contact": [
+    "San Francisco, CA",
+    "jason@ordinarykids.com",
+    "otherstori.es",
+    "linkedin.com/in/ok-jason-herring"
+  ],
+  "summary": "Principal-level design technologist who ships — I write the code and direct the creative. 20+ years at the seam of design and engineering, now leading AI prototyping on Intuit's Foresight team and carrying that work into production: **Intuit Labs** (labs.intuit.com/ai), **Intuit Labs in QuickBooks**, and the **Delphi** AI business advisor. Conversational and voice interfaces, real-time personality engines, and agentic systems that move from speculative demo to shipped product.",
+  "skills": [
+    "Design Engineering & Creative Technology",
+    "Conversational & Voice AI",
+    "Generative AI, LLMs, RAG & Prompt Engineering",
+    "Agentic / Multi-Agent Systems",
+    "Real-Time Voice Pipelines (Vapi, LiveKit, Hume, HeyGen)",
+    "Rapid Prototyping & High-Fidelity Provocation",
+    "Design Systems & Interaction Design (Figma)",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "Real-Time Systems & API Design",
+    "Executive Demos & Design Leadership"
+  ],
+  "experience": [
+    {
+      "company": "Intuit",
+      "role": "Senior Staff Design Technologist, Foresight (AI)",
+      "dates": "Apr 2024 – Present",
+      "context": "Mountain View, CA · Key builder on Foresight, Intuit's 100+ person AI innovation team reporting into the Chief AI Officer org. Promoted Staff → Senior Staff; served as Group Manager (Feb–Jun 2026) before returning to a senior IC leadership track to keep building.",
+      "shipped_label": "Selected shipped work",
+      "shipped": [
+        {
+          "product": "Intuit Labs",
+          "note": "labs.intuit.com/ai",
+          "text": "Shipped Intuit's public AI showcase and designed its Delphi page: the entry point into a free guest experience where anyone can upload their own data and get AI business advice without an Intuit account. Public beta to **1M+ international users**."
+        },
+        {
+          "product": "Intuit Labs in QuickBooks",
+          "text": "Shipped the in-product beta surface where new and early-beta AI features go in front of real customers for iteration and experimentation. Live in the UK with global rollout underway — the pipeline that carries Foresight prototypes into shipping product."
+        },
+        {
+          "product": "Delphi",
+          "text": "Released the first authenticated version inside Intuit Labs in QuickBooks — an AI business advisor built on financial general intelligence, reasoning across a customer's full Intuit data to deliver forward-looking recommendations."
+        },
+        {
+          "product": "QuickBooks mobile voice",
+          "text": "Shipped dictation and voice input into Omni, Intuit's flagship intelligence product — a deliberately light-touch voice experiment on a flagship surface, iterating toward conversational UI."
+        },
+        {
+          "product": "Voice of the customer",
+          "text": "Building a feedback tool that turns raw customer signal off these surfaces into a loop product teams can act on."
+        }
+      ],
+      "bullets": [
+        "Designed and built a real-time AI personality engine from scratch — natural language, emotional intelligence, and embodied avatars — on ultra-low-latency voice pipelines (Vapi, Hume, LiveKit, HeyGen).",
+        "Delivered flagship demos at executive forums and summits that shifted how leadership invests in AI as a product medium.",
+        "Built org-wide AI-literacy workshops (Demystifying Python, Shipping Conversations, AI Avatars & Voice), seeding hands-on fluency across teams."
+      ]
+    },
+    {
+      "company": "Aleph",
+      "role": "Director of Design & Technology",
+      "dates": "Mar 2020 – Apr 2024",
+      "context": "San Francisco, CA · Creative and technical leadership for an enterprise development studio (React, React Native, Node, WordPress).",
+      "bullets": [
+        "Grew annual revenue **85%+** over four years through new-client acquisition and expanded scopes.",
+        "Directed a Helix clinical-trials mobile app — notifications, dashboards, and protocol-compliance tools — lifting user-acquisition success **22%**.",
+        "Built and led a team of 8 engineers and 3 designers; introduced AI workflows (ChatGPT, Midjourney, Stable Diffusion) into design and delivery."
+      ]
+    },
+    {
+      "company": "KQED",
+      "role": "Director of Digital Design & Development",
+      "dates": "Aug 2018 – Mar 2020",
+      "context": "San Francisco, CA · Owned design and engineering for Northern California's largest public-media organization.",
+      "bullets": [
+        "Led the multi-year KQED.org redesign and re-platformed a large WordPress CMS to GCP Kubernetes (canary deploys, instant rollbacks), powering hundreds of thousands of articles and partner feeds (NPR, Apple News, Google News).",
+        "Shipped automated audio workflows for Alexa, Google Assistant, and NPR One; built real-time 2018 election infrastructure across every Bay Area county."
+      ]
+    },
+    {
+      "company": "KQED",
+      "role": "Lead UX Designer",
+      "dates": "Jan 2015 – Aug 2018",
+      "context": "San Francisco, CA",
+      "bullets": [
+        "Redesigned KQED Radio, News, Arts, Science, and the homepage (persistent audio player, real-time trending); election dashboard drew **1M+ views** on 2016 election night.",
+        "Shipped one of public media's first single-page apps — the 2016 Voter Guide (WordPress → Elasticsearch + React) — adopted as a model across NPR member stations."
+      ]
+    },
+    {
+      "company": "OrdinaryKids",
+      "role": "Founder & Creative Director",
+      "dates": "Jan 2001 – Jan 2015",
+      "context": "San Francisco, CA · Founded and ran an award-winning creative studio for 13 years — a small team pioneering the creative use of technology for brand expression, and a hub of the SF interactive design scene that launched a generation of Bay Area careers.",
+      "bullets": [
+        "Pioneered early Flash and creative-technology work that set a bar for interactive brand expression across sport, skate, fashion, music, and architecture.",
+        "Delivered flagship brand work for Nike (Skateboarding, Running, Sportswear), Adidas Skateboarding, and Brita, alongside cultural projects for MoMA, Stüssy, HUF, Tracy Chapman, and Aesop Rock — including the \"None Shall Pass\" music video."
+      ]
+    },
+    {
+      "company": "DualForces",
+      "role": "Partner & Creative Director",
+      "dates": "Sep 2010 – Dec 2013",
+      "context": "San Francisco, CA · Concurrent with OrdinaryKids.",
+      "bullets": [
+        "Creative-directed the Nike Free visual center — the first public use of real Nike+ data in a campaign — and ran the Nike FuelBand NYC activation (60+ events in 90 days)."
+      ]
+    }
+  ],
+  "education": [
+    "University of South Florida — English Literature",
+    "Hillsborough Community College — Associate of Arts"
+  ],
+  "awards": "How Magazine, Best of Show (Interactive Annual) · Cover, Communication Arts Interactive Annual · Print Magazine · FWA Site of the Day (multiple) · Featured in Taschen's History of Web Design"
+}
