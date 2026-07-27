@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ name }} — Resume</title>
+<style>
+  @page { size: letter; margin: 0.5in 0.62in; }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.2pt;
+    line-height: 1.42;
+    color: #1c1c1c;
+  }
+
+  /* ---- header ---- */
+  .name {
+    font-size: 23pt;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin: 0;
+  }
+  .title {
+    font-size: 11pt;
+    color: #333;
+    margin: 3px 0 0;
+  }
+  .contact {
+    font-size: 8.1pt;
+    color: #6a6a6a;
+    margin: 5px 0 0;
+  }
+  .contact span + span::before { content: " · "; }
+  .rule-heavy {
+    border-bottom: 1.4px solid #1c1c1c;
+    margin: 7px 0 0;
+  }
+
+  /* ---- sections ---- */
+  h2 {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    margin: 13px 0 0;
+    padding-bottom: 3px;
+    border-bottom: 0.6px solid #c8c8c8;
+  }
+  h2 + * { margin-top: 6px; }
+
+  p { margin: 0; }
+
+  .skills { color: #262626; }
+
+  /* ---- jobs ---- */
+  .job { margin-top: 10px; break-inside: auto; }
+  .job:first-of-type { margin-top: 0; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .job-title { font-size: 10.2pt; font-weight: 700; }
+  .job-dates {
+    font-size: 8.4pt;
+    color: #6a6a6a;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .job-context {
+    font-size: 8.4pt;
+    font-style: italic;
+    color: #5c5c5c;
+    margin-top: 2px;
+  }
+  /* never strand a job heading at the foot of a page, orphaned from its bullets */
+  .job-head, .job-context, .shipped-label, h2 { break-after: avoid; }
+
+  ul { margin: 4px 0 0; padding-left: 15px; }
+  li { margin-top: 3px; }
+  li::marker { color: #8c8c8c; }
+
+  /* ---- shipped-work block ---- */
+  .shipped-label {
+    font-size: 7.4pt;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #6a6a6a;
+    margin-top: 7px;
+  }
+  ul.shipped { margin-top: 3px; }
+  ul.shipped li { margin-top: 4px; break-inside: avoid; }
+  /* keep the plain bullets from reading as more shipped-work entries */
+  ul.shipped + ul { margin-top: 9px; }
+  .product { font-weight: 700; }
+  .product-note { color: #6a6a6a; }
+
+  /* ---- footer sections ---- */
+  .edu-line { margin-top: 2px; }
+  .edu-line:first-child { margin-top: 0; }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1 class="name">{{ name }}</h1>
+    <p class="title">{{ title }}</p>
+    <p class="contact">{% for c in contact %}<span>{{ c }}</span>{% endfor %}</p>
+    <div class="rule-heavy"></div>
+  </header>
+
+  <h2>Summary</h2>
+  <p>{{ summary | md }}</p>
+
+  <h2>Core Skills</h2>
+  <p class="skills">{{ skills | join(" · ") }}</p>
+
+  <h2>Experience</h2>
+  {% for job in experience %}
+  <section class="job">
+    <div class="job-head">
+      <div class="job-title">{{ job.company }} — {{ job.role }}</div>
+      <div class="job-dates">{{ job.dates }}</div>
+    </div>
+    {% if job.context %}<div class="job-context">{{ job.context }}</div>{% endif %}
+
+    {% if job.shipped %}
+    <div class="shipped-label">{{ job.shipped_label }}</div>
+    <ul class="shipped">
+      {% for s in job.shipped %}
+      <li><span class="product">{{ s.product }}</span>{% if s.note %} <span class="product-note">({{ s.note }})</span>{% endif %} — {{ s.text | md }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if job.bullets %}
+    <ul>
+      {% for b in job.bullets %}<li>{{ b | md }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endfor %}
+
+  <h2>Education</h2>
+  {% for e in education %}<p class="edu-line">{{ e }}</p>{% endfor %}
+
+  <h2>Awards &amp; Recognition</h2>
+  <p>{{ awards }}</p>
+
+</body>
+</html>
